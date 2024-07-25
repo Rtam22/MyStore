@@ -1,0 +1,23 @@
+.mobile-search-container {
+  display: none;
+}
+
+.header-bottom-right input {
+  height: 35px;
+  background-color: #f6f6fb;
+  border: none;
+  padding: 0 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 190px;
+  margin-right: 5px;
+}
+
+@media (max-width: 950px) {
+  .mobile-search-container {
+    display: flex;
+  }
+  .search-container {
+    display: none;
+  }
+}

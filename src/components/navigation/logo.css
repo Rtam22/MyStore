@@ -1,0 +1,13 @@
+.header-bottom-left p {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.header-bottom-left p:first-child {
+  color: #0737e0;
+}
+
+.header-bottom-left {
+  display: flex;
+  align-items: center;
+}

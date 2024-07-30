@@ -11,8 +11,10 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "baseUrl": "./",
-
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "*": ["src/types/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules"]

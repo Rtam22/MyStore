@@ -1,0 +1,7 @@
+.scroller {
+  width: 100%;
+  display: flex;
+  height: auto;
+  gap: 60px;
+  overflow: hidden;
+}

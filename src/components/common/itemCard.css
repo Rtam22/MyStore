@@ -1,0 +1,29 @@
+.item-card a {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+}
+
+.item-card span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-card img {
+  object-fit: cover;
+  width: 500px;
+}
+
+.item-card.large {
+  width: 350px;
+  height: 600px;
+}

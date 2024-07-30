@@ -1,5 +1,5 @@
 /* Global Styles */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
   --main-font-color: rgb(49, 49, 49);
@@ -9,7 +9,14 @@
 body {
   width: 100vw;
   height: auto;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-right: 17px;
+  }
 }
 
 *,
@@ -21,7 +28,7 @@ body {
 }
 
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 p,
@@ -48,4 +55,12 @@ button {
 
 input:focus {
   outline: none;
+}
+
+.content {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
 }

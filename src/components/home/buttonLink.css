@@ -1,0 +1,75 @@
+.button-link {
+  width: 180px;
+  height: 40px;
+  position: relative;
+}
+
+.button-link.large {
+  width: 220px;
+}
+
+.button-link a {
+  background-color: white;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 2;
+  transition: transform 0.15s ease-in-out;
+}
+
+.button-link.small a {
+  width: 180px;
+  height: 40px;
+}
+
+.button-link.large a {
+  width: 220px;
+  height: 50px;
+}
+
+.button-link span {
+  position: absolute;
+  background-color: rgb(252, 252, 252);
+  z-index: 1;
+  left: 5px;
+  top: 8px;
+  transition: transform 0.15s ease-in-out;
+}
+
+.button-link.small span {
+  width: 180px;
+  height: 40px;
+}
+
+.button-link.large span {
+  width: 220px;
+  height: 50px;
+}
+
+.button-link:hover span {
+  transform: translate(3px, 3px);
+}
+
+.button-link:hover a {
+  transform: translate(-3px, -3px);
+}
+
+.button-link.black a {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.button-link.black span {
+  background-color: #ffa800;
+}
+
+.button-link.blue span {
+  background-color: #829dff;
+}
+
+.button-link.orange span {
+  background-color: #ffa800;
+}

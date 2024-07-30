@@ -3,17 +3,33 @@
 }
 
 .header-bottom-right input {
-  height: 35px;
-  background-color: #f6f6fb;
-  border: none;
+  height: 32px;
+  border: 1px solid black;
   padding: 0 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  width: 190px;
+  font-size: 14px;
+  width: 210px;
   margin-right: 5px;
 }
 
-@media (max-width: 950px) {
+.search-container {
+  position: relative;
+}
+
+.search-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.fa-lg {
+  font-size: 1.15em;
+}
+
+.fa-lg:hover {
+  color: rgb(19, 62, 255);
+}
+
+@media (max-width: 1080px) {
   .mobile-search-container {
     display: flex;
   }

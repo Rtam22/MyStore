@@ -15,7 +15,7 @@ function ShowSearch() {
     <>
       <div className="search-container">
         <input className="search" type="search" placeholder="Search"></input>
-        <button>
+        <button className="search-button">
           <FontAwesomeIcon icon={faMagnifyingGlass} className="fa-lg" />
         </button>
       </div>

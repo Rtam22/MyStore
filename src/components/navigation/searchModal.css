@@ -1,24 +1,25 @@
 .search-modal {
   width: 100vw;
-  height: 100px;
-  background-color: rgb(228, 229, 231);
+  height: 0;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
   position: absolute;
-  top: 110px;
+  top: 130px;
   left: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
-  transform: translateY(-100px);
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-  z-index: -1;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s ease-in-out, height 0.2s ease-in-out;
+  z-index: 1;
 }
 
 .search-modal.active {
+  height: 100px;
   opacity: 1;
   pointer-events: all;
-  transform: translateY(0px);
 }
 
 .search-modal input {

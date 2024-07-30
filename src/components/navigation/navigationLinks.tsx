@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import LinkModal from "./linkModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useState, useRef, useEffect } from "react";
 import React from "react";
 import "./navigationLinks.css";
 function NavigationLinks() {
+  /*
   const [showDropDown, setShowDropDown] = useState(false);
   const dropDownRef = useRef<HTMLButtonElement>(null);
   function handleClick() {
@@ -26,25 +28,43 @@ function NavigationLinks() {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+   */
+
+  const mensClothingLinks = [
+    {
+      title: "T-Shirts & Shirts",
+      url: "/category/mens-clothing/tshirt",
+    },
+    {
+      title: "Jackets & Hoodies",
+      url: "/category/mens-clothing/jackets&hoodies",
+    },
+    {
+      title: "Pants & Trousers ",
+      url: "/category/mens-clothing/pants&trousers",
+    },
+    {
+      title: "Shoes ",
+      url: "/category/mens-clothing/shoes",
+    },
+  ];
+
   return (
-    <nav>
+    <nav className="navigation-container">
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/category/mens-clothing">Men's Clothing</Link>
+          <LinkModal links={mensClothingLinks} />
+        </li>
+
+        <li>
+          <Link to="/category/womans-clothing">Woman's Clothing</Link>
         </li>
         <li>
-          <button onClick={handleClick} ref={dropDownRef}>
-            Shop <FontAwesomeIcon icon={faChevronDown} className="fa-sm" />
-          </button>
-          <div className={`dropdown-menu ${showDropDown && "active"}`}>
-            <Link to="/category/mens-clothing">Men's Clothing</Link>
-            <Link to="/category/womans-clothing">Woman's Clothing</Link>
-            <Link to="/category/Jewelry">Jewelry</Link>
-            <Link to="/category/Electronics">Electronics</Link>
-          </div>
+          <Link to="/category/jewelry">Jewelry</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/category/electronics">Electronics</Link>
         </li>
       </ul>
     </nav>

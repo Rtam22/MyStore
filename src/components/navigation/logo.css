@@ -10,4 +10,5 @@
 .header-bottom-left {
   display: flex;
   align-items: center;
+  transform: translateX(-5px);
 }

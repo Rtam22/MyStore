@@ -1,0 +1,25 @@
+.link-modal {
+  position: absolute;
+  width: max-content;
+  height: auto;
+  background-color: white;
+  z-index: 1001;
+  top: 20px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  display: none;
+  padding-top: 15px;
+}
+
+.navigation-container .link-modal ul {
+  gap: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.link-modal li {
+  padding: 20px 20px;
+}
+
+.link-modal li:hover {
+  background-color: aliceblue;
+}

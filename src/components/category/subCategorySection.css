@@ -1,0 +1,18 @@
+.sub-category-container {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgb(58, 58, 58);
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.sub-category-container a {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+}
+
+.sub-category-container a:hover {
+  background-color: aliceblue;
+}

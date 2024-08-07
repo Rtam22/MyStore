@@ -19,7 +19,12 @@ export type subCategorySelectionProps = {
   subCategory: subCategoryType[];
 };
 
-export type allFilterProps = {
+export type combineFilterTypes = {
   filterTypes: filter[];
   subCategoryTypes: subCategoryType[];
+};
+
+export type allFilterProps = {
+  allfilters: combineFilterTypes;
+  categoryTitle: string;
 };

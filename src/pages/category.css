@@ -1,0 +1,50 @@
+.category.content {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+}
+
+.col-left {
+  height: auto;
+  width: 15%;
+  min-width: 200px;
+}
+
+.col-right {
+  height: 1900px;
+  width: 85%;
+}
+
+.col-left,
+.col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 20px 0;
+}
+
+.category.content {
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+}
+
+.top-bar {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-bar p {
+  color: rgb(148, 147, 147);
+  margin-top: 15px;
+}
+
+.top-bar .image-container {
+  width: 81%;
+}

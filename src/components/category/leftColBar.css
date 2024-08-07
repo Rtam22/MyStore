@@ -2,7 +2,7 @@
   position: sticky;
   top: 100px;
   width: 100%;
-  height: calc(85vh - 130px);
+  height: calc(90vh - 130px);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
 }
 
 .filter-modal h2 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .scroller-container {

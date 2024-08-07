@@ -1,15 +1,6 @@
 import "./itemCard.css";
 import { Link } from "react-router-dom";
-type itemCardProps = {
-  title: string;
-  image: string;
-  imageAlt: string;
-  description?: string;
-  rating?: number;
-  href: string;
-  price: number;
-  size: "large" | "small";
-};
+import { itemCardProps } from "./itemCardType";
 
 function ItemCard({
   title,
@@ -29,7 +20,7 @@ function ItemCard({
         <span>
           <h3>{title}</h3> <h3>${price}</h3>
         </span>
-        <p>{description}</p>
+        {size === "large" ? <p>{description}</p> : null}
       </Link>
     </div>
   );

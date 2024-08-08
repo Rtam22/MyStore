@@ -2,7 +2,7 @@ import "./filterSection.css";
 import { filterModalProps } from "./filterTypes";
 import React, { useState } from "react";
 
-function FilterSection({ filters }: filterModalProps) {
+function FilterSection({ filters, subCategoryTitle }: filterModalProps) {
   const [showFilter, setShowFilter] = useState([false, false]);
 
   function handleShowFilters(i: number) {

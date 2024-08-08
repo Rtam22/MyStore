@@ -9,7 +9,9 @@ interface rightColBarProps {
   subCategory?: string;
 }
 function RightColBar({ items, category, subCategory }: rightColBarProps) {
-  function findItems() {
+  function listItems() {
+    console.log("category " + category);
+    console.log("subCategory " + subCategory);
     if (subCategory) {
       return items.map((item, index) => {
         if (
@@ -22,7 +24,6 @@ function RightColBar({ items, category, subCategory }: rightColBarProps) {
     } else if (category) {
       return items.map((item, index) => {
         if (category === item.mainCategory) {
-          console.log(item);
           return <ItemCard key={index} {...item} size="small" />;
         }
       });
@@ -31,7 +32,7 @@ function RightColBar({ items, category, subCategory }: rightColBarProps) {
 
   return (
     <div className="col-right">
-      <div className="items-container">{findItems()}</div>
+      <div className="items-container">{listItems()}</div>
     </div>
   );
 }

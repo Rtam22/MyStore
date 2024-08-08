@@ -8,11 +8,13 @@ export type filter = {
 
 export type filterModalProps = {
   filters: filter[];
+  subCategoryTitle: string;
 };
 
 export type subCategoryType = {
   title: string;
   url: string;
+  filters?: filter[];
 };
 
 export type subCategorySelectionProps = {
@@ -27,4 +29,5 @@ export type combineFilterTypes = {
 export type allFilterProps = {
   allfilters: combineFilterTypes;
   categoryTitle: string;
+  isSubCategory?: boolean;
 };

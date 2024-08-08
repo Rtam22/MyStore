@@ -4,8 +4,12 @@ import FilterSection from "./filterSection";
 import { allFilterProps } from "./filterTypes";
 import SubCategorySection from "./subCategorySection";
 import { formatTitle } from "../../utils/textFormatUtils";
-
-function LeftColBar({ allfilters, categoryTitle }: allFilterProps) {
+import { getLastParamLink } from "../../utils/textFormatUtils";
+function LeftColBar({
+  allfilters,
+  categoryTitle,
+  isSubCategory,
+}: allFilterProps) {
   const [prevYPosition, setPrevYPosition] = useState(window.scrollY);
   const [shiftPosition, setShiftPosition] = useState(false);
   const [extendFilter, setExtendFilter] = useState(false);
@@ -29,6 +33,16 @@ function LeftColBar({ allfilters, categoryTitle }: allFilterProps) {
     console.log("close");
   }
 
+  function findSubCategoryByUrl() {
+    const subCategory = allfilters.subCategoryTypes.find(
+      (subCategory) => getLastParamLink(subCategory.url) === categoryTitle
+    );
+    if (!subCategory.filters) {
+      return allfilters.filterTypes;
+    }
+    return subCategory.filters;
+  }
+
   return (
     <div className="col-left">
       <div
@@ -42,7 +56,12 @@ function LeftColBar({ allfilters, categoryTitle }: allFilterProps) {
         </div>
         <div className="scroller-container">
           <SubCategorySection subCategory={allfilters.subCategoryTypes} />
-          <FilterSection filters={allfilters.filterTypes} />
+          <FilterSection
+            filters={
+              isSubCategory ? findSubCategoryByUrl() : allfilters.filterTypes
+            }
+            subCategoryTitle={categoryTitle}
+          />
         </div>
       </div>
     </div>

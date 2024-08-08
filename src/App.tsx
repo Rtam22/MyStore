@@ -13,12 +13,15 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/category/:categoryName/" element={<Category />} />
+        <Route path="/:categoryName/" element={<Category />} />
         <Route
-          path="/category/:categoryName/:subcategoryName"
+          path="/:categoryName/:subcategoryName"
           element={<SubCategory />}
         />
-        <Route path="/product/:productId" element={<Product />} />
+        <Route
+          path="/:categoryName/:subcategoryName/:productId"
+          element={<Product />}
+        />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>

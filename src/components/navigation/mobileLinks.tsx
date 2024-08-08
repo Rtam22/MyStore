@@ -31,16 +31,16 @@ function MobileLinks() {
             <div className="mobile-category">
               <ul>
                 <li>
-                  <Link to="/category/mens-clothing">Men's Clothing</Link>
+                  <Link to="/mens-clothing">Men's Clothing</Link>
                 </li>
                 <li>
-                  <Link to="/category/womans-clothing">Woman's Clothing</Link>
+                  <Link to="/womans-clothing">Woman's Clothing</Link>
                 </li>
                 <li>
-                  <Link to="/category/Jewelry">Jewelry</Link>
+                  <Link to="/jewelry">Jewelry</Link>
                 </li>
                 <li>
-                  <Link to="/category/Electronics">Electronics</Link>
+                  <Link to="/electronics">Electronics</Link>
                 </li>
               </ul>
             </div>

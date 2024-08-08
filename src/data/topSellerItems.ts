@@ -1,5 +1,6 @@
 import { productItem } from "../components/common/scroller/scrollerTypes";
 import jewelryImage from "../assets/Jewelry.jpg";
+
 export const topSellersData: productItem[] = [
   {
     title: "Mens Casual Slim Fit",

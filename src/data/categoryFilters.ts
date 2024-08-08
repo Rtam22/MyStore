@@ -1,153 +1,124 @@
-import { combineFilterTypes } from "../components/category/filterTypes";
+import { combineFilterTypes, filter } from "../components/category/filterTypes";
+
+const commonFilterTypes: filter[] = [
+  {
+    title: "Price",
+    filterType: "checkbox",
+    filterValues: ["$0 to $20", "$20 to $50", "$50 to $100", "$100+"],
+  },
+  {
+    title: "Size",
+    filterType: "checkbox",
+    filterValues: ["X-Small", "Small", "Medium", "Large", "X-Large"],
+  },
+  {
+    title: "Sales & Offers",
+    filterType: "checkbox",
+    filterValues: ["Sale"],
+  },
+];
 
 export const maleClothingFilters: combineFilterTypes = {
-  filterTypes: [
-    {
-      title: "Price",
-      filterType: "checkbox",
-      filterValues: ["$0 to $20", "$20 to $50", "$50 to $100", "$100+"],
-    },
-    {
-      title: "Size",
-      filterType: "checkbox",
-      filterValues: ["X-Small", "Small", "Medium", "Large", "X-Large"],
-    },
-    {
-      title: "Sales & Offers",
-      filterType: "checkbox",
-      filterValues: ["Sale"],
-    },
-  ],
+  filterTypes: commonFilterTypes,
 
   subCategoryTypes: [
     {
       title: "Tshirts & Tops",
-      url: "tshirts&tops",
+      url: "/mens-clothing/tshirts-&-tops",
     },
     {
       title: "Jackets & Hoodies",
-      url: "jackets&hoodies",
+      url: "/mens-clothing/jackets-&-hoodies",
     },
     {
       title: "Pants & Trousers",
-      url: "pants&trousers",
+      url: "/mens-clothing/pants-&-trousers",
     },
     {
       title: "Shoes",
-      url: "shoes",
+      url: "/mens-clothing/shoes",
+      filters: [
+        {
+          title: "Price",
+          filterType: "checkbox",
+          filterValues: ["$0 to $20", "$20 to $50", "$50 to $100", "$100+"],
+        },
+        {
+          title: "Size",
+          filterType: "checkbox",
+          filterValues: ["6 Au", "7 Au", "8 Au", "9 Au", "10 Au"],
+        },
+        {
+          title: "Sales & Offers",
+          filterType: "checkbox",
+          filterValues: ["Sale"],
+        },
+      ],
     },
   ],
 };
 
 export const femaleClothingFilters: combineFilterTypes = {
-  filterTypes: [
-    {
-      title: "Price",
-      filterType: "checkbox",
-      filterValues: ["$0 to $20", "$20 to $50", "$50 to $100", "$100+"],
-    },
-    {
-      title: "Size",
-      filterType: "checkbox",
-      filterValues: ["X-small", "Small", "Medium", "Large", "X-Large"],
-    },
-    {
-      title: "Sales & Offers",
-      filterType: "checkbox",
-      filterValues: ["Sale"],
-    },
-  ],
+  filterTypes: commonFilterTypes,
 
   subCategoryTypes: [
     {
       title: "Tops & Blouses",
-      url: "/tshirts&tops",
+      url: "/womans-clothing/tops-&-blouses",
     },
     {
       title: "Jackets & Coats",
-      url: "/jackets&coats&tops",
+      url: "/womans-clothing/jackets-&-coats",
     },
     {
-      title: "Dresses & Skirts",
-      url: "/dresses&skirts",
+      title: "Pants & Skirts",
+      url: "/womans-clothing/pants-&-skirts",
     },
     {
       title: "Shoes",
-      url: "/shoes",
+      url: "/womans-clothing/shoes",
     },
   ],
 };
 
 export const jewelryFilters: combineFilterTypes = {
-  filterTypes: [
-    {
-      title: "Price",
-      filterType: "checkbox",
-      filterValues: ["$0 to $50", "$50 to $100", "$100 to $500", "$500+"],
-    },
-    {
-      title: "Material",
-      filterType: "checkbox",
-      filterValues: ["Gold", "Silver", "Platinum", "Diamonds", "Pearls"],
-    },
-    {
-      title: "Sales & Offers",
-      filterType: "checkbox",
-      filterValues: ["Sale"],
-    },
-  ],
+  filterTypes: commonFilterTypes,
 
   subCategoryTypes: [
     {
       title: "Necklaces & Pendants",
-      url: "necklaces&pendants",
+      url: "/jewelry/necklaces-&-pendants",
     },
     {
       title: "Earrings",
-      url: "earrings",
+      url: "/jewelry/earrings",
     },
     {
       title: "Rings",
-      url: "rings",
+      url: "/jewelry/rings",
     },
     {
       title: "Watches",
-      url: "watches",
+      url: "/jewelry/watches",
     },
   ],
 };
 
 export const electronicsFilters: combineFilterTypes = {
-  filterTypes: [
-    {
-      title: "Price",
-      filterType: "checkbox",
-      filterValues: ["$0 to $50", "$50 to $100", "$100 to $500", "$500+"],
-    },
-    {
-      title: "Brand",
-      filterType: "checkbox",
-      filterValues: ["Brand A", "Brand B", "Brand C", "Brand D"],
-    },
-    {
-      title: "Sales & Offers",
-      filterType: "checkbox",
-      filterValues: ["Sale", "test", "dhsajkda"],
-    },
-  ],
+  filterTypes: commonFilterTypes,
 
   subCategoryTypes: [
     {
-      title: "Mobile Phones & Accessories",
-      url: "mobilephones&accessories",
+      title: "Mobile Phones",
+      url: "/electronics/mobile-phones",
     },
     {
       title: "Laptops & Computers",
-      url: "laptops&computers",
+      url: "/electronics/laptops-&-computers",
     },
     {
-      title: "Tablets & E-Readers",
-      url: "tablets&e-readers",
+      title: "Tablets",
+      url: "/electronics/tablets",
     },
   ],
 };

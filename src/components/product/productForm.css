@@ -1,0 +1,66 @@
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.color-container {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.color-container label {
+  font-weight: 700;
+}
+
+.product-form select {
+  font-weight: 400;
+  font-size: 16px;
+  height: 35px;
+  width: 220px;
+  padding-left: 5px;
+}
+
+.size-container,
+.quantity-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-form .quantity-container select {
+  width: 50px;
+}
+
+.size-title-container {
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+}
+
+.size-title-container button {
+  color: blue;
+}
+.size-button-container button {
+  width: 50px;
+  height: 35px;
+  border: solid 1px rgb(124, 124, 124);
+  margin: 0px 5% 0px 0px;
+}
+
+.submit-button {
+  width: 220px;
+  height: 45px;
+  background-color: rgb(61, 61, 61);
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: rgb(86, 86, 87);
+}
+
+.size-button.active {
+  background-color: rgb(61, 61, 61);
+  color: white;
+}

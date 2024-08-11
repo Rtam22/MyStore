@@ -1,0 +1,34 @@
+.information-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.information-container h2 {
+  font-size: 36px;
+}
+
+.information-container p {
+  font-size: 16px;
+  line-height: 35px;
+}
+
+.information-container span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.information-container span p {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.star-icon {
+  display: flex;
+  font-size: 30px;
+  align-items: flex-start;
+}
+
+.information-container span p:last-child {
+  display: flex;
+}

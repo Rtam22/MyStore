@@ -1,0 +1,20 @@
+.image-display-container {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
+
+.image-option-conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 40%;
+  padding-right: 5px;
+  gap: 20px;
+}
+
+.image-container.small {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}

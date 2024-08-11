@@ -6,19 +6,6 @@
   --secondary-font-color: rgb(139, 139, 139);
 }
 
-body {
-  width: 100vw;
-  height: auto;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-@media (min-width: 768px) {
-  body {
-    padding-right: 17px;
-  }
-}
-
 *,
 *::after,
 *::before {
@@ -29,6 +16,11 @@ body {
 
 * {
   font-family: "Inter", sans-serif;
+}
+
+body {
+  height: auto;
+  overflow-y: scroll;
 }
 
 p,
@@ -58,9 +50,27 @@ input:focus {
 }
 
 .content {
-  width: 90%;
+  max-width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 140px;
+}
+
+.scroller-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroller-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+.scroller-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+.scroller-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

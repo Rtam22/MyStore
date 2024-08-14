@@ -32,19 +32,22 @@ export type productType = {
   subCategory: string;
   availability: boolean;
   href: string;
-  size?: string[];
+  size: ("XS" | "S" | "M" | "L" | "XL")[];
   color?: string[];
   discount?: number;
   salePrice?: number;
   tag?: string[];
   amountSold: number;
+  quantity?: number;
+  selectedColor?: string;
+  selectedSize?: string;
 };
 
 export const products: productType[] = [
   /* Tshirts and tops  */
   {
     id: "black-tshirt",
-    href: "Classic-Black-T-shirt",
+    href: "/mens-clothing/tshirts-&-tops/Classic-Black-T-shirt",
     title: "Classic Black T-shirt",
     description:
       "A classic black T-shirt that’s a wardrobe staple. Crafted from soft, breathable cotton, it offers a timeless look and versatile style that pairs well with any outfit.",
@@ -52,7 +55,7 @@ export const products: productType[] = [
     imageAlt: "A classic black T-shirt with a sleek design",
     rating: 4.5,
     price: 19.99,
-    mainCategory: "mens clothing",
+    mainCategory: "mens-clothing",
     subCategory: "tshirts-&-tops",
     availability: true,
     size: ["S", "M", "L", "XL"],
@@ -65,7 +68,7 @@ export const products: productType[] = [
   {
     id: "pacman-yellow-tshirt",
     title: "Pacman Yellow T-shirt",
-    href: "Pacman-Yellow-T-shirt",
+    href: "/mens-clothing/tshirts-&-tops/Pacman-Yellow-T-shirt",
     description:
       "Brighten up your day with this Pacman Yellow T-shirt. Featuring a vivid yellow color and playful design, it's perfect for those who love a touch of fun and a splash of color in their wardrobe.",
     image: Tshirt6,
@@ -76,7 +79,7 @@ export const products: productType[] = [
     subCategory: "tshirts-&-tops",
     availability: true,
     size: ["S", "M", "L", "XL"],
-    color: ["Yellow"],
+    color: ["Yellow", "Red"],
     discount: 5,
     salePrice: 20.99,
     tag: ["fun", "bright"],
@@ -85,7 +88,7 @@ export const products: productType[] = [
   {
     id: "white-red-stripe-tshirt",
     title: "White with Red Stripe T-shirt",
-    href: "White-with-Red-Stripe-T-shirt",
+    href: "/mens-clothing/tshirts-&-tops/White-with-Red-Stripe-T-shirt",
     description:
       "This T-shirt combines classic white with bold red stripes for a sporty and stylish look. Made from premium cotton, it’s both comfortable and eye-catching, ideal for a casual day out.",
     image: Tshirt7,
@@ -96,7 +99,7 @@ export const products: productType[] = [
     subCategory: "tshirts-&-tops",
     availability: true,
     size: ["S", "M", "L", "XL"],
-    color: ["White", "Red"],
+    color: ["White & Red"],
     discount: 15,
     salePrice: 19.99,
     tag: ["sporty", "striped"],
@@ -105,7 +108,7 @@ export const products: productType[] = [
   {
     id: "lavender-purple-tshirt",
     title: "Lavender Purple T-shirt",
-    href: "Lavender-Purple-T-shirt",
+    href: "/mens-clothing/tshirts-&-tops/Lavender-Purple-T-shirt",
     description:
       "Add a pop of color with this Lavender Purple T-shirt. Its soft, pastel hue brings a refreshing and modern touch, while the relaxed fit ensures all-day comfort.",
     image: Tshirt8,
@@ -125,7 +128,7 @@ export const products: productType[] = [
   {
     id: "essential-white-tshirt",
     title: "Essential White T-shirt",
-    href: "Essential-White-T-shirt",
+    href: "/mens-clothing/tshirts-&-tops/Essential-White-T-shirt",
     description:
       "The quintessential white T-shirt, designed for simplicity and elegance. Made from high-quality cotton, it’s a versatile piece that complements any outfit and is a must-have in every wardrobe.",
     image: Tshirt1,
@@ -145,7 +148,7 @@ export const products: productType[] = [
   {
     id: "black-oversized-tshirt",
     title: "Black Oversized T-shirt",
-    href: "Black-Oversized-T-shirt",
+    href: "/mens-clothing/tshirts-&-tops/Black-Oversized-T-shirt",
     description:
       "Embrace a laid-back style with this Black Oversized T-shirt. Its relaxed fit and ultra-soft fabric provide a comfortable, casual look that's perfect for lounging or layering.",
     image: Tshirt2,
@@ -155,7 +158,7 @@ export const products: productType[] = [
     mainCategory: "mens-clothing",
     subCategory: "tshirts-&-tops",
     availability: true,
-    size: ["M", "L", "XL", "XXL"],
+    size: ["M", "L", "XL"],
     color: ["Black"],
     discount: 0,
     salePrice: 24.99,
@@ -165,7 +168,7 @@ export const products: productType[] = [
   {
     id: "black-countries-text-tshirt",
     title: "Black T-shirt with Countries Text",
-    href: "Black-T-shirt-with-Countries-Text",
+    href: "/mens-clothing/tshirts-&-tops/Black-T-shirt-with-Countries-Text",
     description:
       "Show off your global spirit with this Black T-shirt featuring a unique design with country names. Made from soft cotton, this shirt combines style and international flair.",
     image: Tshirt3,
@@ -185,7 +188,7 @@ export const products: productType[] = [
   {
     id: "white-small-text-tshirt",
     title: "White T-shirt with Small Text",
-    href: "White-T-shirt-with-Small-Text",
+    href: "/mens-clothing/tshirts-&-tops/White-T-shirt-with-Small-Text",
     description:
       "This minimalist White T-shirt features a subtle text detail, adding a touch of sophistication to a classic look. Made from soft, breathable cotton, it's perfect for effortless style.",
     image: Tshirt4,
@@ -206,7 +209,7 @@ export const products: productType[] = [
   {
     id: "black-text-tshirt",
     title: "Bold Black Graphic Tee",
-    href: "Bold-Black-Graphic-Tee",
+    href: "/womans-clothing/tops-&-blouses/Bold-Black-Graphic-Tee",
     description:
       "A sleek black T-shirt featuring a bold text graphic. Crafted from high-quality cotton, it combines comfort with a statement-making design, perfect for any casual outing.",
     image: WTshirt1,
@@ -226,7 +229,7 @@ export const products: productType[] = [
   {
     id: "white-black-stripes-tshirt",
     title: "Chic White & Black Striped Tee",
-    href: "Chic-White-&-Black-Striped-Tee",
+    href: "/womans-clothing/tops-&-blouses/Chic-White-&-Black-Striped-Tee",
     description:
       "Elevate your casual look with this chic white and black striped T-shirt. Made from soft, breathable cotton, it offers a stylish contrast that’s both trendy and versatile.",
     image: WTshirt2,
@@ -246,7 +249,7 @@ export const products: productType[] = [
   {
     id: "gray-white-tshirt",
     title: "Minimalist Gray & White Tee",
-    href: "Minimalist-Gray-&-white-Tee",
+    href: "/womans-clothing/tops-&-blouses/Minimalist-Gray-&-white-Tee",
     description:
       "Keep it simple and stylish with this minimalist gray and white T-shirt. Designed for ultimate comfort and crafted from soft cotton, it’s a staple piece for any wardrobe.",
     image: WTshirt3,
@@ -266,7 +269,7 @@ export const products: productType[] = [
   {
     id: "classic-white-tshirt",
     title: "Timeless Classic White Tee",
-    href: "Timeless-Classic-White-Tee",
+    href: "/womans-clothing/tops-&-blouses/Timeless-Classic-White-Tee",
     description:
       "Embrace elegance with this timeless classic white T-shirt. Made from premium, soft cotton, it offers a clean, versatile look that pairs effortlessly with any outfit. Perfect for layering or wearing solo.",
     image: WTshirt4,
@@ -288,7 +291,7 @@ export const products: productType[] = [
 
   {
     id: "naval-blue-jeans",
-    href: "Naval-Blue-Jeans",
+    href: "/mens-clothing/pants-&-trousers/Naval-Blue-Jeans",
     title: "Naval Blue Ankle Length Jeans",
     description:
       "Stylish and comfortable, these ankle-length jeans in naval blue are a perfect addition to your wardrobe. Crafted from durable denim, they offer a sleek look that pairs well with both casual and formal outfits.",
@@ -299,7 +302,7 @@ export const products: productType[] = [
     mainCategory: "mens-clothing",
     subCategory: "pants-&-trousers",
     availability: true,
-    size: ["S", "M", "L", "XL", "XXL"],
+    size: ["S", "M", "L", "XL"],
     color: ["Naval Blue"],
     discount: 10,
     salePrice: 35.99,
@@ -308,7 +311,7 @@ export const products: productType[] = [
   },
   {
     id: "black-pants",
-    href: "Black-Pants",
+    href: "/mens-clothing/pants-&-trousers/Black-Pants",
     title: "Classic Black Pants",
     description:
       "These classic black pants offer a versatile and timeless look. Made from a comfortable stretch fabric, they are perfect for both work and leisure.",
@@ -319,7 +322,7 @@ export const products: productType[] = [
     mainCategory: "mens-clothing",
     subCategory: "pants-&-trousers",
     availability: true,
-    size: ["S", "M", "L", "XL", "XXL"],
+    size: ["S", "M", "L", "XL"],
     color: ["Black"],
     discount: 0,
     salePrice: 29.99,
@@ -328,7 +331,7 @@ export const products: productType[] = [
   },
   {
     id: "wide-ankle-blue-pants",
-    href: "Wide-Ankle-Blue-Pants",
+    href: "/mens-clothing/pants-&-trousers/Wide-Ankle-Blue-Pants",
     title: "Wide Ankle Blue Pants",
     description:
       "Make a bold statement with these wide ankle blue pants. Designed with a relaxed fit, they bring comfort and style together, making them perfect for a casual day out.",
@@ -339,7 +342,7 @@ export const products: productType[] = [
     mainCategory: "mens-clothing",
     subCategory: "pants-&-trousers",
     availability: true,
-    size: ["S", "M", "L", "XL", "XXL"],
+    size: ["S", "M", "L", "XL"],
     color: ["Blue"],
     discount: 5,
     salePrice: 32.99,
@@ -349,7 +352,7 @@ export const products: productType[] = [
 
   {
     id: "light-blue-jeans",
-    href: "Light-Blue-Jeans",
+    href: "/womans-clothing/pants-&-skirts/Light-Blue-Jeans",
     title: "Light Blue Skinny Jeans",
     description:
       "These light blue skinny jeans are a wardrobe essential, offering a flattering fit with just the right amount of stretch. Perfect for casual outings or pairing with your favorite top.",
@@ -369,7 +372,7 @@ export const products: productType[] = [
   },
   {
     id: "blue-long-skirt",
-    href: "Blue-Long-Skirt",
+    href: "/womans-clothing/pants-&-skirts/Blue-Long-Skirt",
     title: "Blue Long Skirt",
     description:
       "Elegant and flowing, this blue long skirt adds a touch of grace to your ensemble. Made from soft, breathable fabric, it’s perfect for both casual and formal occasions.",
@@ -389,7 +392,7 @@ export const products: productType[] = [
   },
   {
     id: "leather-skirt-zip",
-    href: "Leather-Skirt-Zip",
+    href: "/womans-clothing/pants-&-skirts/Leather-Skirt-Zip",
     title: "Zippered Leather Skirt",
     description:
       "Bold and chic, this zippered leather skirt is designed to make a statement. With a sleek silhouette and edgy zipper detail, it’s perfect for a night out or adding some attitude to your outfit.",

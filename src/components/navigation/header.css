@@ -7,11 +7,11 @@
   z-index: 2000;
   top: 0px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  transition: top 0.2s ease-in-out;
+  transition: top 0.25s ease-in-out;
 }
 
 .header-container.hidden {
-  top: -130px;
+  top: -90px;
 }
 
 .header-container a,

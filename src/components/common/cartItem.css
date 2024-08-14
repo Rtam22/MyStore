@@ -1,0 +1,56 @@
+.item-card-cart {
+  display: flex;
+  gap: 10px;
+}
+
+.item-card-cart .image-container {
+  height: 100px;
+  width: 30%;
+}
+
+.item-card-cart .image-container img {
+  width: 73px;
+}
+
+.cart-item-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+}
+.cart-item-information div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-item-information div h5 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+  font-size: 16px;
+}
+
+.cart-item-information p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cart-item-information button {
+  width: 30px;
+}
+
+.title-container h5 a:hover {
+  color: rgb(117, 116, 116);
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
+
+.title-container button {
+  height: 25px;
+  width: 30px;
+}

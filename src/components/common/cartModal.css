@@ -1,0 +1,94 @@
+.cart-modal {
+  position: absolute;
+  top: 85px;
+  right: 0;
+  width: 370px;
+  height: auto;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-height: 86.5vh;
+  transition: max-height 0.3s ease-out;
+  overflow-y: scroll;
+  padding-bottom: 0;
+}
+
+.cart-modal.hide {
+  max-height: 0vh !important;
+  overflow: hidden;
+  padding-right: 13px;
+}
+
+.modal {
+  padding: 20px 25px 25px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.totals-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.totals-container p {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-container button {
+  border: 1px solid black;
+  width: 140px;
+  height: 35px;
+  font-size: 14px;
+}
+
+.buttons-container button:last-child {
+  background-color: rgb(48, 48, 48);
+  color: white;
+  font-weight: 300;
+}
+
+.sticky-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px 0 20px 0;
+  position: sticky;
+  bottom: 0px;
+  background-color: white;
+}
+
+.delete:hover {
+  background-color: rgb(238, 95, 95);
+  color: white;
+}
+
+.modal div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete.minimize {
+  height: 30px;
+  width: 30px;
+}
+
+.cart-modal.shift {
+  max-height: 91vh;
+}
+.cart-modal.extend {
+  max-height: 100vh;
+}

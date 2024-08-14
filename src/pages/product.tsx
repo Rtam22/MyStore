@@ -40,15 +40,12 @@ function Product() {
         <InformationList
           title={product.title}
           price={product.price}
+          discount={product.discount}
+          salePrice={product.salePrice}
           rating={product.rating}
           description={product.description}
         />
-        <ProductForm
-          title={product.title}
-          sizes={product.size}
-          colors={product.color}
-          handleToast={handleToastNotification}
-        />
+        <ProductForm product={product} handleToast={handleToastNotification} />
       </div>
     </div>
   );

@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./productForm.css";
-
+import { CartContext } from "../../context/cartContext";
+import { productType } from "../../data/products";
+import { v4 as uuidv4 } from "uuid";
 type productFormProps = {
-  title: string;
-  colors?: string | string[];
-  sizes?: ("XS" | "S" | "M" | "L" | "XL")[];
+  product: productType;
   handleToast: (message: string, status: string) => void;
 };
 
-function ProductForm({ title, sizes, colors, handleToast }: productFormProps) {
-  const [selectedSize, setSizeSelectedSize] = useState<string | null>(null);
-  const [selectedColor, setSelectedColor] = useState<string>(colors[0]);
+function ProductForm({ product, handleToast }: productFormProps) {
+  const [selectedSize, setSizeSelectedSize] = useState<
+    "XS" | "S" | "M" | "L" | "XL"
+  >(null);
+  const [selectedColor, setSelectedColor] = useState<string>(product.color[0]);
   const [selectedQuantity, setSelectQuantity] = useState<number>(1);
-
+  const { addToCart } = useContext(CartContext);
   function handleColor(colors: string | string[]) {
     if (Array.isArray(colors)) {
       return (
@@ -37,7 +39,7 @@ function ProductForm({ title, sizes, colors, handleToast }: productFormProps) {
     }
   }
 
-  function handleSizes(sizes: string[]) {
+  function handleSizes(sizes: ("XS" | "S" | "M" | "L" | "XL")[]) {
     return (
       <div className="size-container">
         <div className="size-title-container">
@@ -95,16 +97,24 @@ function ProductForm({ title, sizes, colors, handleToast }: productFormProps) {
       handleToast("Please select a size.", "error");
       return;
     }
-    console.log(selectedSize);
-    console.log(selectedColor);
-    console.log(selectedQuantity);
-    handleToast(`${title} has been added to your cart.`, "success");
+    let newProduct = { ...product };
+
+    newProduct.id = uuidv4();
+    if (selectedColor) {
+      newProduct.selectedColor = selectedColor;
+    }
+    if (selectedSize) {
+      newProduct.selectedSize = selectedSize;
+    }
+    newProduct.quantity = selectedQuantity;
+    addToCart(newProduct);
+    handleToast(`${product.title} has been added to your cart.`, "success");
   }
 
   return (
     <form onSubmit={handleSubmit} className="product-form">
-      {colors ? handleColor(colors) : null}
-      {sizes ? handleSizes(sizes) : null}
+      {product.color ? handleColor(product.color) : null}
+      {product.size ? handleSizes(product.size) : null}
       {handleQuantity()}
       <button className="submit-button" type="submit">
         Add to Cart

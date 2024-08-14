@@ -3,6 +3,8 @@ import "./informationList.css";
 type InformationListProps = {
   title: string;
   price: number;
+  discount: number;
+  salePrice: number;
   rating: number;
   description: string;
 };
@@ -10,6 +12,8 @@ type InformationListProps = {
 function InformationList({
   title,
   price,
+  salePrice,
+  discount,
   rating,
   description,
 }: InformationListProps) {
@@ -17,7 +21,20 @@ function InformationList({
     <div className="information-container">
       <h2>{title}</h2>
       <span>
-        <p>${price}</p>
+        <p>
+          {discount > 0 ? (
+            <>
+              <span className="discount-color">
+                ${salePrice} <p className="discount-tag">(-{discount})%</p>
+              </span>
+              <div className="discounted-container">
+                <s>${price}</s>
+              </div>
+            </>
+          ) : (
+            <>{price}</>
+          )}
+        </p>
         <p>
           {rating}
           <span className="star-icon">★</span>

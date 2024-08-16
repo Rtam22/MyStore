@@ -1,0 +1,21 @@
+.content.cart {
+  flex-direction: row;
+  gap: 140px;
+  width: 60%;
+  padding-top: 60px;
+  justify-content: center;
+}
+
+.left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 450px;
+}
+
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 300px;
+}

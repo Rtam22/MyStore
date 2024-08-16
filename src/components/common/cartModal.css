@@ -11,6 +11,7 @@
   transition: max-height 0.3s ease-out;
   overflow-y: scroll;
   padding-bottom: 0;
+  padding-top: 0;
 }
 
 .cart-modal.hide {
@@ -55,7 +56,7 @@
   font-size: 14px;
 }
 
-.buttons-container button:last-child {
+.buttons-container a:last-child button {
   background-color: rgb(48, 48, 48);
   color: white;
   font-weight: 300;
@@ -76,11 +77,6 @@
   color: white;
 }
 
-.modal div:first-child {
-  display: flex;
-  justify-content: space-between;
-}
-
 .delete.minimize {
   height: 30px;
   width: 30px;
@@ -91,4 +87,31 @@
 }
 .cart-modal.extend {
   max-height: 100vh;
+}
+
+.cart-modal .modal .cart-item img {
+  width: 100px;
+}
+
+.cart-modal .modal .cart-item .image-container {
+  object-fit: cover;
+}
+
+.car .cart-modal .item-information {
+  gap: 0px;
+}
+
+.cart-modal .item-information h4 {
+  font-size: 15px;
+}
+
+.buttons-container a:first-child button:hover {
+  background-color: rgb(113, 113, 216);
+  color: white;
+  font-weight: 300;
+  border: none;
+}
+.buttons-container a:last-child button:hover {
+  background-color: rgb(95, 95, 99);
+  border: none;
 }

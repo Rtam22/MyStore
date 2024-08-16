@@ -9,10 +9,10 @@ export function calculateTotalCost(items: productType[]) {
       total += item.quantity * item.salePrice;
     }
   });
-  return total.toFixed(2);
+  return parseFloat(total.toFixed(2));
 }
 
-export function calculateAllTotal(items: productType[]) {
+export function calculateQuantityTotal(items: productType[]) {
   let total = 0;
   items.forEach((item) => {
     total += item.quantity;
@@ -21,5 +21,5 @@ export function calculateAllTotal(items: productType[]) {
 }
 
 export function calculateItemTotal(price: number, quantity: number) {
-  return (price * quantity).toFixed(2);
+  return parseFloat((price * quantity).toFixed(2));
 }

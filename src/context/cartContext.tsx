@@ -7,6 +7,7 @@ type cardContextProp = {
   addToCart: (product: productType) => void;
   removeFromCart: (itemId: string) => void;
   handleModal: () => void;
+  updateCart: (newCart: productType[]) => void;
 };
 
 export const CartContext = createContext<cardContextProp | null>(null);
@@ -54,11 +55,9 @@ export function CartProvider({ children }) {
   }
 
   function compareItems(product: productType, item: productType) {
-    switch (product.subCategory) {
-      case "tshirts-&-tops":
-      case "jackets-&hoodies":
-      case "pants&trousers":
-      case "shoes":
+    switch (product.mainCategory) {
+      case "mens-clothing":
+      case "womans-clothing":
         if (
           product.selectedColor === item.selectedColor &&
           product.selectedSize === item.selectedSize
@@ -68,9 +67,20 @@ export function CartProvider({ children }) {
     }
   }
 
+  function updateCart(newCart: productType[]) {
+    setCartItems(newCart);
+  }
+
   return (
     <CartContext.Provider
-      value={{ cartItems, showModal, addToCart, removeFromCart, handleModal }}
+      value={{
+        cartItems,
+        showModal,
+        addToCart,
+        removeFromCart,
+        handleModal,
+        updateCart,
+      }}
     >
       {children}
     </CartContext.Provider>

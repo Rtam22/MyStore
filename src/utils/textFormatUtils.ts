@@ -1,6 +1,5 @@
 export function formatTitle(title: string) {
   let newTitle = breakStringToArray(title);
-  console.log(newTitle);
   newTitle = capitalizeFirstLetterArray(newTitle);
   return newTitle.join(" ");
 }

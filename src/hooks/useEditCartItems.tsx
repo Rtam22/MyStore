@@ -12,6 +12,8 @@ function UseEditCartItems() {
         return result.selectedSize;
       case "color":
         return result.selectedColor;
+      case "quantity":
+        return result.quantity;
     }
   }
 
@@ -20,13 +22,40 @@ function UseEditCartItems() {
     type: string,
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) {
+    const value =
+      type === "quantity"
+        ? parseInt(event.currentTarget.value, 10)
+        : event.currentTarget.value;
     const newCart = cartItems.map((item) => {
       if (item.id === id) {
-        return { ...item, [type]: event.currentTarget.value };
+        return { ...item, [type]: value };
       }
       return item;
     });
     updateCart(newCart);
+  }
+
+  function handleQuantity(quantityList: number[], id: string) {
+    return (
+      <div className="flex-start">
+        <p>
+          <span className="bold">Quantity:</span>
+        </p>
+        <select
+          id="quanity"
+          value={findItemValue(id, "quantity")}
+          onChange={(event) => updateOptionValue(id, "quantity", event)}
+        >
+          {quantityList.map((amount, index) => {
+            return (
+              <option key={index} value={amount}>
+                {amount}
+              </option>
+            );
+          })}
+        </select>
+      </div>
+    );
   }
 
   function handleColor(color: string | null, colors: string[], id: string) {
@@ -89,7 +118,7 @@ function UseEditCartItems() {
     return null;
   }
 
-  return { cartItems, handleSize, handleColor };
+  return { cartItems, handleSize, handleColor, handleQuantity };
 }
 
 export default UseEditCartItems;

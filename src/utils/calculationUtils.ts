@@ -15,7 +15,11 @@ export function calculateTotalCost(items: productType[]) {
 export function calculateQuantityTotal(items: productType[]) {
   let total = 0;
   items.forEach((item) => {
-    total += item.quantity;
+    if (typeof item.quantity !== "number") {
+      total += Number(item.quantity);
+    } else {
+      total += item.quantity;
+    }
   });
   return total;
 }

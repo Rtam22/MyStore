@@ -20,6 +20,10 @@
   padding-right: 13px;
 }
 
+.cart-modal.hide .sticky-container {
+  position: static;
+}
+
 .modal {
   padding: 20px 25px 25px 25px;
   display: flex;
@@ -103,6 +107,8 @@
 
 .cart-modal .item-information h4 {
   font-size: 15px;
+  max-width: 170px;
+  min-width: 170px;
 }
 
 .buttons-container a:first-child button:hover {
@@ -112,6 +118,6 @@
   border: none;
 }
 .buttons-container a:last-child button:hover {
-  background-color: rgb(95, 95, 99);
+  background-color: rgb(113, 113, 216);
   border: none;
 }

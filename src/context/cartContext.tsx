@@ -4,14 +4,14 @@ import { productType } from "../data/products";
 type cardContextProp = {
   cartItems: productType[];
   showModal: boolean;
-  addToCart: (product: productType) => void;
+  addToCart: (product: productType) => string;
   removeFromCart: (itemId: string) => void;
   handleModal: () => void;
   updateCart: (newCart: productType[]) => void;
 };
 
 export const CartContext = createContext<cardContextProp | null>(null);
-
+const quantityLimiter = 20;
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState<productType[]>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -22,12 +22,18 @@ export function CartProvider({ children }) {
 
   function addToCart(product: productType) {
     const newCart = checkDuplicate(product);
+    if (newCart === "limit") {
+      return "limit";
+    }
     if (newCart) {
       setCartItems(newCart);
+      setShowModal(true);
+      return "success";
     } else {
       setCartItems([product, ...cartItems]);
+      setShowModal(true);
+      return "success";
     }
-    setShowModal(true);
   }
 
   function removeFromCart(itemId: string) {
@@ -37,16 +43,25 @@ export function CartProvider({ children }) {
 
   function checkDuplicate(product: productType) {
     let found = false;
+    let limit = false;
     const newCart = cartItems.map((item) => {
       const result = compareItems(product, item);
       if (result) {
-        found = true;
-        item.quantity += product.quantity;
-        return item;
+        if (item.quantity + product.quantity > quantityLimiter) {
+          limit = true;
+          return item;
+        } else {
+          found = true;
+          item.quantity += product.quantity;
+          return item;
+        }
       } else {
         return item;
       }
     });
+    if (limit) {
+      return "limit";
+    }
     if (found) {
       return newCart;
     } else {
@@ -55,16 +70,12 @@ export function CartProvider({ children }) {
   }
 
   function compareItems(product: productType, item: productType) {
-    switch (product.mainCategory) {
-      case "mens-clothing":
-      case "womans-clothing":
-        if (
-          product.selectedColor === item.selectedColor &&
-          product.selectedSize === item.selectedSize
-        ) {
-          return true;
-        } else return false;
-    }
+    return (
+      product.mainCategory === item.mainCategory &&
+      product.title === item.title &&
+      product.selectedColor === item.selectedColor &&
+      product.selectedSize === item.selectedSize
+    );
   }
 
   function updateCart(newCart: productType[]) {

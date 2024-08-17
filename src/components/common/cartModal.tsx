@@ -15,12 +15,7 @@ type cartModalProps = {
   shiftPosition: boolean;
 };
 function CartModal({ showHeader, shiftPosition }: cartModalProps) {
-  const { cartItems, showModal, removeFromCart, handleModal } =
-    useContext(CartContext);
-
-  function handleDelete(itemId: string) {
-    removeFromCart(itemId);
-  }
+  const { cartItems, showModal, handleModal } = useContext(CartContext);
 
   function handleClose() {
     handleModal();
@@ -43,27 +38,30 @@ function CartModal({ showHeader, shiftPosition }: cartModalProps) {
           <div>
             <p>Cart is empty</p>
           </div>
-        ) : null}
-        <CartList />
-        <div className="sticky-container">
-          <hr />
-          <div className="totals-container">
-            <p>
-              Total items: <span>{calculateQuantityTotal(cartItems)}</span>
-            </p>
-            <p>
-              Sub Total: <span>${calculateTotalCost(cartItems)}</span>
-            </p>
-          </div>
-          <div className="buttons-container">
-            <Link to="/cart">
-              <button>View Cart</button>
-            </Link>
-            <Link to="/cart">
-              <button>Checkout</button>
-            </Link>
-          </div>
-        </div>
+        ) : (
+          <>
+            <CartList />
+            <div className="sticky-container">
+              <hr />
+              <div className="totals-container">
+                <p>
+                  Total items: <span>{calculateQuantityTotal(cartItems)}</span>
+                </p>
+                <p>
+                  Sub Total: <span>${calculateTotalCost(cartItems)}</span>
+                </p>
+              </div>
+              <div className="buttons-container">
+                <Link to="/cart">
+                  <button>View Cart</button>
+                </Link>
+                <Link to="/cart">
+                  <button>Checkout</button>
+                </Link>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

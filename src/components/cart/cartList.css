@@ -14,7 +14,8 @@
 }
 
 .cart-item .image-container {
-  width: 130px;
+  min-width: 100px;
+  width: 100px;
   height: 130px;
 }
 
@@ -52,6 +53,10 @@
 
 .delete {
   width: 20px;
+}
+
+.cart-item a {
+  width: 100%;
 }
 
 @media (min-width: 650px) {

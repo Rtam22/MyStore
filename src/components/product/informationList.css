@@ -40,7 +40,7 @@
 .information-container .discount-tag {
   font-size: 18px;
   margin-left: 10px;
-  font-weight: 300;
+  font-weight: 400;
   color: rgb(190, 24, 24);
 }
 
@@ -48,4 +48,13 @@
   display: flex;
   font-size: 24px;
   font-weight: 400;
+}
+
+@media (max-width: 550px) {
+  .information-container h2 {
+    font-size: 18px;
+  }
+  .information-container p {
+    font-size: 14px;
+  }
 }

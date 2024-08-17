@@ -3,15 +3,7 @@
   justify-content: center;
   gap: 0;
   min-width: 500px;
-}
-
-.image-option-conatiner {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 30%;
-  padding-right: 5px;
-  gap: 20px;
+  max-width: 500px;
 }
 
 .image-container.small {
@@ -20,12 +12,23 @@
   background-color: red;
 }
 
+.image-display-container {
+  position: relative;
+}
+
 @media (max-width: 1400px) {
-  .image-option-conatiner {
-    display: none;
-  }
   .image-display-container {
     min-width: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .image-display-container {
+    min-width: none;
+    max-width: none;
+  }
+  .image-display-container img {
     width: 100%;
   }
 }

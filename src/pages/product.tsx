@@ -41,7 +41,11 @@ function Product() {
       <ToastNotification position="bottom-center" autoClose={3000} />
       <div className="content product">
         <div className="col-left">
-          <ImageDisplay image={product.image} imageAlt={product.imageAlt} />
+          <ImageDisplay
+            image={product.image}
+            imageAlt={product.imageAlt}
+            discount={product.discount}
+          />
         </div>
         <div className="col-right">
           <InformationList

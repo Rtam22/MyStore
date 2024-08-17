@@ -6,5 +6,7 @@ export type itemCardProps = {
   rating?: number;
   href: string;
   price: number;
+  discount?: number;
+  salePrice?: number;
   size: "large" | "small";
 };

@@ -24,16 +24,15 @@ function InformationList({
         <div>
           {discount > 0 ? (
             <>
-              <span className="discount-color">
-                <p> ${salePrice}</p>{" "}
-                <p className="discount-tag">(-{discount})%</p>
-              </span>
               <div className="discounted-container">
                 <s>${price}</s>
               </div>
+              <span className="discount-color">
+                <p> ${salePrice}</p>
+              </span>
             </>
           ) : (
-            <>{price}</>
+            <p>${price}</p>
           )}
         </div>
         <p>

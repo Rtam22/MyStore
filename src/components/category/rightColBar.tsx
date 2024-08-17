@@ -10,8 +10,6 @@ interface rightColBarProps {
 }
 function RightColBar({ items, category, subCategory }: rightColBarProps) {
   function listItems() {
-    console.log("category " + category);
-    console.log("subCategory " + subCategory);
     if (subCategory) {
       return items.map((item, index) => {
         if (

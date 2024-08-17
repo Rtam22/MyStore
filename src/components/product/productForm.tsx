@@ -107,8 +107,13 @@ function ProductForm({ product, handleToast }: productFormProps) {
       newProduct.selectedSize = selectedSize;
     }
     newProduct.quantity = selectedQuantity;
-    addToCart(newProduct);
-    handleToast(`${product.title} has been added to your cart.`, "success");
+    const result = addToCart(newProduct);
+    if (result === "limit") {
+      handleToast(`Quantity is limited to 20 max`, "error");
+    }
+    if (result === "success") {
+      handleToast(`${product.title} has been added to your cart.`, "success");
+    }
   }
 
   return (

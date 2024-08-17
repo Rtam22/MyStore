@@ -21,11 +21,12 @@ function InformationList({
     <div className="information-container">
       <h2>{title}</h2>
       <span>
-        <p>
+        <div>
           {discount > 0 ? (
             <>
               <span className="discount-color">
-                ${salePrice} <p className="discount-tag">(-{discount})%</p>
+                <p> ${salePrice}</p>{" "}
+                <p className="discount-tag">(-{discount})%</p>
               </span>
               <div className="discounted-container">
                 <s>${price}</s>
@@ -34,7 +35,7 @@ function InformationList({
           ) : (
             <>{price}</>
           )}
-        </p>
+        </div>
         <p>
           {rating}
           <span className="star-icon">★</span>

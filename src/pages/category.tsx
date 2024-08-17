@@ -36,10 +36,6 @@ function Category() {
   const { categoryName } = useParams<{ categoryName: string }>();
   const [items, setItems] = useState<categoryItem[]>([]);
 
-  useEffect(() => {
-    console.log(categoryName);
-  }, [categoryName]);
-
   return (
     <div className="category content">
       <div className="top-bar">

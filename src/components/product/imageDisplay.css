@@ -2,13 +2,14 @@
   display: flex;
   justify-content: center;
   gap: 0;
+  min-width: 500px;
 }
 
 .image-option-conatiner {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  width: 40%;
+  width: 30%;
   padding-right: 5px;
   gap: 20px;
 }
@@ -17,4 +18,14 @@
   width: 100px;
   height: 100px;
   background-color: red;
+}
+
+@media (max-width: 1400px) {
+  .image-option-conatiner {
+    display: none;
+  }
+  .image-display-container {
+    min-width: auto;
+    width: 100%;
+  }
 }

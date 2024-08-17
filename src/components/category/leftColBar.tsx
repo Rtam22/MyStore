@@ -20,7 +20,7 @@ function LeftColBar({
 
   function handleEvent() {
     window.scrollY > 10 ? setExtendFilter(true) : setExtendFilter(false);
-    console.log(extendFilter);
+
     if (window.scrollY < prevYPosition || window.scrollY < 800) {
       setShiftPosition(false);
     } else {

@@ -12,16 +12,17 @@ import {
 } from "../components/common/toastNotification";
 
 function Product() {
-  const { categoryName, subcategoryName, productId } = useParams<{
-    categoryName: string;
-    subcategoryName: string;
+  const { productId } = useParams<{
     productId: string;
   }>();
-  const [product, setProduct] = useState<productType>(() => {
-    return products.find(
+  const [product, setProduct] = useState<productType | undefined>(undefined);
+
+  useEffect(() => {
+    const selectedProduct = products.find(
       (product) => productId === getLastParamLink(product.href)
     );
-  });
+    setProduct(selectedProduct);
+  }, [productId]);
 
   function handleToastNotification(
     message: string,
@@ -30,24 +31,34 @@ function Product() {
     showToast(message, status);
   }
 
+  if (!product) {
+    return <p>Loading...</p>;
+  }
+
   return (
-    <div className="content product">
+    <>
+      {" "}
       <ToastNotification position="bottom-center" autoClose={3000} />
-      <div className="col-left">
-        <ImageDisplay image={product.image} imageAlt={product.imageAlt} />
+      <div className="content product">
+        <div className="col-left">
+          <ImageDisplay image={product.image} imageAlt={product.imageAlt} />
+        </div>
+        <div className="col-right">
+          <InformationList
+            title={product.title}
+            price={product.price}
+            discount={product.discount}
+            salePrice={product.salePrice}
+            rating={product.rating}
+            description={product.description}
+          />
+          <ProductForm
+            product={product}
+            handleToast={handleToastNotification}
+          />
+        </div>
       </div>
-      <div className="col-right">
-        <InformationList
-          title={product.title}
-          price={product.price}
-          discount={product.discount}
-          salePrice={product.salePrice}
-          rating={product.rating}
-          description={product.description}
-        />
-        <ProductForm product={product} handleToast={handleToastNotification} />
-      </div>
-    </div>
+    </>
   );
 }
 

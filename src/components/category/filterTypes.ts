@@ -1,3 +1,5 @@
+import { sortType } from "../../pages/category";
+
 type filterType = "radio" | "button" | "checkbox" | "dropdown";
 
 export type filter = {
@@ -30,4 +32,5 @@ export type allFilterProps = {
   allfilters: combineFilterTypes;
   categoryTitle: string;
   isSubCategory?: boolean;
+  sortFilter?: sortType;
 };

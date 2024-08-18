@@ -8,6 +8,7 @@
   height: auto;
   width: 15%;
   min-width: 200px;
+  z-index: 1001;
 }
 
 .col-right {
@@ -36,6 +37,7 @@
 
 .top-bar {
   height: 40px;
+  width: 89vw;
   display: flex;
   justify-content: space-between;
 }

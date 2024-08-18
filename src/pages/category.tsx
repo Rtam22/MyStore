@@ -19,6 +19,12 @@ type categoryItem = {
   rating: number;
 };
 
+export type sortType =
+  | "Newest"
+  | "Price: High-Low"
+  | "Price: Low-High"
+  | "Featured";
+
 function categoryOptions(categoryName) {
   switch (categoryName) {
     case "mens-clothing":
@@ -35,7 +41,6 @@ function categoryOptions(categoryName) {
 function Category() {
   const { categoryName } = useParams<{ categoryName: string }>();
   const [items, setItems] = useState<categoryItem[]>([]);
-
   return (
     <div className="category content">
       <div className="top-bar">

@@ -39,12 +39,9 @@ function FilterSection({ filters, subCategoryTitle }: filterModalProps) {
       {filters.map((filter, index) => {
         return (
           <React.Fragment key={index}>
-            <button
-              className="filter-button"
-              onClick={() => handleShowFilters(1)}
-            >
+            <p className="filter-button" onClick={() => handleShowFilters(1)}>
               {filter.title}
-            </button>
+            </p>
             <div className="filter-details">
               {filterType(filter.filterType, filter.filterValues)}
             </div>

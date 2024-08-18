@@ -3,15 +3,11 @@
   top: 100px;
   width: 100%;
   height: calc(90vh - 130px);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   transform: translateY(0px);
   transition: top 0.25s ease-in-out, height 0.25s ease-in-out;
-}
-
-.filter-modal h2 {
-  margin-bottom: 30px;
+  padding-top: 45px;
 }
 
 .scroller-container {
@@ -57,4 +53,41 @@
 .filter-button-container button,
 .filter-top {
   padding: 0 5px;
+}
+
+.filter-control-container {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  width: 89.4vw;
+  padding-right: 5px;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  z-index: 2000;
+  height: 60px;
+  top: -20px;
+  transform: translateY(-0);
+  transition: transform 0.2s ease-out, padding-top 0.2s ease-out;
+}
+
+.filter-control-container h2 {
+  display: flex;
+  align-items: center;
+}
+
+.filter-modal.shift .filter-control-container {
+  transform: translateY(-8px);
+  padding-top: 5px;
+}
+
+.filter-type-container {
+  display: flex;
+  gap: 20px;
+}
+
+.filter-type-container select {
+  font-size: 14px;
+  height: 28px;
+  padding: 0 5px;
+  display: flex;
 }

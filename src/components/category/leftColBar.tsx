@@ -5,14 +5,17 @@ import { allFilterProps } from "./filterTypes";
 import SubCategorySection from "./subCategorySection";
 import { formatTitle } from "../../utils/textFormatUtils";
 import { getLastParamLink } from "../../utils/textFormatUtils";
+import { sortType } from "../../pages/category";
 function LeftColBar({
   allfilters,
   categoryTitle,
   isSubCategory,
+  sortFilter,
 }: allFilterProps) {
   const [prevYPosition, setPrevYPosition] = useState(window.scrollY);
-  const [shiftPosition, setShiftPosition] = useState(false);
-  const [extendFilter, setExtendFilter] = useState(false);
+  const [shiftPosition, setShiftPosition] = useState<boolean>(false);
+  const [extendFilter, setExtendFilter] = useState<boolean>(false);
+
   useEffect(() => {
     document.addEventListener("scroll", handleEvent);
     return () => document.removeEventListener("scroll", handleEvent);
@@ -28,6 +31,8 @@ function LeftColBar({
     }
     setPrevYPosition(window.scrollY);
   }
+
+  function handleSortFilter(filter: sortType) {}
 
   function handleHideFilter() {
     console.log("close");
@@ -50,9 +55,26 @@ function LeftColBar({
           extendFilter ? "extend" : ""
         }`}
       >
-        <h2>{formatTitle(categoryTitle)}</h2>
+        <div className="filter-control-container">
+          <h2>{formatTitle(categoryTitle)}</h2>
+          <div className="filter-type-container">
+            <button>Hide Filter</button>
+            <select
+              name="filter-type"
+              id="filter-type"
+              value={sortFilter}
+              onChange={(e) => handleSortFilter(e.target.value as sortType)}
+            >
+              <option value="Featured">Featured</option>
+              <option value="Price: High-Low">Price: High-Low</option>
+              <option value="Price: Low-High">Price: Low-High</option>
+              <option value="Newest">Newest</option>
+            </select>
+          </div>
+        </div>
+
         <div className="filter-top">
-          <h3>Filter</h3> <button onClick={handleHideFilter}>X</button>
+          <h3>Filter</h3>
         </div>
         <div className="scroller-container">
           <SubCategorySection subCategory={allfilters.subCategoryTypes} />

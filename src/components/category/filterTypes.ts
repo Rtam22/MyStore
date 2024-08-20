@@ -34,4 +34,5 @@ export type allFilterProps = {
   categoryTitle: string;
   isSubCategory?: boolean;
   updateFilter: (value: filterValue, filterKey: keyof filterType) => void;
+  filterSettings: filterType;
 };

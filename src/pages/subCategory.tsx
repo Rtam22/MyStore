@@ -53,6 +53,7 @@ function SubCategory() {
           categoryTitle={subcategoryName}
           isSubCategory={true}
           updateFilter={updateFilter}
+          filterSettings={filterSettings}
         />
         <RightColBar
           items={items}

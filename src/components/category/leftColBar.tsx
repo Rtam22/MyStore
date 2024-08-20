@@ -6,18 +6,19 @@ import SubCategorySection from "./subCategorySection";
 import { formatTitle } from "../../utils/textFormatUtils";
 import { getLastParamLink } from "../../utils/textFormatUtils";
 
-type filterType = "Newest" | "Price: High-Low" | "Price: Low-High" | "Featured";
+type sortType = "Newest" | "Price: High-Low" | "Price: Low-High" | "Featured";
 
 function LeftColBar({
   allfilters,
   categoryTitle,
   isSubCategory,
   updateFilter,
+  filterSettings,
 }: allFilterProps) {
   const [prevYPosition, setPrevYPosition] = useState(window.scrollY);
   const [shiftPosition, setShiftPosition] = useState<boolean>(false);
   const [extendFilter, setExtendFilter] = useState<boolean>(false);
-  const [filterType, setFilterType] = useState<filterType>("Featured");
+  const [sort, setSort] = useState<sortType>("Featured");
   useEffect(() => {
     document.addEventListener("scroll", handleEvent);
     return () => document.removeEventListener("scroll", handleEvent);
@@ -48,6 +49,10 @@ function LeftColBar({
     return subCategory.filters;
   }
 
+  function handleSort(event: sortType) {
+    updateFilter(event, "sort");
+  }
+
   return (
     <div className="col-left">
       <div
@@ -62,8 +67,8 @@ function LeftColBar({
             <select
               name="filter-type"
               id="filter-type"
-              value={filterType}
-              onChange={(e) => setFilterType(e.target.value as filterType)}
+              value={filterSettings.sort}
+              onChange={(e) => handleSort(e.target.value as sortType)}
             >
               <option value="Featured">Featured</option>
               <option value="Price: High-Low">Price: High-Low</option>

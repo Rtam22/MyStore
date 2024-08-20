@@ -62,6 +62,14 @@ function UseFilters() {
           [filterKeyCase]: !filterSettings.sales,
         });
         break;
+      case "sort":
+        setFilterSettings({
+          ...filterSettings,
+          [filterKeyCase as sort]: value,
+        });
+        break;
+      default:
+        break;
     }
   }
 
@@ -82,8 +90,9 @@ function UseFilters() {
 
   function applyFilters(items: productType[]) {
     if (checkIfFiltersOff()) {
-      return items;
+      return handleSort([...items]);
     }
+
     let filteredItems = [];
     if (filterSettings.price.length > 0) {
       filterSettings.price.forEach((filter) => {
@@ -107,7 +116,24 @@ function UseFilters() {
       filteredItems = items.filter((item) => item.discount > 0);
     }
 
-    return filteredItems;
+    return handleSort([...filteredItems]);
+  }
+
+  function handleSort(items: productType[]) {
+    const sortedItems = [...items];
+    switch (filterSettings.sort) {
+      case "Newest":
+        return sortedItems.sort(
+          (a, b) =>
+            new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime()
+        );
+      case "Price: High-Low":
+        return sortedItems.sort((a, b) => b.salePrice - a.salePrice);
+      case "Price: Low-High":
+        return sortedItems.sort((a, b) => a.salePrice - b.salePrice);
+      case "Featured":
+        return sortedItems;
+    }
   }
 
   function handleSizeRange(sizeRange: string[], items: productType[]) {

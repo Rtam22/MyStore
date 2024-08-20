@@ -42,7 +42,6 @@ function categoryOptions(categoryName) {
 function Category() {
   const { categoryName } = useParams<{ categoryName: string }>();
   const [items, setItems] = useState<productType[]>(products);
-  const [sortFilter, sortFilterType] = useState<sortType>("Featured");
   const { filterSettings, updateFilter, applyFilters } = useFilters();
 
   useEffect(() => {
@@ -59,6 +58,7 @@ function Category() {
           allfilters={categoryOptions(categoryName)}
           categoryTitle={categoryName}
           updateFilter={updateFilter}
+          filterSettings={filterSettings}
         />
         <RightColBar items={items} category={categoryName} />
       </div>

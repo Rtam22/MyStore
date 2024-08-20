@@ -40,6 +40,7 @@ export type productType = {
   quantity?: number;
   selectedColor?: string;
   selectedSize?: string;
+  dateAdded: Date;
 };
 
 export const products: productType[] = [
@@ -63,6 +64,7 @@ export const products: productType[] = [
     salePrice: 65.99,
     tag: ["casual", "basic"],
     amountSold: 223,
+    dateAdded: new Date("2024-03-17"),
   },
   {
     id: "pacman-yellow-tshirt",
@@ -83,6 +85,7 @@ export const products: productType[] = [
     salePrice: 20.99,
     tag: ["fun", "bright"],
     amountSold: 128,
+    dateAdded: new Date("2024-02-07"),
   },
   {
     id: "white-red-stripe-tshirt",
@@ -103,6 +106,7 @@ export const products: productType[] = [
     salePrice: 19.99,
     tag: ["sporty", "striped"],
     amountSold: 123,
+    dateAdded: new Date("2024-04-15"),
   },
   {
     id: "lavender-purple-tshirt",
@@ -123,6 +127,7 @@ export const products: productType[] = [
     salePrice: 52.5,
     tag: ["pastel", "comfortable"],
     amountSold: 420,
+    dateAdded: new Date("2024-02-01"),
   },
   {
     id: "essential-white-tshirt",
@@ -143,6 +148,7 @@ export const products: productType[] = [
     salePrice: 18.99,
     tag: ["elegant", "basic"],
     amountSold: 49,
+    dateAdded: new Date("2024-04-08"),
   },
   {
     id: "black-oversized-tshirt",
@@ -163,6 +169,7 @@ export const products: productType[] = [
     salePrice: 24.99,
     tag: ["oversized", "casual"],
     amountSold: 139,
+    dateAdded: new Date("2024-03-25"),
   },
   {
     id: "black-countries-text-tshirt",
@@ -183,6 +190,7 @@ export const products: productType[] = [
     salePrice: 80.99,
     tag: ["global", "text"],
     amountSold: 98,
+    dateAdded: new Date("2024-01-05"),
   },
   {
     id: "white-small-text-tshirt",
@@ -203,6 +211,7 @@ export const products: productType[] = [
     salePrice: 19.99,
     tag: ["minimalist", "subtle"],
     amountSold: 184,
+    dateAdded: new Date("2024-05-05"),
   },
 
   {
@@ -224,6 +233,7 @@ export const products: productType[] = [
     salePrice: 20.69,
     tag: ["modern", "statement"],
     amountSold: 465,
+    dateAdded: new Date("2024-01-25"),
   },
   {
     id: "white-black-stripes-tshirt",
@@ -244,6 +254,7 @@ export const products: productType[] = [
     salePrice: 24.99,
     tag: ["chic", "casual"],
     amountSold: 130,
+    dateAdded: new Date("2024-03-03"),
   },
   {
     id: "gray-white-tshirt",
@@ -264,6 +275,7 @@ export const products: productType[] = [
     salePrice: 16.99,
     tag: ["comfortable", "simple"],
     amountSold: 294,
+    dateAdded: new Date("2024-02-27"),
   },
   {
     id: "classic-white-tshirt",
@@ -284,6 +296,7 @@ export const products: productType[] = [
     salePrice: 18.99,
     tag: ["classic", "versatile"],
     amountSold: 123,
+    dateAdded: new Date("2024-05-12"),
   },
 
   /* Pants */
@@ -307,6 +320,7 @@ export const products: productType[] = [
     salePrice: 126.99,
     tag: ["denim", "casual"],
     amountSold: 320,
+    dateAdded: new Date("2024-02-13"),
   },
   {
     id: "black-pants",
@@ -327,7 +341,9 @@ export const products: productType[] = [
     salePrice: 120.99,
     tag: ["formal", "versatile"],
     amountSold: 180,
+    dateAdded: new Date("2024-01-12"),
   },
+
   {
     id: "wide-ankle-blue-pants",
     href: "/mens-clothing/pants-&-trousers/Wide-Ankle-Blue-Pants",
@@ -347,6 +363,7 @@ export const products: productType[] = [
     salePrice: 82.99,
     tag: ["relaxed fit", "casual"],
     amountSold: 67,
+    dateAdded: new Date("2024-04-01"),
   },
 
   {
@@ -368,6 +385,7 @@ export const products: productType[] = [
     salePrice: 29.74,
     tag: ["skinny fit", "casual"],
     amountSold: 285,
+    dateAdded: new Date("2024-03-10"),
   },
   {
     id: "blue-long-skirt",
@@ -388,6 +406,7 @@ export const products: productType[] = [
     salePrice: 35.99,
     tag: ["elegant", "flowing"],
     amountSold: 324,
+    dateAdded: new Date("2024-04-22"),
   },
   {
     id: "leather-skirt-zip",
@@ -408,5 +427,6 @@ export const products: productType[] = [
     salePrice: 47.49,
     tag: ["edgy", "night out"],
     amountSold: 120,
+    dateAdded: new Date("2024-04-29"),
   },
 ];

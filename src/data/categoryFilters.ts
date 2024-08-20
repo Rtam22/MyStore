@@ -9,7 +9,7 @@ const commonFilterTypes: filter[] = [
   {
     title: "Size",
     filterType: "checkbox",
-    filterValues: ["X-Small", "Small", "Medium", "Large", "X-Large"],
+    filterValues: ["XS", "S", "M", "L", "XL"],
   },
   {
     title: "Sales & Offers",

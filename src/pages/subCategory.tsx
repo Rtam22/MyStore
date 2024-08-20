@@ -8,7 +8,8 @@ import {
   electronicsFilters,
   jewelryFilters,
 } from "../data/categoryFilters";
-import { products } from "../data/products";
+import { products, productType } from "../data/products";
+import useFilters from "../hooks/useFilters";
 type categoryItem = {
   title: string;
   image: string;
@@ -35,7 +36,11 @@ function SubCategory() {
     subcategoryName: string;
     categoryName: string;
   }>();
-  const [items, setItems] = useState<categoryItem[]>([]);
+  const [items, setItems] = useState<productType[]>([]);
+  const { filterSettings, updateFilter, applyFilters } = useFilters();
+  useEffect(() => {
+    setItems(applyFilters(products));
+  }, [filterSettings]);
 
   return (
     <div className="category content">
@@ -47,9 +52,10 @@ function SubCategory() {
           allfilters={categoryOptions(categoryName)}
           categoryTitle={subcategoryName}
           isSubCategory={true}
+          updateFilter={updateFilter}
         />
         <RightColBar
-          items={products}
+          items={items}
           category={categoryName}
           subCategory={subcategoryName}
         />

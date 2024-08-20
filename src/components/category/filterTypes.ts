@@ -1,16 +1,17 @@
-import { sortType } from "../../pages/category";
+import { filterType, filterValue } from "../../hooks/useFilters";
 
-type filterType = "radio" | "button" | "checkbox" | "dropdown";
+type filterTypes = "radio" | "button" | "checkbox" | "dropdown";
 
 export type filter = {
   title: string;
-  filterType: filterType;
+  filterType: filterTypes;
   filterValues: string[];
 };
 
 export type filterModalProps = {
   filters: filter[];
   subCategoryTitle: string;
+  updateFilter: (value: filterValue, filterKey: keyof filterType) => void;
 };
 
 export type subCategoryType = {
@@ -32,5 +33,5 @@ export type allFilterProps = {
   allfilters: combineFilterTypes;
   categoryTitle: string;
   isSubCategory?: boolean;
-  sortFilter?: sortType;
+  updateFilter: (value: filterValue, filterKey: keyof filterType) => void;
 };

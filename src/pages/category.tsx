@@ -3,13 +3,14 @@ import { useParams } from "react-router-dom";
 import "./category.css";
 import LeftColBar from "../components/category/leftColBar";
 import RightColBar from "../components/category/rightColBar";
-import { products } from "../data/products";
+import { products, productType } from "../data/products";
 import {
   maleClothingFilters,
   femaleClothingFilters,
   electronicsFilters,
   jewelryFilters,
 } from "../data/categoryFilters";
+import useFilters from "../hooks/useFilters";
 
 type categoryItem = {
   title: string;
@@ -40,7 +41,14 @@ function categoryOptions(categoryName) {
 
 function Category() {
   const { categoryName } = useParams<{ categoryName: string }>();
-  const [items, setItems] = useState<categoryItem[]>([]);
+  const [items, setItems] = useState<productType[]>(products);
+  const [sortFilter, sortFilterType] = useState<sortType>("Featured");
+  const { filterSettings, updateFilter, applyFilters } = useFilters();
+
+  useEffect(() => {
+    setItems(applyFilters(products));
+  }, [filterSettings]);
+
   return (
     <div className="category content">
       <div className="top-bar">
@@ -50,8 +58,9 @@ function Category() {
         <LeftColBar
           allfilters={categoryOptions(categoryName)}
           categoryTitle={categoryName}
+          updateFilter={updateFilter}
         />
-        <RightColBar items={products} category={categoryName} />
+        <RightColBar items={items} category={categoryName} />
       </div>
     </div>
   );

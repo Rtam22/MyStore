@@ -22,3 +22,8 @@ function capitalizeFirstLetter(string: string) {
 function breakStringToArray(string: string) {
   return string.split("-");
 }
+
+export function getFirstWord(string: string) {
+  const result = string.split(" ");
+  return result[0];
+}

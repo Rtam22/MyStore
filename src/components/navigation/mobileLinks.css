@@ -5,7 +5,7 @@
   height: calc(100vh - 111px);
   width: 0;
   right: 0px;
-  top: 130px;
+  top: 85px;
   padding: 20px 0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
   background-color: white;
@@ -13,6 +13,7 @@
   overflow: hidden;
   transition: width 0.2s ease-out;
   pointer-events: none;
+  overflow-y: scroll;
 }
 .mobile-modal-links.active {
   width: 250px;
@@ -32,6 +33,7 @@
   padding: 0px 20px;
   height: 100%;
   width: 100%;
+  text-wrap: nowrap;
 }
 
 .mobile-modal-links button {
@@ -73,4 +75,36 @@
 
 .mobile-container button:hover {
   cursor: pointer;
+}
+
+.mobile-container .link-modal {
+  display: block;
+  position: static;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  font-size: 12px;
+  box-shadow: none;
+}
+
+.mobile-container .link-modal a {
+  font-size: 14px;
+  color: rgb(56, 56, 56);
+}
+
+.mobile-container .link-modal a li {
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 40px;
+  text-wrap: nowrap;
+}
+
+.mobile-modal-links .main-category {
+  font-weight: 600;
+}
+
+.mobile-modal-links hr {
+  border-color: rgb(245, 245, 245);
+  width: 85%;
+  margin: 0 auto;
 }

@@ -37,10 +37,8 @@ function Header() {
       </div>
       <div className={`header-container ${showHeader ? "" : "hidden"}`}>
         <div className="header-middle">
-          <Link to="/">Track Order</Link>
-          <Link to="/">Contact</Link>
           <Link to="/">Register</Link>
-          <Link to="/">Contact</Link>
+          <Link to="/">Login</Link>
         </div>
         <div className="header-bottom">
           <Logo />

@@ -8,7 +8,6 @@ function ShowSearch() {
 
   function handleClick() {
     setShowModal(!showModal);
-    console.log(showModal);
   }
 
   return (

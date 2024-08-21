@@ -1,8 +1,15 @@
 import "./mobileLinks.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import React, { useState, useRef } from "react";
+import LinkModal from "./linkModal";
+import React, { useState } from "react";
+import {
+  mensClothingLinks,
+  jewelryLinks,
+  womansClothingLinks,
+} from "../../data/linkData";
+
 function MobileLinks() {
   const [showModal, setShowModal] = useState(false);
 
@@ -16,39 +23,45 @@ function MobileLinks() {
       <button onClick={handleClick}>
         <FontAwesomeIcon icon={faBars} className="fa-lg" />
       </button>
-      <nav className={`mobile-modal-links ${showModal ? "active" : ""}`}>
+      <nav
+        className={`mobile-modal-links scroller-container ${
+          showModal ? "active" : ""
+        }`}
+      >
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link className="main-category" to="/">
+              Home
+            </Link>
           </li>
           <li>
-            <span>
-              <button>Shop</button>
-              <FontAwesomeIcon icon={faChevronDown} className="fa-sm" />
-            </span>
+            <Link className="main-category" to="/mens-clothing">
+              Men's Clothing
+            </Link>
+            <hr />
           </li>
-          <li className="category-container">
-            <div className="mobile-category">
-              <ul>
-                <li>
-                  <Link to="/mens-clothing">Men's Clothing</Link>
-                </li>
-                <li>
-                  <Link to="/womans-clothing">Woman's Clothing</Link>
-                </li>
-                <li>
-                  <Link to="/jewelry">Jewelry</Link>
-                </li>
-                <li>
-                  <Link to="/electronics">Electronics</Link>
-                </li>
-              </ul>
-            </div>
+          <div className="mobile-category">
+            <LinkModal links={mensClothingLinks} />
+          </div>
+          <li>
+            <Link className="main-category" to="/womans-clothing">
+              Woman's Clothing
+            </Link>
+            <hr />
           </li>
 
+          <div className="mobile-category">
+            <LinkModal links={womansClothingLinks} />
+          </div>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link className="main-category" to="/jewelry">
+              Jewelry
+            </Link>
+            <hr />
           </li>
+          <div className="mobile-category">
+            <LinkModal links={jewelryLinks} />
+          </div>
         </ul>
       </nav>
     </div>

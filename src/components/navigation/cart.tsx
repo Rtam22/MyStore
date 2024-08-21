@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import CartModal from "../common/cartModal";
+import CartModal from "../cart/cartModal";
 import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 type CartProps = {

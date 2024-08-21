@@ -17,7 +17,7 @@
 .cart-modal.hide {
   max-height: 0vh !important;
   overflow: hidden;
-  padding-right: 13px;
+  padding-right: 8px;
 }
 
 .cart-modal.hide .sticky-container {

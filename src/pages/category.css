@@ -51,3 +51,15 @@
 .top-bar .image-container {
   width: 81%;
 }
+
+@media (max-width: 1530px) {
+  .category.content .flex {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 850px) {
+  .category.content .flex {
+    gap: 0px;
+  }
+}

@@ -9,6 +9,7 @@
   width: 15%;
   min-width: 200px;
   z-index: 1001;
+  transition: width 0.3s ease-in-out, min-width 0.3s ease-in-out;
 }
 
 .col-right {

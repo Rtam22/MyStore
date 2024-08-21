@@ -38,9 +38,14 @@ function SubCategory() {
   }>();
   const [items, setItems] = useState<productType[]>([]);
   const { filterSettings, updateFilter, applyFilters } = useFilters();
+  const [hideFilter, setHideFilter] = useState<boolean>();
   useEffect(() => {
     setItems(applyFilters(products));
   }, [filterSettings]);
+
+  function handleHideLeftFilter(value: boolean) {
+    setHideFilter(value);
+  }
 
   return (
     <div className="category content">
@@ -54,11 +59,13 @@ function SubCategory() {
           isSubCategory={true}
           updateFilter={updateFilter}
           filterSettings={filterSettings}
+          handleHideLeftFilter={handleHideLeftFilter}
         />
         <RightColBar
           items={items}
           category={categoryName}
           subCategory={subcategoryName}
+          hideFilter={hideFilter}
         />
       </div>
     </div>

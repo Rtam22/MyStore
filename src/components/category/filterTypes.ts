@@ -12,6 +12,8 @@ export type filterModalProps = {
   filters: filter[];
   subCategoryTitle: string;
   updateFilter: (value: filterValue, filterKey: keyof filterType) => void;
+  filterSettings: filterType;
+  handleHideFilter: () => void;
 };
 
 export type subCategoryType = {
@@ -34,5 +36,6 @@ export type allFilterProps = {
   categoryTitle: string;
   isSubCategory?: boolean;
   updateFilter: (value: filterValue, filterKey: keyof filterType) => void;
+  handleHideLeftFilter: (value: boolean) => void;
   filterSettings: filterType;
 };

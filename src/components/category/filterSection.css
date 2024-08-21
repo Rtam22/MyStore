@@ -39,3 +39,17 @@
 .filter-container:last-child {
   margin-bottom: 15px;
 }
+
+.filter-button-container .apply-button {
+  margin-top: 20px;
+  padding: 8px 15px;
+  border: 1px solid black;
+}
+
+.filter-button-container .apply-button:hover {
+  background-color: rgb(113, 113, 216);
+  color: white;
+  border: none;
+  font-weight: 300;
+  padding: 9px 16px;
+}

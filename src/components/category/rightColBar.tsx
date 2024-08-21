@@ -7,8 +7,14 @@ interface rightColBarProps {
   items: productType[];
   category?: string;
   subCategory?: string;
+  hideFilter: boolean;
 }
-function RightColBar({ items, category, subCategory }: rightColBarProps) {
+function RightColBar({
+  items,
+  category,
+  subCategory,
+  hideFilter,
+}: rightColBarProps) {
   function listItems() {
     if (subCategory) {
       return items.map((item, index) => {
@@ -45,7 +51,7 @@ function RightColBar({ items, category, subCategory }: rightColBarProps) {
   }
 
   return (
-    <div className="col-right">
+    <div className={`col-right ${hideFilter ? "extend" : ""}`}>
       <div className="items-container">{listItems()}</div>
     </div>
   );

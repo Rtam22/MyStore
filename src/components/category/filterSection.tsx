@@ -4,13 +4,20 @@ import React, { useState } from "react";
 import UseFilters from "../../hooks/useFilters";
 import { filterValue, filterType } from "../../hooks/useFilters";
 import { getFirstWord } from "../../utils/textFormatUtils";
+import { sortType } from "../../pages/category";
 
 function FilterSection({
   filters,
   subCategoryTitle,
   updateFilter,
+  filterSettings,
+  handleHideFilter,
 }: filterModalProps) {
   const [showFilter, setShowFilter] = useState([false, false]);
+
+  function handleSort(event: sortType) {
+    updateFilter(event, "sort");
+  }
 
   function handlefilter(value: filterValue, filterTitle: keyof filterType) {
     const title = getFirstWord(filterTitle);
@@ -48,6 +55,24 @@ function FilterSection({
   return (
     <div className="filter-button-container">
       <hr />
+      <div className="sort-container mobile">
+        <p className="filter-button">Sort</p>
+        <div className="sort-container">
+          <select
+            name="filter-type"
+            id="filter-type"
+            value={filterSettings.sort}
+            onChange={(e) => handleSort(e.target.value as sortType)}
+          >
+            <option value="Featured">Featured</option>
+            <option value="Price: High-Low">Price: High-Low</option>
+            <option value="Price: Low-High">Price: Low-High</option>
+            <option value="Newest">Newest</option>
+          </select>
+        </div>
+        <hr />
+      </div>
+
       {filters.map((filter, index) => {
         return (
           <React.Fragment key={index}>
@@ -59,6 +84,9 @@ function FilterSection({
           </React.Fragment>
         );
       })}
+      <button className="apply-button" onClick={handleHideFilter}>
+        Apply Filters
+      </button>
     </div>
   );
 }

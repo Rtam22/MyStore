@@ -36,10 +36,10 @@
 }
 
 .item-card.small {
-  width: 85%;
+  width: 100%;
   max-width: 450px;
   height: auto;
-  justify-self: end;
+  justify-self: center;
   padding-bottom: 20px;
 }
 

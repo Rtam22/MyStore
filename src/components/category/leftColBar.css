@@ -1,3 +1,12 @@
+.col-left.hide {
+  width: 0px;
+  min-width: 0;
+}
+
+.sort-container.mobile {
+  display: none;
+}
+
 .filter-modal {
   position: sticky;
   top: 100px;
@@ -13,10 +22,12 @@
 .scroller-container {
   flex: 1;
   overflow-y: auto;
-  padding: 5px 5px 25px 5px;
+  overflow-x: hidden;
+  padding: 5px 0px 25px 0px;
+  text-wrap: nowrap;
 }
 
-.filter-modal.shift {
+.shift {
   top: 20px;
   height: 94vh;
 }
@@ -59,7 +70,7 @@
   display: flex;
   position: absolute;
   justify-content: space-between;
-  width: 89.4vw;
+  width: 89vw;
   padding-right: 5px;
   background-color: rgb(255, 255, 255);
   align-items: center;
@@ -90,4 +101,65 @@
   height: 28px;
   padding: 0 5px;
   display: flex;
+}
+
+.filter-type-container button:hover {
+  text-decoration: underline;
+}
+
+.mobile-filter-button {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .col-left {
+    width: 0;
+    min-width: 0;
+  }
+  .col-left .scroller-container {
+    transform: translateY(-15px);
+    position: absolute;
+    width: 90vw;
+    background-color: white;
+    transition: 10px;
+    z-index: 19000;
+    height: 100vh;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .col-left .scroller-container.show {
+    width: 0vw;
+  }
+
+  .sort-container {
+    display: none;
+  }
+
+  .sort-container.mobile {
+    display: block;
+  }
+
+  .sort-container.mobile .sort-container {
+    margin-bottom: 20px;
+  }
+
+  .filter-control-container h2 {
+    font-size: 18px;
+  }
+  .filter-control-container {
+    width: 88vw;
+  }
+
+  .mobile-filter-button {
+    display: block;
+  }
+  .filter-button-sort {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .filter-control-container {
+    width: 86vw;
+  }
 }

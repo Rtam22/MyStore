@@ -14,11 +14,12 @@ function LeftColBar({
   isSubCategory,
   updateFilter,
   filterSettings,
+  handleHideLeftFilter,
 }: allFilterProps) {
   const [prevYPosition, setPrevYPosition] = useState(window.scrollY);
   const [shiftPosition, setShiftPosition] = useState<boolean>(false);
   const [extendFilter, setExtendFilter] = useState<boolean>(false);
-  const [sort, setSort] = useState<sortType>("Featured");
+  const [hideFilter, setHideFilter] = useState<boolean>(false);
   useEffect(() => {
     document.addEventListener("scroll", handleEvent);
     return () => document.removeEventListener("scroll", handleEvent);
@@ -36,7 +37,8 @@ function LeftColBar({
   }
 
   function handleHideFilter() {
-    console.log("close");
+    handleHideLeftFilter(!hideFilter);
+    setHideFilter(!hideFilter);
   }
 
   function findSubCategoryByUrl() {
@@ -54,7 +56,7 @@ function LeftColBar({
   }
 
   return (
-    <div className="col-left">
+    <div className={`col-left ${hideFilter ? "hide" : ""}`}>
       <div
         className={`filter-modal ${shiftPosition ? "shift" : ""} ${
           extendFilter ? "extend" : ""
@@ -63,25 +65,29 @@ function LeftColBar({
         <div className="filter-control-container">
           <h2>{formatTitle(categoryTitle)}</h2>
           <div className="filter-type-container">
-            <button>Hide Filter</button>
-            <select
-              name="filter-type"
-              id="filter-type"
-              value={filterSettings.sort}
-              onChange={(e) => handleSort(e.target.value as sortType)}
-            >
-              <option value="Featured">Featured</option>
-              <option value="Price: High-Low">Price: High-Low</option>
-              <option value="Price: Low-High">Price: Low-High</option>
-              <option value="Newest">Newest</option>
-            </select>
+            <button className="filter-button-sort" onClick={handleHideFilter}>
+              {hideFilter ? "Show Filters" : "Hide Filters"}
+            </button>
+            <button onClick={handleHideFilter} className="mobile-filter-button">
+              Filters
+            </button>
+            <div className="sort-container">
+              <select
+                name="filter-type"
+                id="filter-type"
+                value={filterSettings.sort}
+                onChange={(e) => handleSort(e.target.value as sortType)}
+              >
+                <option value="Featured">Featured</option>
+                <option value="Price: High-Low">Price: High-Low</option>
+                <option value="Price: Low-High">Price: Low-High</option>
+                <option value="Newest">Newest</option>
+              </select>
+            </div>
           </div>
         </div>
 
-        <div className="filter-top">
-          <h3>Filter</h3>
-        </div>
-        <div className="scroller-container">
+        <div className={`scroller-container ${hideFilter ? "" : "show"}`}>
           <SubCategorySection subCategory={allfilters.subCategoryTypes} />
           <FilterSection
             filters={
@@ -89,6 +95,8 @@ function LeftColBar({
             }
             subCategoryTitle={categoryTitle}
             updateFilter={updateFilter}
+            filterSettings={filterSettings}
+            handleHideFilter={handleHideFilter}
           />
         </div>
       </div>

@@ -43,10 +43,15 @@ function Category() {
   const { categoryName } = useParams<{ categoryName: string }>();
   const [items, setItems] = useState<productType[]>(products);
   const { filterSettings, updateFilter, applyFilters } = useFilters();
+  const [hideFilter, setHideFilter] = useState<boolean>();
 
   useEffect(() => {
     setItems(applyFilters(products));
   }, [filterSettings]);
+
+  function handleHideLeftFilter(value: boolean) {
+    setHideFilter(value);
+  }
 
   return (
     <div className="category content">
@@ -59,8 +64,13 @@ function Category() {
           categoryTitle={categoryName}
           updateFilter={updateFilter}
           filterSettings={filterSettings}
+          handleHideLeftFilter={handleHideLeftFilter}
         />
-        <RightColBar items={items} category={categoryName} />
+        <RightColBar
+          items={items}
+          category={categoryName}
+          hideFilter={hideFilter}
+        />
       </div>
     </div>
   );

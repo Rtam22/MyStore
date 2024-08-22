@@ -1,71 +1,71 @@
 export const mensClothingLinks = [
   {
     title: "T-Shirts & Tops",
-    url: "/mens-clothing/tshirts-&-tops",
+    url: "/mens-clothing_tshirts-&-tops",
   },
   {
     title: "Jackets & Hoodies",
-    url: "/mens-clothing/jackets-&-hoodies",
+    url: "/mens-clothing_jackets-&-hoodies",
   },
   {
     title: "Pants & Trousers ",
-    url: "/mens-clothing/pants-&-trousers",
+    url: "/mens-clothing_pants-&-trousers",
   },
   {
     title: "Shoes ",
-    url: "/mens-clothing/shoes",
+    url: "/mens-clothing_shoes",
   },
 ];
 
 export const womansClothingLinks = [
   {
     title: "Tops & Blouses",
-    url: "/womans-clothing/tops-&-blouses",
+    url: "/womans-clothing_tops-&-blouses",
   },
   {
     title: "Jackets & Coats",
-    url: "/womans-clothing/jackets-&-coats",
+    url: "/womans-clothing_jackets-&-coats",
   },
   {
     title: "Pants & Skirts ",
-    url: "/womans-clothing/pants-&-skirts",
+    url: "/womans-clothing_pants-&-skirts",
   },
   {
     title: "Shoes ",
-    url: "/womans-clothing/shoes",
+    url: "/womans-clothing_shoes",
   },
 ];
 
 export const jewelryLinks = [
   {
     title: "Necklaces & Pendants",
-    url: "/jewelry/necklaces-&-pendants",
+    url: "/jewelry_necklaces-&-pendants",
   },
   {
     title: "Earrings",
-    url: "/jewelry/earrings",
+    url: "/jewelry_earrings",
   },
   {
     title: "Rings",
-    url: "/jewelry/rings",
+    url: "/jewelry_rings",
   },
   {
     title: "Watches",
-    url: "/jewelry/watches",
+    url: "/jewelry_watches",
   },
 ];
 
 export const electronicLinks = [
   {
     title: "Mobile Phones",
-    url: "/electronics/mobile-phones",
+    url: "/electronics_mobile-phones",
   },
   {
     title: "Laptops & Computers",
-    url: "/electronics/laptops-&-computers",
+    url: "/electronics_laptops-&-computers",
   },
   {
     title: "Tablets",
-    url: "/electronics/tablets",
+    url: "/electronics_tablets",
   },
 ];

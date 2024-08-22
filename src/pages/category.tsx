@@ -11,6 +11,7 @@ import {
   jewelryFilters,
 } from "../data/categoryFilters";
 import useFilters from "../hooks/useFilters";
+import { determineCategory } from "../utils/textFormatUtils";
 
 type categoryItem = {
   title: string;
@@ -44,7 +45,10 @@ function Category() {
   const [items, setItems] = useState<productType[]>(products);
   const { filterSettings, updateFilter, applyFilters } = useFilters();
   const [hideFilter, setHideFilter] = useState<boolean>();
-
+  const categories = determineCategory(categoryName);
+  const passCategory = categories.secondaryCategory
+    ? categories.secondaryCategory
+    : categories.mainCategory;
   useEffect(() => {
     setItems(applyFilters(products));
   }, [filterSettings]);
@@ -60,15 +64,19 @@ function Category() {
       </div>
       <div className="flex">
         <LeftColBar
-          allfilters={categoryOptions(categoryName)}
-          categoryTitle={categoryName}
+          allfilters={categoryOptions(categories.mainCategory)}
+          categoryTitle={passCategory}
           updateFilter={updateFilter}
           filterSettings={filterSettings}
           handleHideLeftFilter={handleHideLeftFilter}
+          isSubCategory={categories.secondaryCategory ? true : false}
         />
         <RightColBar
           items={items}
-          category={categoryName}
+          category={categories.mainCategory}
+          subCategory={
+            categories.secondaryCategory ? categories.secondaryCategory : null
+          }
           hideFilter={hideFilter}
         />
       </div>

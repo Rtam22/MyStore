@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./product.css";
 import { products, productType } from "../data/products";
-import { getLastParamLink } from "../utils/textFormatUtils";
+import { getLastProductParamLink } from "../utils/textFormatUtils";
 import ImageDisplay from "../components/product/imageDisplay";
 import InformationList from "../components/product/informationList";
 import ProductForm from "../components/product/productForm";
@@ -18,8 +18,9 @@ function Product() {
   const [product, setProduct] = useState<productType | undefined>(undefined);
 
   useEffect(() => {
+    console.log(productId);
     const selectedProduct = products.find(
-      (product) => productId === getLastParamLink(product.href)
+      (product) => productId === getLastProductParamLink(product.href)
     );
     setProduct(selectedProduct);
   }, [productId]);

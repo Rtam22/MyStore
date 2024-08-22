@@ -86,10 +86,11 @@
   width: 30px;
 }
 
-.cart-modal.shift {
+body .cart-modal.shift {
   max-height: 91vh;
 }
-.cart-modal.extend {
+body .cart-modal.extend {
+  top: 85px;
   max-height: 100vh;
 }
 

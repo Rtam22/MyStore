@@ -27,7 +27,7 @@
   text-wrap: nowrap;
 }
 
-.shift {
+.shift.extend {
   top: 20px;
   height: 94vh;
 }
@@ -70,8 +70,8 @@
   display: flex;
   position: absolute;
   justify-content: space-between;
-  width: 89vw;
-  padding-right: 5px;
+  width: 90vw;
+  padding-right: 15px;
   background-color: rgb(255, 255, 255);
   align-items: center;
   z-index: 2000;
@@ -147,7 +147,7 @@
     font-size: 18px;
   }
   .filter-control-container {
-    width: 88vw;
+    width: 90vw;
   }
 
   .mobile-filter-button {
@@ -155,11 +155,5 @@
   }
   .filter-button-sort {
     display: none;
-  }
-}
-
-@media (max-width: 450px) {
-  .filter-control-container {
-    width: 86vw;
   }
 }

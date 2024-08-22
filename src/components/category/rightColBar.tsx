@@ -2,7 +2,6 @@ import "./rightColBar.css";
 import ItemCard from "../common/itemCard";
 import { itemCardProps } from "../common/itemCardType";
 import { productType } from "../../data/products";
-
 interface rightColBarProps {
   items: productType[];
   category?: string;

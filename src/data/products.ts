@@ -96,7 +96,7 @@ export const products: productType[] = [
     image: Tshirt7,
     imageAlt: "A white T-shirt with bold red stripes for a sporty look",
     rating: 4.6,
-    price: 2.99,
+    price: 22.99,
     mainCategory: "mens-clothing",
     subCategory: "tshirts-&-tops",
     availability: true,

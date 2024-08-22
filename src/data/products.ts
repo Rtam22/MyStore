@@ -12,13 +12,34 @@ import WTshirt1 from "../assets/products/womans-clothing/WTshirt1.png";
 import WTshirt2 from "../assets/products/womans-clothing/WTshirt2.png";
 import WTshirt3 from "../assets/products/womans-clothing/WTshirt3.png";
 import WTshirt4 from "../assets/products/womans-clothing/WTshirt4.png";
-
 import Pants1 from "../assets/products/mens-clothing/Pants1.png";
 import Pants2 from "../assets/products/mens-clothing/Pants2.png";
 import Pants3 from "../assets/products/mens-clothing/Pants3.png";
+import Pants4 from "../assets/products/mens-clothing/Pants4.png";
+import Pants5 from "../assets/products/mens-clothing/Pants5.png";
 import WPants1 from "../assets/products/womans-clothing/WPants1.png";
+import WPants2 from "../assets/products/womans-clothing/WPants2.png";
 import WSkirt1 from "../assets/products/womans-clothing/WSkirt1.png";
 import WSkirt2 from "../assets/products/womans-clothing/WSkirt2.png";
+import WSkirt3 from "../assets/products/womans-clothing/WSkirt3.png";
+import WSkirt4 from "../assets/products/womans-clothing/WSkirt4.png";
+import Jacket1 from "../assets/products/mens-clothing/Jacket1.png";
+import Jacket2 from "../assets/products/mens-clothing/Jacket2.png";
+import Jacket3 from "../assets/products/mens-clothing/Jacket3.png";
+import Jacket4 from "../assets/products/mens-clothing/Jacket4.png";
+import WJacket1 from "../assets/products/mens-clothing/WJacket1.png";
+import WJacket2 from "../assets/products/mens-clothing/WJacket2.png";
+import WJacket3 from "../assets/products/mens-clothing/WJacket3.png";
+import WJacket4 from "../assets/products/mens-clothing/WJacket4.png";
+import Shoes1 from "../assets/products/mens-clothing/Shoes1.png";
+import Shoes2 from "../assets/products/mens-clothing/Shoes2.png";
+import Shoes3 from "../assets/products/mens-clothing/Shoes3.png";
+import Shoes4 from "../assets/products/mens-clothing/Shoes4.png";
+import WShoes1 from "../assets/products/womans-clothing/WShoes1.png";
+import WShoes2 from "../assets/products/womans-clothing/WShoes2.png";
+import WShoes3 from "../assets/products/womans-clothing/WShoes3.png";
+import WShoes4 from "../assets/products/womans-clothing/WShoes4.png";
+
 export type productType = {
   id: string;
   title: string;
@@ -31,7 +52,9 @@ export type productType = {
   subCategory: string;
   availability: boolean;
   href: string;
-  size: ("XS" | "S" | "M" | "L" | "XL")[];
+  size:
+    | ("XS" | "S" | "M" | "L" | "XL")[]
+    | ("6 Au" | "7 Au" | "8 Au" | "9 Au" | "10 Au")[];
   color?: string[];
   discount?: number;
   salePrice?: number;
@@ -367,6 +390,49 @@ export const products: productType[] = [
   },
 
   {
+    id: "green-red-stripe-pants",
+    href: "/mens-clothing_pants-&-trousers/Green-Red-Stripe-Pants",
+    title: "Green Pants with Red Stripes",
+    description:
+      "Bold and trendy, these green pants feature stylish red stripes down the sides. Perfect for making a fashion statement, they blend comfort with a striking look.",
+    image: Pants4,
+    imageAlt: "Green pants with red stripes running down the sides",
+    rating: 4.4,
+    price: 129.99,
+    mainCategory: "mens-clothing",
+    subCategory: "pants-&-trousers",
+    availability: true,
+    size: ["S", "M", "L"],
+    color: ["Green", "Red"],
+    discount: 5,
+    salePrice: 123.49,
+    tag: ["bold", "fashion"],
+    amountSold: 287,
+    dateAdded: new Date("2024-03-08"),
+  },
+  {
+    id: "black-ankle-pants",
+    href: "/mens-clothing_pants-&-trousers/Black-Ankle-Pants",
+    title: "Black Ankle Length Pants",
+    description:
+      "These sleek black ankle-length pants are versatile and stylish. Whether paired with a formal shirt or a casual tee, they offer a comfortable and tailored fit.",
+    image: Pants5,
+    imageAlt: "Black ankle-length pants with a tailored design",
+    rating: 4.7,
+    price: 149.99,
+    mainCategory: "mens-clothing",
+    subCategory: "pants-&-trousers",
+    availability: true,
+    size: ["M", "L", "XL"],
+    color: ["Black"],
+    discount: 15,
+    salePrice: 127.49,
+    tag: ["formal", "versatile"],
+    amountSold: 412,
+    dateAdded: new Date("2024-01-25"),
+  },
+
+  {
     id: "light-blue-jeans",
     href: "/womans-clothing_pants-&-skirts/Light-Blue-Jeans",
     title: "Light Blue Skinny Jeans",
@@ -428,5 +494,326 @@ export const products: productType[] = [
     tag: ["edgy", "night out"],
     amountSold: 120,
     dateAdded: new Date("2024-04-29"),
+  },
+
+  {
+    id: "white-ankle-pants",
+    href: "/womans-clothing_pants-&-skirts/White-Ankle-Pants",
+    title: "White Ankle Length Pants",
+    description:
+      "These classic white ankle-length pants offer a clean and sophisticated look. Ideal for both casual and semi-formal occasions, they provide a comfortable fit with a modern edge.",
+    image: WPants2,
+    imageAlt: "White ankle-length pants with a modern design",
+    rating: 4.5,
+    price: 59.99,
+    mainCategory: "womans-clothing",
+    subCategory: "pants-&-skirts",
+    availability: true,
+    size: ["S", "M", "L"],
+    color: ["White"],
+    discount: 10,
+    salePrice: 53.99,
+    tag: ["classic", "versatile"],
+    amountSold: 215,
+    dateAdded: new Date("2024-05-10"),
+  },
+  {
+    id: "white-skirt",
+    href: "/womans-clothing_pants-&-skirts/White-Skirt",
+    title: "White A-Line Skirt",
+    description:
+      "This elegant white A-line skirt is a timeless piece for any wardrobe. With a flattering cut and soft fabric, it’s perfect for both casual and formal events.",
+    image: WSkirt3,
+    imageAlt: "White A-line skirt with a classic design",
+    rating: 4.6,
+    price: 54.99,
+    mainCategory: "womans-clothing",
+    subCategory: "pants-&-skirts",
+    availability: true,
+    size: ["S", "M", "L"],
+    color: ["White"],
+    discount: 8,
+    salePrice: 50.59,
+    tag: ["elegant", "classic"],
+    amountSold: 180,
+    dateAdded: new Date("2024-05-22"),
+  },
+  {
+    id: "dotted-skirt",
+    href: "/womans-clothing_pants-&-skirts/Dotted-Skirt",
+    title: "White and Black Dotted Skirt",
+    description:
+      "Fun and stylish, this white and black dotted skirt adds a playful touch to any outfit. The polka-dot pattern and flowy fabric make it a versatile piece for various occasions.",
+    image: WSkirt4,
+    imageAlt: "White and black dotted skirt with a playful design",
+    rating: 4.4,
+    price: 44.99,
+    mainCategory: "womans-clothing",
+    subCategory: "pants-&-skirts",
+    availability: true,
+    size: ["S", "M", "L"],
+    color: ["White", "Black"],
+    discount: 7,
+    salePrice: 41.49,
+    tag: ["playful", "versatile"],
+    amountSold: 145,
+    dateAdded: new Date("2024-06-05"),
+  },
+
+  /*Jackets */
+  {
+    id: "black-leather-jacket",
+    href: "/mens-clothing_jackets-&-hoodies/Classic-Black-Leather-Jacket",
+    title: "Classic Black Leather Jacket",
+    description:
+      "A timeless black leather jacket crafted from premium materials. Perfect for adding a rugged, stylish edge to your wardrobe, this jacket features a sleek design with durable zippers and pockets.",
+    image: Jacket1,
+    imageAlt: "A classic black leather jacket with a sleek design",
+    rating: 4.8,
+    price: 189.99,
+    mainCategory: "mens-clothing",
+    subCategory: "jackets-&-hoodies",
+    availability: true,
+    size: ["M", "L", "XL"],
+    color: ["Black"],
+    discount: 10,
+    salePrice: 170.99,
+    tag: ["outerwear", "leather", "stylish"],
+    amountSold: 156,
+    dateAdded: new Date("2024-01-10"),
+  },
+  {
+    id: "yellow-hoodie",
+    href: "/mens-clothing_jackets-&-hoodies/Bright-Yellow-Hoodie",
+    title: "Bright Yellow Hoodie",
+    description:
+      "A vibrant yellow hoodie made from cozy, soft fabric. This hoodie is perfect for both casual outings and staying comfortable at home. It features a relaxed fit and a spacious front pocket.",
+    image: Jacket2,
+    imageAlt: "A bright yellow hoodie with a casual design",
+    rating: 4.2,
+    price: 49.99,
+    mainCategory: "mens-clothing",
+    subCategory: "jackets-&-hoodies",
+    availability: true,
+    size: ["S", "M", "L", "XL"],
+    color: ["Yellow"],
+    discount: 5,
+    salePrice: 47.49,
+    tag: ["casual", "hoodie", "colorful"],
+    amountSold: 320,
+    dateAdded: new Date("2024-02-05"),
+  },
+  {
+    id: "denim-light-blue-jacket",
+    href: "/mens-clothing_jackets-&-hoodies/Denim-Light-Blue-Jacket",
+    title: "Denim Light Blue Jacket",
+    description:
+      "A versatile light blue denim jacket that adds a cool, casual vibe to your wardrobe. This jacket is designed with a classic cut and features durable stitching and buttons for a long-lasting wear.",
+    image: Jacket3,
+    imageAlt: "A light blue denim jacket with a casual design",
+    rating: 4.6,
+    price: 79.99,
+    mainCategory: "mens-clothing",
+    subCategory: "jackets-&-hoodies",
+    availability: true,
+    size: ["M", "L", "XL"],
+    color: ["Light Blue"],
+    discount: 0,
+    salePrice: 79.99,
+    tag: ["denim", "casual", "versatile"],
+    amountSold: 205,
+    dateAdded: new Date("2024-04-02"),
+  },
+  {
+    id: "black-hoodie",
+    href: "/mens-clothing_jackets-&-hoodies/Classic-Black-Hoodie",
+    title: "Classic Black Hoodie",
+    description:
+      "A simple yet stylish black hoodie that’s an essential for any wardrobe. Made from soft, premium fabric, it offers both comfort and a sleek look, whether you're lounging or out and about.",
+    image: Jacket4,
+    imageAlt: "A classic black hoodie with a minimal design",
+    rating: 4.4,
+    price: 55.99,
+    mainCategory: "mens-clothing",
+    subCategory: "jackets-&-hoodies",
+    availability: true,
+    size: ["S", "M", "L", "XL"],
+    color: ["Black"],
+    discount: 15,
+    salePrice: 47.59,
+    tag: ["casual", "hoodie", "basic"],
+    amountSold: 280,
+    dateAdded: new Date("2024-05-10"),
+  },
+
+  /*Shoes */
+  {
+    id: "orange-sneakers",
+    href: "/mens-clothing_shoes/Orange-Sneakers",
+    title: "Orange Sneakers",
+    description:
+      "Bright orange sneakers that make a bold statement. Designed with both style and comfort in mind, they are perfect for casual wear or light sports activities.",
+    image: Shoes1,
+    imageAlt: "Vibrant orange sneakers with a sleek design",
+    rating: 4.3,
+    price: 89.99,
+    mainCategory: "mens-clothing",
+    subCategory: "shoes",
+    availability: true,
+    size: ["6 Au", "7 Au", "8 Au"],
+    color: ["Orange"],
+    discount: 0,
+    salePrice: 89.99,
+    tag: ["casual", "sporty"],
+    amountSold: 157,
+    dateAdded: new Date("2024-04-02"),
+  },
+  {
+    id: "orangy-yellow-boots",
+    href: "/mens-clothing_shoes/Orangy-Yellow-Boots",
+    title: "Orangy Yellow Boots",
+    description:
+      "Sturdy boots in a unique orangy-yellow color, designed for rugged adventures. Durable material combined with comfort makes these a go-to choice for tough terrains.",
+    image: Shoes2,
+    imageAlt: "Orangy yellow boots with a rugged design",
+    rating: 4.7,
+    price: 129.99,
+    mainCategory: "mens-clothing",
+    subCategory: "shoes",
+    availability: true,
+    size: ["8 Au", "9 Au", "10 Au"],
+    color: ["Orangy Yellow"],
+    discount: 10,
+    salePrice: 116.99,
+    tag: ["outdoor", "rugged"],
+    amountSold: 312,
+    dateAdded: new Date("2024-04-10"),
+  },
+  {
+    id: "blue-shoes",
+    href: "/mens-clothing_shoes/Blue-Shoes",
+    title: "Blue Shoes",
+    description:
+      "Stylish blue shoes that add a splash of color to your outfit. Perfect for everyday use with a comfortable fit and sleek look.",
+    image: Shoes3,
+    imageAlt: "A pair of stylish blue shoes",
+    rating: 4.1,
+    price: 79.99,
+    mainCategory: "mens-clothing",
+    subCategory: "shoes",
+    availability: true,
+    size: ["6 Au", "7 Au", "9 Au"],
+    color: ["Blue"],
+    discount: 5,
+    salePrice: 75.99,
+    tag: ["casual", "versatile"],
+    amountSold: 200,
+    dateAdded: new Date("2024-04-15"),
+  },
+  {
+    id: "red-basketball-shoes",
+    href: "/mens-clothing_shoes/Red-Basketball-Shoes",
+    title: "Red Basketball Shoes",
+    description:
+      "High-performance red basketball shoes designed for both style and agility on the court. Built with advanced support and grip for sports enthusiasts.",
+    image: Shoes4,
+    imageAlt: "Red basketball shoes designed for performance",
+    rating: 4.8,
+    price: 139.99,
+    mainCategory: "mens-clothing",
+    subCategory: "shoes",
+    availability: true,
+    size: ["7 Au", "8 Au", "10 Au"],
+    color: ["Red"],
+    discount: 15,
+    salePrice: 118.99,
+    tag: ["sports", "performance"],
+    amountSold: 411,
+    dateAdded: new Date("2024-04-20"),
+  },
+
+  {
+    id: "black-high-heels",
+    href: "/womans-clothing_shoes/Black-High-Heels",
+    title: "Black High Heels",
+    description:
+      "Elegant and stylish, these black high heels are perfect for any formal occasion. Crafted from high-quality materials, they provide a sophisticated look and comfortable fit.",
+    image: WShoes1,
+    imageAlt: "Black high heels with a sleek design",
+    rating: 4.7,
+    price: 89.99,
+    mainCategory: "womans-clothing",
+    subCategory: "shoes",
+    availability: true,
+    size: ["6 Au", "7 Au", "8 Au", "9 Au", "10 Au"],
+    color: ["Black"],
+    discount: 15,
+    salePrice: 76.99,
+    tag: ["elegant", "formal"],
+    amountSold: 320,
+    dateAdded: new Date("2024-01-15"),
+  },
+  {
+    id: "white-shoes",
+    href: "/womans-clothing_shoes/White-Shoes",
+    title: "White Casual Shoes",
+    description:
+      "These white casual shoes offer a clean and versatile look suitable for everyday wear. Made from breathable materials, they provide comfort and style for any casual outing.",
+    image: WShoes2,
+    imageAlt: "White casual shoes with a comfortable design",
+    rating: 4.5,
+    price: 59.99,
+    mainCategory: "womans-clothing",
+    subCategory: "shoes",
+    availability: true,
+    size: ["6 Au", "7 Au", "8 Au", "9 Au"],
+    color: ["White"],
+    discount: 10,
+    salePrice: 53.99,
+    tag: ["casual", "comfortable"],
+    amountSold: 250,
+    dateAdded: new Date("2024-02-20"),
+  },
+  {
+    id: "white-shoes-bow-stripes",
+    href: "/womans-clothing_shoes/White-Shoes-Bow-Stripes",
+    title: "White Shoes with Bow Stripes",
+    description:
+      "Add a touch of charm to your outfit with these white shoes featuring bow stripes. Ideal for a playful yet chic look, they combine comfort with a stylish design.",
+    image: WShoes3,
+    imageAlt: "White shoes with bow stripes and a stylish design",
+    rating: 4.6,
+    price: 64.99,
+    mainCategory: "womans-clothing",
+    subCategory: "shoes",
+    availability: true,
+    size: ["6 Au", "7 Au", "8 Au"],
+    color: ["White"],
+    discount: 12,
+    salePrice: 57.99,
+    tag: ["charming", "playful"],
+    amountSold: 180,
+    dateAdded: new Date("2024-03-10"),
+  },
+  {
+    id: "red-high-heels",
+    href: "/womans-clothing_shoes/Red-High-Heels",
+    title: "Red High Heels",
+    description:
+      "Make a bold statement with these red high heels. Perfect for special occasions, they feature a vibrant color and elegant design that stands out while ensuring a comfortable fit.",
+    image: WShoes4,
+    imageAlt: "Red high heels with a bold design",
+    rating: 4.8,
+    price: 99.99,
+    mainCategory: "womans-clothing",
+    subCategory: "shoes",
+    availability: true,
+    size: ["7 Au", "8 Au", "9 Au", "10 Au"],
+    color: ["Red"],
+    discount: 20,
+    salePrice: 79.99,
+    tag: ["bold", "special occasion"],
+    amountSold: 210,
+    dateAdded: new Date("2024-04-05"),
   },
 ];

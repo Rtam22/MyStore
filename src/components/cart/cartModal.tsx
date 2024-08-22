@@ -25,7 +25,8 @@ function CartModal({ showHeader, shiftPosition }: cartModalProps) {
     <div
       className={`scroller-container cart-modal ${
         shiftPosition ? "shift" : ""
-      } ${!showModal ? "hide" : ""} ${showHeader ? "" : "extend"}`}
+      } ${!showModal ? "hide" : ""} ${showHeader ? "" : "extend"}
+      ${cartItems.length > 0 ? "" : "empty"}`}
     >
       <div className="modal">
         <div className="title-container">

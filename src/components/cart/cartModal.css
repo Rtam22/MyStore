@@ -14,6 +14,10 @@
   padding-top: 0;
 }
 
+.cart-modal.empty {
+  max-height: 12vh;
+}
+
 .cart-modal.hide {
   max-height: 0vh !important;
   overflow: hidden;

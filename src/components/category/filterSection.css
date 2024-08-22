@@ -53,3 +53,13 @@
   font-weight: 300;
   padding: 9px 16px;
 }
+
+.apply-button {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .apply-button {
+    display: block;
+  }
+}

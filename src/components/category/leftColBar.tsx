@@ -20,6 +20,7 @@ function LeftColBar({
   const [shiftPosition, setShiftPosition] = useState<boolean>(false);
   const [extendFilter, setExtendFilter] = useState<boolean>(false);
   const [hideFilter, setHideFilter] = useState<boolean>(false);
+
   useEffect(() => {
     document.addEventListener("scroll", handleEvent);
     return () => document.removeEventListener("scroll", handleEvent);
@@ -27,10 +28,16 @@ function LeftColBar({
 
   function handleEvent() {
     window.scrollY > 10 ? setExtendFilter(true) : setExtendFilter(false);
-
+    let screenWidth = window.innerWidth;
     if (window.scrollY < prevYPosition || window.scrollY < 800) {
+      if (screenWidth < 850 && hideFilter) {
+        return;
+      }
       setShiftPosition(false);
     } else {
+      if (screenWidth < 850 && hideFilter) {
+        return;
+      }
       setShiftPosition(true);
     }
     setPrevYPosition(window.scrollY);
@@ -54,6 +61,23 @@ function LeftColBar({
   function handleSort(event: sortType) {
     updateFilter(event, "sort");
   }
+
+  useEffect(() => {
+    const screenWidth = window.innerWidth;
+    if (hideFilter && screenWidth < 850) {
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      document.body.style.overflowY = "scroll";
+      document.body.style.paddingRight = "0px";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+      document.body.style.paddingRight = "0px";
+    };
+  });
 
   return (
     <div className={`col-left ${hideFilter ? "hide" : ""}`}>
@@ -87,7 +111,13 @@ function LeftColBar({
           </div>
         </div>
 
-        <div className={`scroller-container ${hideFilter ? "" : "show"}`}>
+        <div
+          className={`scroller-container ${
+            shiftPosition ? "scroll-shift" : ""
+          } ${extendFilter ? "scroll-extend" : ""}  ${
+            hideFilter ? "" : "show"
+          }`}
+        >
           <SubCategorySection subCategory={allfilters.subCategoryTypes} />
           <FilterSection
             filters={

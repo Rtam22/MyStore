@@ -29,7 +29,7 @@
 }
 
 .modal {
-  padding: 20px 25px 25px 25px;
+  padding: 20px 25px 0px 25px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -110,6 +110,9 @@ body .cart-modal.extend {
   gap: 0px;
 }
 
+.empty-cart {
+  padding-bottom: 25px;
+}
 .cart-modal .item-information h4 {
   font-size: 15px;
   max-width: 170px;

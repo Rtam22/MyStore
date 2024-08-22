@@ -23,7 +23,7 @@
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 5px 0px 25px 0px;
+  padding: 5px 0px 50px 0px;
   text-wrap: nowrap;
 }
 
@@ -123,8 +123,16 @@
     background-color: white;
     transition: 10px;
     z-index: 19000;
-    height: 100vh;
+    height: 77vh;
     transition: width 0.3s ease-in-out;
+  }
+
+  .col-left .scroller-container.scroll-shift.scroll-extend {
+    height: 98vh;
+  }
+
+  .col-left .scroller-container.scroll-extend {
+    height: calc(100vh - 130px);
   }
 
   .col-left .scroller-container.show {

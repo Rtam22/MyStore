@@ -39,7 +39,11 @@ function ProductForm({ product, handleToast }: productFormProps) {
     }
   }
 
-  function handleSizes(sizes: ("XS" | "S" | "M" | "L" | "XL")[]) {
+  function handleSizes(
+    sizes:
+      | ("XS" | "S" | "M" | "L" | "XL")[]
+      | ("6 Au" | "7 Au" | "8 Au" | "9 Au" | "10 Au")[]
+  ) {
     return (
       <div className="size-container">
         <div className="size-title-container">

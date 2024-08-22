@@ -57,7 +57,7 @@ function FilterSection({
       <hr />
       <div className="sort-container mobile">
         <p className="filter-button">Sort</p>
-        <div className="sort-container">
+        <div className="sort-container mobile">
           <select
             name="filter-type"
             id="filter-type"

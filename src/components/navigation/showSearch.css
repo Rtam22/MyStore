@@ -5,7 +5,7 @@
 .header-bottom-right input {
   height: 32px;
   border: 1px solid black;
-  padding: 0 10px;
+  padding: 0 15px 0 10px;
   font-size: 14px;
   width: 210px;
   margin-right: 5px;
@@ -17,19 +17,21 @@
 
 .search-button {
   position: absolute;
-  top: 5px;
-  right: 10px;
+  top: 1px;
+  right: 6px;
+  padding: 5px 5px;
+  background-color: white;
 }
 
+.search-button:hover {
+  background-color: rgb(113, 113, 216);
+  color: white;
+}
 .fa-lg {
   font-size: 1.15em;
 }
 
-.fa-lg:hover {
-  color: rgb(19, 62, 255);
-}
-
-@media (max-width: 1080px) {
+@media (max-width: 980px) {
   .mobile-search-container {
     display: flex;
   }

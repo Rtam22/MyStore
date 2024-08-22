@@ -109,7 +109,7 @@
   padding: 7px 0;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 980px) {
   .header-bottom-right {
     display: none;
   }

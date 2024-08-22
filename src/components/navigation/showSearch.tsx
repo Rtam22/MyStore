@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SearchModal from "./searchModal";
 import "./showSearch.css";
 import React, { useState } from "react";
+import SearchFunction from "./searchFunction";
 function ShowSearch() {
   const [showModal, setShowModal] = useState(false);
 
@@ -13,10 +14,7 @@ function ShowSearch() {
   return (
     <>
       <div className="search-container">
-        <input className="search" type="search" placeholder="Search"></input>
-        <button className="search-button">
-          <FontAwesomeIcon icon={faMagnifyingGlass} className="fa-lg" />
-        </button>
+        <SearchFunction />
       </div>
       <div className="mobile-search-container">
         <button onClick={handleClick}>

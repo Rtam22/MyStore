@@ -9,6 +9,7 @@ import SubCategory from "./pages/subCategory";
 import React from "react";
 import { CartProvider } from "./context/cartContext";
 import Cart from "./pages/cart";
+import Search from "./pages/search";
 function App() {
   return (
     <CartProvider>
@@ -27,6 +28,7 @@ function App() {
           <Route path="/:categoryName/" element={<Category />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/search/" element={<Search />} />
         </Routes>
       </Router>
     </CartProvider>

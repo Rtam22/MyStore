@@ -1,7 +1,7 @@
 import "./searchModal.css";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import SearchFunction from "./searchFunction";
 type searchModalProps = {
   showModal: boolean;
 };
@@ -9,10 +9,7 @@ type searchModalProps = {
 function SearchModal({ showModal }: searchModalProps) {
   return (
     <div className={`search-modal ${showModal ? "active" : ""}`}>
-      <input type="text"></input>
-      <button>
-        <FontAwesomeIcon icon={faMagnifyingGlass} className="fa-xl" />
-      </button>
+      <SearchFunction />
     </div>
   );
 }

@@ -45,3 +45,7 @@ export function determineCategory(param: string) {
   }
   return allCategories;
 }
+
+export function removeSubCategory(link: string) {
+  return link.split("_")[0];
+}

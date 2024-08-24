@@ -24,6 +24,7 @@ export type subCategoryType = {
 
 export type subCategorySelectionProps = {
   subCategory: subCategoryType[];
+  currentCategory: string;
 };
 
 export type combineFilterTypes = {

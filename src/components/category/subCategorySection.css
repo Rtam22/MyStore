@@ -16,3 +16,6 @@
 .sub-category-container a:hover {
   background-color: aliceblue;
 }
+.active-link {
+  background-color: rgb(240, 240, 240);
+}

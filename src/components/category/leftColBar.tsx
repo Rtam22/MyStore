@@ -5,6 +5,7 @@ import { allFilterProps } from "./filterTypes";
 import SubCategorySection from "./subCategorySection";
 import { formatTitle } from "../../utils/textFormatUtils";
 import { getLastParamLink } from "../../utils/textFormatUtils";
+import { useParams } from "react-router-dom";
 
 type sortType = "Newest" | "Price: High-Low" | "Price: Low-High" | "Featured";
 
@@ -20,6 +21,7 @@ function LeftColBar({
   const [shiftPosition, setShiftPosition] = useState<boolean>(false);
   const [extendFilter, setExtendFilter] = useState<boolean>(false);
   const [hideFilter, setHideFilter] = useState<boolean>(false);
+  const { categoryName } = useParams();
 
   useEffect(() => {
     document.addEventListener("scroll", handleEvent);
@@ -112,7 +114,10 @@ function LeftColBar({
             hideFilter ? "" : "show"
           }`}
         >
-          <SubCategorySection subCategory={allfilters.subCategoryTypes} />
+          <SubCategorySection
+            subCategory={allfilters.subCategoryTypes}
+            currentCategory={getLastParamLink(categoryName)}
+          />
           <FilterSection
             filters={
               isSubCategory ? findSubCategoryByUrl() : allfilters.filterTypes

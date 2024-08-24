@@ -37,7 +37,11 @@ function Cart({
       <button onClick={handleClick}>
         <FontAwesomeIcon icon={faCartShopping} className="fa-lg" />
       </button>
-      <CartModal activeHeader={activeHeader} shiftPosition={shiftPosition} />
+      <CartModal
+        activeHeader={activeHeader}
+        shiftPosition={shiftPosition}
+        handleActiveHeader={handleActiveHeader}
+      />
     </div>
   );
 }

@@ -14,6 +14,7 @@
 
 .filter-button-container label {
   font-size: 14px;
+  padding: 1px 2px;
 }
 
 .filter-container {
@@ -52,6 +53,10 @@
   border: none;
   font-weight: 300;
   padding: 9px 16px;
+}
+
+.filter-container label:hover {
+  text-decoration: underline;
 }
 
 .apply-button {

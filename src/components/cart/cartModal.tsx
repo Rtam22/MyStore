@@ -9,16 +9,20 @@ import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import CartList from "./cartList";
-import { activeHeaderTypes } from "../navigation/header";
+import { activeHeaderProps, activeHeaderTypes } from "../navigation/header";
 type cartModalProps = {
   activeHeader: activeHeaderTypes;
   shiftPosition: boolean;
 };
-function CartModal({ activeHeader, shiftPosition }: cartModalProps) {
+
+type combinedCartProps = cartModalProps & activeHeaderProps;
+
+function CartModal({ activeHeader, handleActiveHeader }: combinedCartProps) {
   const { cartItems, handleModal } = useContext(CartContext);
 
   function handleClose() {
     handleModal();
+    handleActiveHeader("none");
   }
 
   return (

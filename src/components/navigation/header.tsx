@@ -9,8 +9,8 @@ import NavigationLinks from "./navigationLinks";
 import MobileLinks from "./mobileLinks";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/cartContext";
-export type activeHeaderTypes = "navigation" | "cart" | "search" | "none";
 
+export type activeHeaderTypes = "navigation" | "cart" | "search" | "none";
 export type activeHeaderProps = {
   activeHeader?: activeHeaderTypes;
   handleActiveHeader?: (activeHeader: activeHeaderTypes) => void;

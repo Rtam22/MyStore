@@ -9,13 +9,13 @@ import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import CartList from "./cartList";
-
+import { activeHeaderTypes } from "../navigation/header";
 type cartModalProps = {
-  showHeader: boolean;
+  activeHeader: activeHeaderTypes;
   shiftPosition: boolean;
 };
-function CartModal({ showHeader, shiftPosition }: cartModalProps) {
-  const { cartItems, showModal, handleModal } = useContext(CartContext);
+function CartModal({ activeHeader, shiftPosition }: cartModalProps) {
+  const { cartItems, handleModal } = useContext(CartContext);
 
   function handleClose() {
     handleModal();
@@ -23,7 +23,9 @@ function CartModal({ showHeader, shiftPosition }: cartModalProps) {
 
   return (
     <div
-      className={`scroller-container cart-modal  ${!showModal ? "hide" : ""}
+      className={`scroller-container cart-modal  ${
+        activeHeader !== "cart" ? "hide" : ""
+      }
       ${cartItems.length > 0 ? "" : "empty"}`}
     >
       <div className="modal">

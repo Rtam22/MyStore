@@ -2,13 +2,13 @@ import "./searchModal.css";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SearchFunction from "./searchFunction";
-type searchModalProps = {
-  showModal: boolean;
-};
+import { activeHeaderProps } from "./header";
 
-function SearchModal({ showModal }: searchModalProps) {
+function SearchModal({ activeHeader }: activeHeaderProps) {
   return (
-    <div className={`search-modal ${showModal ? "active" : ""}`}>
+    <div
+      className={`search-modal ${activeHeader === "search" ? "active" : ""}`}
+    >
       <SearchFunction />
     </div>
   );

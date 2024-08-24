@@ -30,14 +30,8 @@ function LeftColBar({
     window.scrollY > 10 ? setExtendFilter(true) : setExtendFilter(false);
     let screenWidth = window.innerWidth;
     if (window.scrollY < prevYPosition || window.scrollY < 800) {
-      if (screenWidth < 850 && hideFilter) {
-        return;
-      }
       setShiftPosition(false);
     } else {
-      if (screenWidth < 850 && hideFilter) {
-        return;
-      }
       setShiftPosition(true);
     }
     setPrevYPosition(window.scrollY);
@@ -74,7 +68,7 @@ function LeftColBar({
       document.body.style.paddingRight = "0px";
     }
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflowY = "scroll";
       document.body.style.paddingRight = "0px";
     };
   });

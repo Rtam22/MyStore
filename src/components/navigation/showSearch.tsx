@@ -4,11 +4,23 @@ import SearchModal from "./searchModal";
 import "./showSearch.css";
 import React, { useState } from "react";
 import SearchFunction from "./searchFunction";
-function ShowSearch() {
-  const [showModal, setShowModal] = useState(false);
+import { activeHeaderProps } from "./header";
 
+function ShowSearch({
+  activeHeader,
+  handleActiveHeader,
+  handleModal,
+  showModal,
+}: activeHeaderProps) {
   function handleClick() {
-    setShowModal(!showModal);
+    if (activeHeader === "search") {
+      handleActiveHeader("none");
+    } else {
+      if (showModal === true) {
+        handleModal();
+      }
+      handleActiveHeader("search");
+    }
   }
 
   return (
@@ -20,7 +32,7 @@ function ShowSearch() {
         <button onClick={handleClick}>
           <FontAwesomeIcon icon={faMagnifyingGlass} className="fa-lg" />
         </button>
-        <SearchModal showModal={showModal} />
+        <SearchModal activeHeader={activeHeader} />
       </div>
     </>
   );

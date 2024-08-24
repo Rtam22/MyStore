@@ -9,13 +9,23 @@ import {
   jewelryLinks,
   womansClothingLinks,
 } from "../../data/linkData";
+import { activeHeaderProps } from "./header";
 
-function MobileLinks() {
-  const [showModal, setShowModal] = useState(false);
-
+function MobileLinks({
+  activeHeader,
+  handleActiveHeader,
+  showModal,
+  handleModal,
+}: activeHeaderProps) {
   function handleClick() {
-    setShowModal(!showModal);
-    console.log(showModal);
+    if (activeHeader === "navigation") {
+      handleActiveHeader("none");
+    } else {
+      if (showModal) {
+        handleModal();
+      }
+      handleActiveHeader("navigation");
+    }
   }
 
   return (
@@ -25,7 +35,7 @@ function MobileLinks() {
       </button>
       <nav
         className={`mobile-modal-links scroller-container ${
-          showModal ? "active" : ""
+          activeHeader === "navigation" ? "active" : ""
         }`}
       >
         <ul>

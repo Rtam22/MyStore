@@ -155,7 +155,8 @@
     font-size: 18px;
   }
   .filter-control-container {
-    width: 90vw;
+    width: 92vw;
+    padding-right: 25px;
   }
 
   .mobile-filter-button {

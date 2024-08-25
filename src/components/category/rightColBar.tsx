@@ -8,45 +8,19 @@ interface rightColBarProps {
   subCategory?: string;
   hideFilter: boolean;
 }
-function RightColBar({
-  items,
-  category,
-  subCategory,
-  hideFilter,
-}: rightColBarProps) {
+function RightColBar({ items, hideFilter }: rightColBarProps) {
   function listItems() {
-    if (subCategory) {
-      return items.map((item, index) => {
-        if (
-          category === item.mainCategory &&
-          subCategory === item.subCategory
-        ) {
-          return (
-            <ItemCard
-              key={index}
-              {...item}
-              size="small"
-              discount={item.discount}
-              salePrice={item.salePrice}
-            />
-          );
-        }
-      });
-    } else if (category) {
-      return items.map((item, index) => {
-        if (category === item.mainCategory) {
-          return (
-            <ItemCard
-              key={index}
-              {...item}
-              size="small"
-              discount={item.discount}
-              salePrice={item.salePrice}
-            />
-          );
-        }
-      });
-    }
+    return items.map((item, index) => {
+      return (
+        <ItemCard
+          key={index}
+          {...item}
+          size="small"
+          discount={item.discount}
+          salePrice={item.salePrice}
+        />
+      );
+    });
   }
 
   return (

@@ -31,7 +31,7 @@ function LeftColBar({
   function handleEvent() {
     window.scrollY > 10 ? setExtendFilter(true) : setExtendFilter(false);
     let screenWidth = window.innerWidth;
-    if (window.scrollY < prevYPosition || window.scrollY < 800) {
+    if (window.scrollY < prevYPosition || window.scrollY < 200) {
       setShiftPosition(false);
     } else {
       setShiftPosition(true);

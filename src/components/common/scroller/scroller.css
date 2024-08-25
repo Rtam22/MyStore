@@ -1,7 +1,53 @@
 .scroller {
-  width: 100%;
+  width: auto;
   display: flex;
   height: auto;
   gap: 60px;
-  overflow: hidden;
+  position: relative;
+  overflow-x: scroll;
+  padding-bottom: 30px;
+}
+
+.scroller-button-left,
+.scroller-button-right {
+  position: absolute;
+  background-color: rgb(197, 197, 197, 0.5);
+  padding: 10px;
+  z-index: 1001;
+  top: 35%;
+  font-size: 50px;
+}
+
+.scroller-button-right {
+  right: 0px;
+}
+
+.scroller-button-left:hover,
+.scroller-button-right:hover {
+  background-color: rgb(134, 134, 134);
+  color: white;
+}
+
+.promo-items-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.scroller::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroller::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 6px;
+}
+
+.scroller::-webkit-scrollbar-thumb {
+  background: #dadceb;
+  border-radius: 4px;
+}
+
+.scroller::-webkit-scrollbar-thumb:hover {
+  background: #999999;
 }

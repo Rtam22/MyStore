@@ -32,7 +32,7 @@
 
 .item-card.large {
   width: 350px;
-  height: 600px;
+  height: auto;
 }
 
 .item-card.small {

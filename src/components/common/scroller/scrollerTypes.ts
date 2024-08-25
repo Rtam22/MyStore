@@ -20,6 +20,5 @@ export type productItem = baseCard & {
 };
 
 export type scrollerProps = {
-  type: "product-card" | "category-card";
   items: (categoryItem | productItem)[];
 };

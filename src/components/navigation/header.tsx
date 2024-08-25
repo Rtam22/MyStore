@@ -41,7 +41,7 @@ function Header() {
     } else {
       setShiftPosition(false);
     }
-    if (window.scrollY < prevYPosition || window.scrollY < 800) {
+    if (window.scrollY < prevYPosition || window.scrollY < 200) {
       setShowHeader(true);
     } else {
       setShowHeader(false);

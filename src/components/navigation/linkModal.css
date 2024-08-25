@@ -1,13 +1,13 @@
 .link-modal {
   position: absolute;
   width: max-content;
-  height: auto;
+  height: 0px;
   background-color: white;
   z-index: 1001;
   top: 20px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-  display: none;
-  padding-top: 15px;
+  overflow: hidden;
+  transition: height 0.2s ease-out, padding-top 0.2s ease-out;
 }
 
 .navigation-container .link-modal ul {

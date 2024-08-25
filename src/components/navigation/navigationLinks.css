@@ -58,5 +58,6 @@ nav ul li {
 
 .navigation-container ul li:hover .link-modal,
 .link-modal:hover {
-  display: flex;
+  padding-top: 10px;
+  height: 240px;
 }

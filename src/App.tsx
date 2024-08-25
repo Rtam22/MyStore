@@ -9,6 +9,7 @@ import React from "react";
 import { CartProvider } from "./context/cartContext";
 import Cart from "./pages/cart";
 import Search from "./pages/search";
+import NotFound from "./pages/notFound";
 function App() {
   return (
     <CartProvider>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/search/" element={<Search />} />
+          <Route path="not-found" element={<NotFound />} />
         </Routes>
       </Router>
     </CartProvider>

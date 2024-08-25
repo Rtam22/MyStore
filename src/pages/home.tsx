@@ -41,13 +41,13 @@ function Home() {
 
         <div className="container">
           <h2>Category</h2>
-          <Scroller type="category-card" items={categoryItems} />
+          <Scroller items={topSellersData} />
         </div>
 
         <div className="container">
           <h2>Top Sellers</h2>
           <div className="category-items">
-            <Scroller type="product-card" items={topSellersData}></Scroller>
+            <Scroller items={topSellersData} />
           </div>
         </div>
       </div>

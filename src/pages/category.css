@@ -52,6 +52,10 @@
   width: 81%;
 }
 
+.found-container {
+  margin: 20px 0;
+}
+
 @media (max-width: 1530px) {
   .category.content .flex {
     gap: 10px;

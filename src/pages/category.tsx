@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import "./category.css";
 import LeftColBar from "../components/category/leftColBar";
 import RightColBar from "../components/category/rightColBar";
@@ -12,6 +12,7 @@ import {
 } from "../data/categoryFilters";
 import useFilters from "../hooks/useFilters";
 import { determineCategory } from "../utils/textFormatUtils";
+import { useNavigate } from "react-router-dom";
 
 type categoryItem = {
   title: string;
@@ -27,7 +28,7 @@ export type sortType =
   | "Price: Low-High"
   | "Featured";
 
-function categoryOptions(categoryName) {
+function categoryOptions(categoryName: string) {
   switch (categoryName) {
     case "mens-clothing":
       return maleClothingFilters;
@@ -37,6 +38,8 @@ function categoryOptions(categoryName) {
       return jewelryFilters;
     case "electronics":
       return electronicsFilters;
+    default:
+      return null;
   }
 }
 
@@ -46,9 +49,31 @@ function Category() {
   const { filterSettings, updateFilter, applyFilters } = useFilters();
   const [hideFilter, setHideFilter] = useState<boolean>();
   const categories = determineCategory(categoryName);
+  const navigate = useNavigate();
   const passCategory = categories.secondaryCategory
     ? categories.secondaryCategory
     : categories.mainCategory;
+
+  function fetchItems(items: productType[]) {
+    if (categories.secondaryCategory) {
+      return items.filter((item) => {
+        if (categories.secondaryCategory === item.subCategory) {
+          return item;
+        } else {
+          return null;
+        }
+      });
+    } else if (categories.mainCategory) {
+      return items.filter((item) => {
+        if (categories.mainCategory === item.mainCategory) {
+          return item;
+        } else {
+          return null;
+        }
+      });
+    } else return null;
+  }
+
   useEffect(() => {
     setItems(applyFilters(products));
   }, [filterSettings]);
@@ -57,12 +82,19 @@ function Category() {
     setHideFilter(value);
   }
 
+  const itemList = fetchItems(items);
+
+  if (!itemList || itemList.length < 1) {
+    return <Navigate to="/not-found" />;
+  }
+
   return (
     <div className="category content">
       <div className="top-bar">
         <p>home / shop / men's clothing </p>
       </div>
       <div className="flex">
+        {}
         <LeftColBar
           allfilters={categoryOptions(categories.mainCategory)}
           categoryTitle={passCategory}
@@ -72,7 +104,7 @@ function Category() {
           isSubCategory={categories.secondaryCategory ? true : false}
         />
         <RightColBar
-          items={items}
+          items={itemList}
           category={categories.mainCategory}
           subCategory={
             categories.secondaryCategory ? categories.secondaryCategory : null

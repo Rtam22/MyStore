@@ -10,25 +10,28 @@ import { CartProvider } from "./context/cartContext";
 import Cart from "./pages/cart";
 import Search from "./pages/search";
 import NotFound from "./pages/notFound";
+import { ScrollerProvider } from "./context/scrollerContext";
 function App() {
   return (
     <CartProvider>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/:categoryName/:productId" element={<Product />} />
-          <Route
-            path="/:categoryName_:subcategoryName"
-            element={<Category />}
-          />
-          <Route path="/:categoryName/" element={<Category />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/search/" element={<Search />} />
-          <Route path="not-found" element={<NotFound />} />
-        </Routes>
-      </Router>
+      <ScrollerProvider>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/:categoryName/:productId" element={<Product />} />
+            <Route
+              path="/:categoryName_:subcategoryName"
+              element={<Category />}
+            />
+            <Route path="/:categoryName/" element={<Category />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/search/" element={<Search />} />
+            <Route path="not-found" element={<NotFound />} />
+          </Routes>
+        </Router>
+      </ScrollerProvider>
     </CartProvider>
   );
 }

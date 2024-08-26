@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./header.css";
-import SocialMediaLinks from "./socialMediaLinks";
 import ShippingInfo from "./shippingInfo";
 import Logo from "./logo";
 import ShowSearch from "./showSearch";
@@ -9,6 +8,7 @@ import NavigationLinks from "./navigationLinks";
 import MobileLinks from "./mobileLinks";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/cartContext";
+import { ScrollerContext } from "../../context/scrollerContext";
 
 export type activeHeaderTypes = "navigation" | "cart" | "search" | "none";
 export type activeHeaderProps = {
@@ -19,10 +19,8 @@ export type activeHeaderProps = {
 };
 
 function Header() {
-  const [prevYPosition, setPrevYPosition] = useState(window.scrollY);
-  const [showHeader, setShowHeader] = useState<boolean>(true);
-  const [shiftPosition, setShiftPosition] = useState<boolean>(false);
   const [activeHeader, setActiveHeader] = useState<activeHeaderTypes>();
+  const { showHeader, shiftPosition } = useContext(ScrollerContext);
   const { showModal, handleModal } = useContext(CartContext);
   function handleActiveHeader(activeHeader: activeHeaderTypes) {
     setActiveHeader(activeHeader);
@@ -35,24 +33,6 @@ function Header() {
     console.log(activeHeader);
   }, [showModal]);
 
-  function handleScroll() {
-    if (window.scrollY > 0) {
-      setShiftPosition(true);
-    } else {
-      setShiftPosition(false);
-    }
-    if (window.scrollY < prevYPosition || window.scrollY < 200) {
-      setShowHeader(true);
-    } else {
-      setShowHeader(false);
-    }
-    setPrevYPosition(window.scrollY);
-  }
-
-  useEffect(() => {
-    document.addEventListener("scroll", handleScroll);
-    return () => document.removeEventListener("scroll", handleScroll);
-  });
   return (
     <>
       <div className="header-top">

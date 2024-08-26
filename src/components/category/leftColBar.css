@@ -9,14 +9,13 @@
 
 .filter-modal {
   position: sticky;
-  top: 100px;
+  top: 140px;
   width: 100%;
   height: calc(90vh - 130px);
   display: flex;
   flex-direction: column;
   transform: translateY(0px);
   transition: top 0.25s ease-in-out, height 0.25s ease-in-out;
-  padding-top: 45px;
 }
 
 .scroller-container {
@@ -27,12 +26,12 @@
   text-wrap: nowrap;
 }
 
-.shift.extend {
-  top: 20px;
+.filter-modal.shift.extend {
+  top: 57px;
   height: 94vh;
 }
 
-.extend {
+.filter-modal.shift {
   height: calc(100vh - 130px);
 }
 
@@ -64,21 +63,6 @@
 .filter-button-container button,
 .filter-top {
   padding: 0 5px;
-}
-
-.filter-control-container {
-  display: flex;
-  position: absolute;
-  justify-content: space-between;
-  width: 90vw;
-  padding-right: 15px;
-  background-color: rgb(255, 255, 255);
-  align-items: center;
-  z-index: 2000;
-  height: 60px;
-  top: -20px;
-  transform: translateY(-0);
-  transition: transform 0.2s ease-out, padding-top 0.2s ease-out;
 }
 
 .filter-control-container h2 {
@@ -153,10 +137,6 @@
 
   .filter-control-container h2 {
     font-size: 18px;
-  }
-  .filter-control-container {
-    width: 92vw;
-    padding-right: 25px;
   }
 
   .mobile-filter-button {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import "./category.css";
 import LeftColBar from "../components/category/leftColBar";
@@ -11,8 +11,8 @@ import {
   jewelryFilters,
 } from "../data/categoryFilters";
 import useFilters from "../hooks/useFilters";
-import { determineCategory } from "../utils/textFormatUtils";
-import { useNavigate } from "react-router-dom";
+import { determineCategory, formatTitle } from "../utils/textFormatUtils";
+import { ScrollerContext } from "../context/scrollerContext";
 
 type categoryItem = {
   title: string;
@@ -49,7 +49,7 @@ function Category() {
   const { filterSettings, updateFilter, applyFilters } = useFilters();
   const [hideFilter, setHideFilter] = useState<boolean>();
   const categories = determineCategory(categoryName);
-  const navigate = useNavigate();
+  const { shiftPosition, showHeader } = useContext(ScrollerContext);
   const passCategory = categories.secondaryCategory
     ? categories.secondaryCategory
     : categories.mainCategory;
@@ -78,8 +78,12 @@ function Category() {
     setItems(applyFilters(products));
   }, [filterSettings]);
 
-  function handleHideLeftFilter(value: boolean) {
-    setHideFilter(value);
+  function handleHideFilter() {
+    setHideFilter(!hideFilter);
+  }
+
+  function handleSort(event: sortType) {
+    updateFilter(event, "sort");
   }
 
   const itemList = fetchItems(items);
@@ -93,15 +97,39 @@ function Category() {
       <div className="top-bar">
         <p>home / shop / men's clothing </p>
       </div>
+      <div className={`filter-control-container ${showHeader ? "" : "shift"}`}>
+        <h2>{formatTitle(passCategory)}</h2>
+        <div className="filter-type-container">
+          <button className="filter-button-sort" onClick={handleHideFilter}>
+            {hideFilter ? "Show Filters" : "Hide Filters"}
+          </button>
+          <button onClick={handleHideFilter} className="mobile-filter-button">
+            Filters
+          </button>
+          <div className="sort-container">
+            <select
+              name="filter-type"
+              id="filter-type"
+              value={filterSettings.sort}
+              onChange={(e) => handleSort(e.target.value as sortType)}
+            >
+              <option value="Featured">Featured</option>
+              <option value="Price: High-Low">Price: High-Low</option>
+              <option value="Price: Low-High">Price: Low-High</option>
+              <option value="Newest">Newest</option>
+            </select>
+          </div>
+        </div>
+      </div>
       <div className="flex">
-        {}
         <LeftColBar
           allfilters={categoryOptions(categories.mainCategory)}
           categoryTitle={passCategory}
           updateFilter={updateFilter}
           filterSettings={filterSettings}
-          handleHideLeftFilter={handleHideLeftFilter}
           isSubCategory={categories.secondaryCategory ? true : false}
+          handleHideFilter={handleHideFilter}
+          hideFilter={hideFilter}
         />
         <RightColBar
           items={itemList}

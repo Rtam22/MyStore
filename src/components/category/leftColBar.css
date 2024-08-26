@@ -28,7 +28,7 @@
 
 .filter-modal.shift.extend {
   top: 57px;
-  height: 94vh;
+  height: 91vh;
 }
 
 .filter-modal.shift {
@@ -115,7 +115,7 @@
     height: 98vh;
   }
 
-  .col-left .scroller-container.scroll-extend {
+  .col-left .scroller-container.scroll-shift {
     height: calc(100vh - 130px);
   }
 
@@ -144,5 +144,9 @@
   }
   .filter-button-sort {
     display: none;
+  }
+
+  .filter-modal.shift {
+    height: calc(95vh - 130px);
   }
 }

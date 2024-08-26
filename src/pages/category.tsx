@@ -14,14 +14,6 @@ import useFilters from "../hooks/useFilters";
 import { determineCategory, formatTitle } from "../utils/textFormatUtils";
 import { ScrollerContext } from "../context/scrollerContext";
 
-type categoryItem = {
-  title: string;
-  image: string;
-  imageAlt: string;
-  price: number;
-  rating: number;
-};
-
 export type sortType =
   | "Newest"
   | "Price: High-Low"
@@ -47,11 +39,9 @@ function Category() {
   const { categoryName } = useParams<{ categoryName: string }>();
   const [items, setItems] = useState<productType[]>(products);
   const { filterSettings, updateFilter, applyFilters } = useFilters();
-  const [hideFilter, setHideFilter] = useState<boolean>();
+  const [hideFilter, setHideFilter] = useState<boolean>(false);
   const categories = determineCategory(categoryName);
-  console.log(categories);
-  const { shiftPosition, showHeader, handlePauseScroll } =
-    useContext(ScrollerContext);
+  const { showHeader, handlePauseScroll } = useContext(ScrollerContext);
   const passCategory = categories.secondaryCategory
     ? categories.secondaryCategory
     : categories.mainCategory;

@@ -77,13 +77,17 @@
 }
 
 @media (max-width: 1530px) {
-  .category.content .flex {
-    gap: 10px;
+  .col-left {
+    margin-right: 10px;
+  }
+
+  .col-left.hide {
+    margin-right: 0px;
   }
 }
 
 @media (max-width: 850px) {
-  .category.content .flex {
-    gap: 0px;
+  .col-left {
+    margin-right: 0px;
   }
 }

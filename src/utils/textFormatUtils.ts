@@ -1,3 +1,5 @@
+import { products } from "../data/products";
+
 export function formatTitle(title: string) {
   let newTitle = breakStringToArray(title);
   newTitle = capitalizeFirstLetterArray(newTitle);
@@ -36,12 +38,16 @@ export function getFirstWord(string: string) {
 export function determineCategory(param: string) {
   const categories = param.split("_");
   let allCategories = {
-    mainCategory: "",
+    mainCategory: null,
     secondaryCategory: null,
   };
   if (categories.length > 0) {
-    allCategories.mainCategory = categories[0];
-    allCategories.secondaryCategory = categories[1];
+    if (products.find((item) => item.mainCategory === categories[0])) {
+      allCategories.mainCategory = categories[0];
+    }
+    if (products.find((item) => item.subCategory === categories[1])) {
+      allCategories.secondaryCategory = categories[1];
+    }
   }
   return allCategories;
 }

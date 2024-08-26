@@ -49,7 +49,9 @@ function Category() {
   const { filterSettings, updateFilter, applyFilters } = useFilters();
   const [hideFilter, setHideFilter] = useState<boolean>();
   const categories = determineCategory(categoryName);
-  const { shiftPosition, showHeader } = useContext(ScrollerContext);
+  console.log(categories);
+  const { shiftPosition, showHeader, handlePauseScroll } =
+    useContext(ScrollerContext);
   const passCategory = categories.secondaryCategory
     ? categories.secondaryCategory
     : categories.mainCategory;
@@ -57,7 +59,10 @@ function Category() {
   function fetchItems(items: productType[]) {
     if (categories.secondaryCategory) {
       return items.filter((item) => {
-        if (categories.secondaryCategory === item.subCategory) {
+        if (
+          categories.secondaryCategory === item.subCategory &&
+          categories.mainCategory === item.mainCategory
+        ) {
           return item;
         } else {
           return null;
@@ -80,6 +85,9 @@ function Category() {
 
   function handleHideFilter() {
     setHideFilter(!hideFilter);
+    if (window.innerWidth < 850) {
+      handlePauseScroll(!hideFilter);
+    }
   }
 
   function handleSort(event: sortType) {
@@ -88,7 +96,7 @@ function Category() {
 
   const itemList = fetchItems(items);
 
-  if (!itemList || itemList.length < 1) {
+  if (!categories.secondaryCategory && !categories.mainCategory) {
     return <Navigate to="/not-found" />;
   }
 

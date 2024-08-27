@@ -1,45 +1,39 @@
 import "./itemCard.css";
 import { Link } from "react-router-dom";
-import { itemCardProps } from "./itemCardType";
+import { productType } from "../../data/products";
 
-function ItemCard({
-  title,
-  image,
-  imageAlt,
-  description,
-  href,
-  size,
-  price,
-  discount,
-  salePrice,
-}: itemCardProps) {
+type itemCardProps = {
+  item: productType;
+  size: "small" | "large";
+};
+
+function ItemCard({ item, size }: itemCardProps) {
   return (
     <div className={`item-card ${size}`}>
-      <Link to={href}>
+      <Link to={item.href}>
         <div className="image-container">
-          {discount > 0 ? (
+          {item.discount > 0 ? (
             <div className="discount-tag-item">
-              <h3>{discount}% Off</h3>
+              <h3>{item.discount}% Off</h3>
             </div>
           ) : null}
-          <img src={image} alt={imageAlt} />
+          <img src={item.image} alt={item.imageAlt} />
         </div>
         <span>
-          <h3>{title}</h3>
+          <h3>{item.title}</h3>
           <div className="price-container">
-            {discount > 0 ? (
+            {item.discount > 0 ? (
               <>
                 <h3>
-                  <s>${price}</s>
+                  <s>${item.price}</s>
                 </h3>
-                <h3 className="discount">${salePrice}</h3>
+                <h3 className="discount">${item.salePrice}</h3>
               </>
             ) : (
-              <h3>${salePrice}</h3>
+              <h3>${item.salePrice}</h3>
             )}
           </div>
         </span>
-        {size === "large" ? <p>{description}</p> : null}
       </Link>
     </div>
   );

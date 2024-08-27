@@ -30,7 +30,6 @@ function Header() {
     if (showModal) {
       setActiveHeader("cart");
     }
-    console.log(activeHeader);
   }, [showModal]);
 
   return (

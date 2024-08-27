@@ -28,7 +28,7 @@ function Search() {
   return (
     <div className="content search">
       <h2>Search Results: {query}</h2>
-      <ItemList items={items} />
+      <ItemList items={items} size="small" />
     </div>
   );
 }

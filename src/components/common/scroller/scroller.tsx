@@ -4,7 +4,7 @@ import ItemCard from "../itemCard";
 import "./scroller.css";
 import { scrollerProps } from "./scrollerTypes";
 
-function Scroller({ items, title }: scrollerProps) {
+function Scroller({ items, title, size }: scrollerProps) {
   const [translateX, setTranslateX] = useState(0);
   const scrollerRef = useRef<HTMLDivElement>(null);
 
@@ -44,17 +44,7 @@ function Scroller({ items, title }: scrollerProps) {
       >
         <div className="flex">
           {items.map((item, index) => {
-            return (
-              <ItemCard
-                key={index + item.title}
-                title={item.title}
-                image={item.image}
-                imageAlt={item.imageAlt}
-                href={item.href}
-                size={item.size}
-                price={item.price}
-              />
-            );
+            return <ItemCard key={index} item={item} size={size} />;
           })}
         </div>
       </div>

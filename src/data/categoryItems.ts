@@ -24,7 +24,7 @@ export const categoryItems: categoryItem[] = [
     href: "/category/jewelry",
   },
   {
-    title: "Technology",
+    title: "Shoes",
     image: jewelryImage,
     imageAlt: "Men's clothing",
     category: "category-card",

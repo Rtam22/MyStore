@@ -1,5 +1,3 @@
-import { itemCardProps } from "../components/common/itemCardType";
-import jewelryImage from "../assets/Jewelry.jpg";
 import Tshirt1 from "../assets/products/mens-clothing/Tshirt1.png";
 import Tshirt2 from "../assets/products/mens-clothing/Tshirt2.png";
 import Tshirt3 from "../assets/products/mens-clothing/Tshirt3.png";

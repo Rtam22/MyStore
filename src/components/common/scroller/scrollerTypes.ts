@@ -1,3 +1,5 @@
+import { productType } from "../../../data/products";
+
 type baseCard = {
   title: string;
   href: string;
@@ -12,14 +14,8 @@ export type categoryItem = baseCard & {
   size?: never;
 };
 
-export type productItem = baseCard & {
-  category?: never;
-  price: number;
-  description?: string;
-  size: "small" | "large";
-};
-
 export type scrollerProps = {
-  items: (categoryItem | productItem)[];
+  items: productType[];
   title: string;
+  size: "small" | "large";
 };

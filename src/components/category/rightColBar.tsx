@@ -1,6 +1,5 @@
 import "./rightColBar.css";
 import ItemCard from "../common/itemCard";
-import { itemCardProps } from "../common/itemCardType";
 import { productType } from "../../data/products";
 interface rightColBarProps {
   items: productType[];
@@ -11,15 +10,7 @@ interface rightColBarProps {
 function RightColBar({ items, hideFilter }: rightColBarProps) {
   function listItems() {
     return items.map((item, index) => {
-      return (
-        <ItemCard
-          key={index}
-          {...item}
-          size="small"
-          discount={item.discount}
-          salePrice={item.salePrice}
-        />
-      );
+      return <ItemCard key={index} item={item} size="small" />;
     });
   }
 

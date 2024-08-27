@@ -18,6 +18,24 @@ const commonFilterTypes: filter[] = [
   },
 ];
 
+export const shopFilters: combineFilterTypes = {
+  filterTypes: commonFilterTypes,
+  subCategoryTypes: [
+    {
+      title: "Men's Clothing",
+      url: "/mens-clothing",
+    },
+    {
+      title: "Woman's Clothing",
+      url: "/womans-clothing",
+    },
+    {
+      title: "Jewelry",
+      url: "/jewelry",
+    },
+  ],
+};
+
 export const maleClothingFilters: combineFilterTypes = {
   filterTypes: commonFilterTypes,
 

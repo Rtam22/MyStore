@@ -9,6 +9,7 @@ import {
   femaleClothingFilters,
   electronicsFilters,
   jewelryFilters,
+  shopFilters,
 } from "../data/categoryFilters";
 import useFilters from "../hooks/useFilters";
 import { determineCategory, formatTitle } from "../utils/textFormatUtils";
@@ -22,6 +23,8 @@ export type sortType =
 
 function categoryOptions(categoryName: string) {
   switch (categoryName) {
+    case "shop":
+      return shopFilters;
     case "mens-clothing":
       return maleClothingFilters;
     case "womans-clothing":
@@ -47,6 +50,9 @@ function Category() {
     : categories.mainCategory;
 
   function fetchItems(items: productType[]) {
+    if (categories.mainCategory === "shop") {
+      return items;
+    }
     if (categories.secondaryCategory) {
       return items.filter((item) => {
         if (

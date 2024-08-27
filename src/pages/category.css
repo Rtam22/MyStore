@@ -90,4 +90,8 @@
   .col-left {
     margin-right: 0px;
   }
+
+  .category .flex .col-left {
+    margin-top: 14px;
+  }
 }

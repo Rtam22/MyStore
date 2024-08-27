@@ -41,7 +41,11 @@ export function determineCategory(param: string) {
     mainCategory: null,
     secondaryCategory: null,
   };
+
   if (categories.length > 0) {
+    if (categories[0] === "shop") {
+      allCategories.mainCategory = categories[0];
+    }
     if (products.find((item) => item.mainCategory === categories[0])) {
       allCategories.mainCategory = categories[0];
     }

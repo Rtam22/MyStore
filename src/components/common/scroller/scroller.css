@@ -3,7 +3,7 @@
 }
 
 .scroller-wrapper .flex {
-  gap: 20px;
+  gap: 30px;
 }
 
 .scroller {
@@ -67,7 +67,7 @@
 }
 
 .scroller::-webkit-scrollbar-thumb:hover {
-  background: #999999;
+  background: #ffffff;
 }
 
 @media (max-width: 1050px) {

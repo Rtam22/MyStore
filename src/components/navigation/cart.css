@@ -2,7 +2,8 @@
   display: none;
 }
 
-.cart-button-container {
+.cart-button-container,
+.mobile-cart-button {
   position: relative;
 }
 

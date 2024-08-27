@@ -103,7 +103,7 @@
   .col-left .scroller-container {
     transform: translateY(-15px);
     position: absolute;
-    width: 90vw;
+    width: 90.1vw;
     background-color: white;
     transition: 10px;
     z-index: 19000;
@@ -113,10 +113,12 @@
 
   .col-left .scroller-container.scroll-shift.scroll-extend {
     height: 98vh;
+    margin-top: 15px;
   }
 
   .col-left .scroller-container.scroll-shift {
     height: calc(100vh - 130px);
+    margin-top: 10px;
   }
 
   .col-left .scroller-container.show {

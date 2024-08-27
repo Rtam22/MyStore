@@ -58,10 +58,10 @@ function CartModal({ activeHeader, handleActiveHeader }: combinedCartProps) {
               </div>
               <div className="buttons-container">
                 <Link to="/cart">
-                  <button>View Cart</button>
+                  <button onClick={handleClose}>View Cart</button>
                 </Link>
                 <Link to="/cart">
-                  <button>Checkout</button>
+                  <button onClick={handleClose}>Checkout</button>
                 </Link>
               </div>
             </div>

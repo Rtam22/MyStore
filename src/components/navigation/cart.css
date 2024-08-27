@@ -1,0 +1,33 @@
+.mobile-cart-button {
+  display: none;
+}
+
+.cart-button-container {
+  position: relative;
+}
+
+.item-count {
+  top: -10px;
+  right: -10px;
+  position: absolute;
+  background-color: rgb(228, 92, 92);
+  color: white;
+  width: 17px;
+  height: 17px;
+  border-radius: 100%;
+  font-size: 12px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 385px) {
+  .mobile-cart-button {
+    display: block;
+  }
+
+  .cart-button-container {
+    display: none;
+  }
+}

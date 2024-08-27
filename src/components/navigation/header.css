@@ -128,10 +128,6 @@
     justify-content: center;
   }
 
-  .header-bottom {
-    justify-content: space-around;
-  }
-
   .header-top span svg {
     font-size: 12px;
   }

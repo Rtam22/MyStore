@@ -43,3 +43,9 @@
   justify-content: center;
   position: relative;
 }
+
+@media (max-width: 500px) {
+  .search-modal form {
+    width: 85%;
+  }
+}

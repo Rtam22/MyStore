@@ -5,7 +5,9 @@ import CartModal from "../cart/cartModal";
 import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 import { activeHeaderProps } from "./header";
-
+import { Link } from "react-router-dom";
+import "./cart.css";
+import { calculateQuantityTotal } from "../../utils/calculationUtils";
 type CartProps = {
   size?: "sm" | "md" | "lg";
   showHeader?: boolean;
@@ -15,12 +17,11 @@ type CartProps = {
 type combinedCartProps = CartProps & activeHeaderProps;
 
 function Cart({
-  showHeader,
   shiftPosition,
   activeHeader,
   handleActiveHeader,
 }: combinedCartProps) {
-  const { handleModal } = useContext(CartContext);
+  const { handleModal, cartItems } = useContext(CartContext);
 
   function handleClick() {
     if (activeHeader === "cart") {
@@ -34,9 +35,22 @@ function Cart({
 
   return (
     <div className="cart-container">
-      <button onClick={handleClick}>
+      <Link to="/cart" className="mobile-cart-button">
+        {cartItems.length > 0 ? (
+          <div className="item-count">{calculateQuantityTotal(cartItems)}</div>
+        ) : null}
         <FontAwesomeIcon icon={faCartShopping} className="fa-lg" />
-      </button>
+      </Link>
+      <div className="cart-button-container">
+        <button onClick={handleClick}>
+          {cartItems.length > 0 ? (
+            <div className="item-count">
+              {calculateQuantityTotal(cartItems)}
+            </div>
+          ) : null}
+          <FontAwesomeIcon icon={faCartShopping} className="fa-lg" />
+        </button>
+      </div>
       <CartModal
         activeHeader={activeHeader}
         shiftPosition={shiftPosition}

@@ -1,14 +1,29 @@
 import React from "react";
 import HeroSection from "../components/home/heroSection";
 import clothingImage from "../assets/ClothingCollection.png";
-import { topSellersData } from "../data/topSellerItems";
 import Card from "../components/home/card";
 import "./home.css";
 import Scroller from "../components/common/scroller/scroller";
-import { categoryItems } from "../data/categoryItems";
 import { promotionItems } from "../data/promotionItems";
 import { v4 as uuidv4 } from "uuid";
+import { products, productType } from "../data/products";
+import { selectRandomNumbersArray } from "../utils/calculationUtils";
 function Home() {
+  function fetchTopSellers() {
+    return products.sort((a, b) => b.amountSold - a.amountSold).slice(0, 9);
+  }
+
+  function fetchStoreSales() {
+    const saleItems = products.filter((item) => item.discount > 0);
+    const itemIndex = selectRandomNumbersArray(saleItems.length, 10);
+    let result = [];
+    itemIndex.forEach((index) => {
+      console.log(index);
+      result = [...result, saleItems[index]];
+    });
+    return result;
+  }
+
   return (
     <>
       <HeroSection
@@ -22,6 +37,13 @@ function Home() {
       />
 
       <div className="content home">
+        <div className="container">
+          <Scroller
+            items={fetchStoreSales() as productType[]}
+            title="Store Wide Sale"
+            size="large"
+          />
+        </div>
         <div className="promotion-container">
           {promotionItems.map((item) => {
             return (
@@ -40,11 +62,11 @@ function Home() {
         </div>
 
         <div className="container">
-          <Scroller items={topSellersData} title="Category" />
-        </div>
-
-        <div className="container">
-          <Scroller items={topSellersData} title="Top Sellers" />
+          <Scroller
+            items={fetchTopSellers() as productType[]}
+            title="Top Sellers"
+            size="large"
+          />
         </div>
       </div>
     </>

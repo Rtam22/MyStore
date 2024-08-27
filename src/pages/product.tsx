@@ -10,6 +10,7 @@ import {
   ToastNotification,
   showToast,
 } from "../components/common/toastNotification";
+import BreakCrumbNavigation from "../components/navigation/breadCrumbNavigation";
 
 function Product() {
   const { productId } = useParams<{
@@ -18,7 +19,6 @@ function Product() {
   const [product, setProduct] = useState<productType | undefined>(undefined);
 
   useEffect(() => {
-    console.log(productId);
     const selectedProduct = products.find(
       (product) => productId === getLastProductParamLink(product.href)
     );
@@ -38,8 +38,12 @@ function Product() {
 
   return (
     <>
-      {" "}
       <ToastNotification position="bottom-center" autoClose={3000} />
+      <div className="content">
+        <div className="top-bar">
+          <BreakCrumbNavigation />
+        </div>
+      </div>
       <div className="content product">
         <div className="col-left">
           <ImageDisplay

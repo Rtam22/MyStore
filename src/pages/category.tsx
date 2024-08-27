@@ -14,6 +14,7 @@ import {
 import useFilters from "../hooks/useFilters";
 import { determineCategory, formatTitle } from "../utils/textFormatUtils";
 import { ScrollerContext } from "../context/scrollerContext";
+import BreakCrumbNavigation from "../components/navigation/breadCrumbNavigation";
 
 export type sortType =
   | "Newest"
@@ -99,7 +100,7 @@ function Category() {
   return (
     <div className="category content">
       <div className="top-bar">
-        <p>home / shop / men's clothing </p>
+        <BreakCrumbNavigation />
       </div>
       <div className={`filter-control-container ${showHeader ? "" : "shift"}`}>
         <h2>{formatTitle(passCategory)}</h2>

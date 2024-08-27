@@ -18,7 +18,6 @@ function Home() {
     const itemIndex = selectRandomNumbersArray(saleItems.length, 10);
     let result = [];
     itemIndex.forEach((index) => {
-      console.log(index);
       result = [...result, saleItems[index]];
     });
     return result;

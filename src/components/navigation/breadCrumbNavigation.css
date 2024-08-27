@@ -1,0 +1,26 @@
+.bread-crumb-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bread-crumb-container p {
+  margin-top: 0;
+  color: rgb(2, 2, 2);
+}
+
+.bread-crumb-container span,
+.bread-crumb-container a {
+  color: rgb(117, 117, 117);
+}
+
+.bread-crumb-container a:hover {
+  color: rgb(2, 2, 2);
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .bread-crumb-container {
+    display: none;
+  }
+}

@@ -34,11 +34,12 @@ export function selectRandomNumbersArray(maxLength: number, maxAmount: number) {
     let randomNumber = Math.floor(Math.random() * maxLength);
     let found = selectionArray.find((number) => number === randomNumber);
 
-    while (found) {
+    while (found !== undefined) {
       randomNumber = Math.floor(Math.random() * maxLength);
       found = selectionArray.find((number) => number === randomNumber);
     }
     selectionArray = [...selectionArray, randomNumber];
   }
+
   return selectionArray;
 }

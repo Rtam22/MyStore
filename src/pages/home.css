@@ -16,7 +16,6 @@
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  padding-bottom: 30px;
 }
 
 .category-items {
@@ -39,5 +38,9 @@
 
   .category-container {
     height: 430px;
+  }
+
+  .content.home {
+    padding-top: 100px;
   }
 }

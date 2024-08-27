@@ -60,6 +60,7 @@
 .button-link.black a {
   background-color: rgb(0, 0, 0);
   color: white;
+  font-weight: 400;
 }
 
 .button-link.black span {

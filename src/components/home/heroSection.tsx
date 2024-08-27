@@ -19,6 +19,9 @@ function HeroSection({
 }: heroSectionProps) {
   return (
     <div className="hero-container">
+      <div className="image-wrapper">
+        <img src={image} alt={imageAlt} />
+      </div>
       <div className="hero-content">
         {title && (
           <span>
@@ -41,7 +44,6 @@ function HeroSection({
           </span>
         )}
       </div>
-      <img src={image} alt={imageAlt} />
     </div>
   );
 }

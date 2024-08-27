@@ -40,15 +40,11 @@ function Home() {
         </div>
 
         <div className="container">
-          <h2>Category</h2>
-          <Scroller items={topSellersData} />
+          <Scroller items={topSellersData} title="Category" />
         </div>
 
         <div className="container">
-          <h2>Top Sellers</h2>
-          <div className="category-items">
-            <Scroller items={topSellersData} />
-          </div>
+          <Scroller items={topSellersData} title="Top Sellers" />
         </div>
       </div>
     </>

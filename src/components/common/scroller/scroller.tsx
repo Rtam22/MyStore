@@ -4,7 +4,7 @@ import ItemCard from "../itemCard";
 import "./scroller.css";
 import { scrollerProps } from "./scrollerTypes";
 
-function Scroller({ items }: scrollerProps) {
+function Scroller({ items, title }: scrollerProps) {
   const [translateX, setTranslateX] = useState(0);
   const scrollerRef = useRef<HTMLDivElement>(null);
 
@@ -23,33 +23,41 @@ function Scroller({ items }: scrollerProps) {
   }
 
   return (
-    <div className="promo-items-container">
-      <button onClick={handleLeftScroll} className="scroller-button-left">
-        {"<"}
-      </button>
+    <div className="scroller-wrapper">
+      <div className="hover">
+        <h2>{title}</h2>
+        <div className="button-right">
+          <button onClick={handleLeftScroll} className="scroller-button-left">
+            {"‹"}
+          </button>
+          <button onClick={handleRightScroll} className="scroller-button-right">
+            {"›"}
+          </button>
+        </div>
+      </div>
+
       <div
         className="scroller"
         id="scroller"
         ref={scrollerRef}
         style={{ transform: `translateX(${translateX}px)` }}
       >
-        {items.map((item, index) => {
-          return (
-            <ItemCard
-              key={index + item.title}
-              title={item.title}
-              image={item.image}
-              imageAlt={item.imageAlt}
-              href={item.href}
-              size={item.size}
-              price={item.price}
-            />
-          );
-        })}
+        <div className="flex">
+          {items.map((item, index) => {
+            return (
+              <ItemCard
+                key={index + item.title}
+                title={item.title}
+                image={item.image}
+                imageAlt={item.imageAlt}
+                href={item.href}
+                size={item.size}
+                price={item.price}
+              />
+            );
+          })}
+        </div>
       </div>
-      <button onClick={handleRightScroll} className="scroller-button-right">
-        {">"}
-      </button>
     </div>
   );
 }

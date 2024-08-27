@@ -2,7 +2,6 @@
 
 .card-base {
   position: relative;
-  background-color: rgb(0, 0, 0);
 }
 
 .card-base .image-container {
@@ -84,6 +83,7 @@
 
 .card-banner h3 {
   font-size: 18px;
+  color: white;
 }
 
 .small .card-banner {
@@ -130,7 +130,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 525px) {
   .promo-card h3 span {
     background-color: white;
     line-height: 25px;
@@ -140,18 +140,26 @@
   .card-base h3 {
     font-size: 16px;
   }
+
   .promo-card {
-    height: 450px;
+    height: auto;
   }
+
   .card-banner {
     right: -15px;
-    top: 5px;
+    top: 20px;
     padding-right: 20px;
+  }
+
+  .card-banner h3 {
+    font-size: 14px;
   }
 
   .promo-card h3 span {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
+    text-align: center;
   }
   .card-content {
     padding: 0 10px;
@@ -162,7 +170,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: static;
   }
+
+  .card-content .button-link a {
+    border: 1px solid black;
+  }
+
+  .card-base .image-container {
+    height: 350px;
+  }
+
   .category-card {
     height: 380px;
     width: 230px;

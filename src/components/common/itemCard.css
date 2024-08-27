@@ -70,3 +70,23 @@
   display: flex;
   gap: 5px;
 }
+
+@media (max-width: 1000px) {
+  .item-card.large {
+    width: 250px;
+  }
+
+  .item-card.large .image-container img {
+    height: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .item-card.large {
+    width: 200px;
+  }
+
+  .item-card.large .image-container img {
+    height: 280px;
+  }
+}

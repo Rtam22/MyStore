@@ -22,6 +22,10 @@ function Card({
       ) : null}
       {type === "category-card" ? <Link to={href}></Link> : null}
 
+      <div className="image-container">
+        <img src={image} alt={imageAlt} />
+      </div>
+
       <div className="card-content">
         <h3>
           <span>{title}</span>
@@ -29,10 +33,6 @@ function Card({
         {type === "promo-card" && (
           <ButtonLink title="Shop Now!" color={color} size="small" />
         )}
-      </div>
-
-      <div className="image-container">
-        <img src={image} alt={imageAlt} />
       </div>
     </div>
   );

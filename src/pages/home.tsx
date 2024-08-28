@@ -8,6 +8,7 @@ import { promotionItems } from "../data/promotionItems";
 import { v4 as uuidv4 } from "uuid";
 import { products, productType } from "../data/products";
 import { selectRandomNumbersArray } from "../utils/calculationUtils";
+import Footer from "../components/navigation/footer";
 function Home() {
   function fetchTopSellers() {
     return products.sort((a, b) => b.amountSold - a.amountSold).slice(0, 9);
@@ -68,6 +69,7 @@ function Home() {
           />
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -69,7 +69,14 @@
   background: #575555;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 500px) {
+  .scroller-wrapper button {
+    display: none;
+  }
+
+  .scroller-wrapper .hover {
+    top: 10px;
+  }
 }
 
 @media (max-width: 350px) {

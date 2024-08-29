@@ -28,6 +28,7 @@
   flex-direction: column;
   gap: 8px;
   justify-content: space-between;
+  min-width: 0px;
   width: 100%;
 }
 
@@ -59,5 +60,8 @@
   width: 100%;
 }
 
-@media (min-width: 650px) {
+@media (max-width: 350px) {
+  .cart-item {
+    min-width: 200px;
+  }
 }

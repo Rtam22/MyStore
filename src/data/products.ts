@@ -25,10 +25,10 @@ import Jacket1 from "../assets/products/mens-clothing/Jacket1.png";
 import Jacket2 from "../assets/products/mens-clothing/Jacket2.png";
 import Jacket3 from "../assets/products/mens-clothing/Jacket3.png";
 import Jacket4 from "../assets/products/mens-clothing/Jacket4.png";
-import WJacket1 from "../assets/products/mens-clothing/WJacket1.png";
-import WJacket2 from "../assets/products/mens-clothing/WJacket2.png";
-import WJacket3 from "../assets/products/mens-clothing/WJacket3.png";
-import WJacket4 from "../assets/products/mens-clothing/WJacket4.png";
+import WJacket1 from "../assets/products/womans-clothing/WJacket1.png";
+import WJacket2 from "../assets/products/womans-clothing/WJacket2.png";
+import WJacket3 from "../assets/products/womans-clothing/WJacket3.png";
+import WJacket4 from "../assets/products/womans-clothing/WJacket4.png";
 import Shoes1 from "../assets/products/mens-clothing/Shoes1.png";
 import Shoes2 from "../assets/products/mens-clothing/Shoes2.png";
 import Shoes3 from "../assets/products/mens-clothing/Shoes3.png";
@@ -423,8 +423,8 @@ export const products: productType[] = [
     availability: true,
     size: ["M", "L", "XL"],
     color: ["Black"],
-    discount: 15,
-    salePrice: 127.49,
+    discount: 0,
+    salePrice: 149.99,
     tag: ["formal", "versatile"],
     amountSold: 412,
     dateAdded: new Date("2024-01-25"),
@@ -644,6 +644,91 @@ export const products: productType[] = [
     dateAdded: new Date("2024-05-10"),
   },
 
+  {
+    id: "white-long-coat",
+    href: "/womans-clothing_jackets-&-coats/White-Long-Coat",
+    title: "Classic White Wool Overcoat",
+    description:
+      "Stay warm and stylish with this classic white wool overcoat. Its clean lines and timeless design make it a versatile addition to any wardrobe, perfect for layering during the colder months.",
+    image: WJacket1,
+    imageAlt: "White long coat with a tailored fit",
+    rating: 4.8,
+    price: 120.0,
+    mainCategory: "womans-clothing",
+    subCategory: "jackets-&-coats",
+    availability: true,
+    size: ["S", "M", "L", "XL"],
+    color: ["White"],
+    discount: 0,
+    salePrice: 120.0,
+    tag: ["stylish", "winter"],
+    amountSold: 220,
+    dateAdded: new Date("2024-03-15"),
+  },
+  {
+    id: "gray-button-coat-long",
+    href: "/womans-clothing_jackets-&-coats/Gray-Button-Coat-Long",
+    title: "Longline Gray Button-Up Coat",
+    description:
+      "A sophisticated longline gray button-up coat that combines warmth and style. Featuring a long length and button-up front, it's perfect for adding a touch of elegance to your winter attire.",
+    image: WJacket2,
+    imageAlt: "Gray button coat with a long length and classic buttons",
+    rating: 4.5,
+    price: 135.0,
+    mainCategory: "womans-clothing",
+    subCategory: "jackets-&-coats",
+    availability: true,
+    size: ["M", "L", "XL"],
+    color: ["Gray"],
+    discount: 0,
+    salePrice: 135.0,
+    tag: ["sophisticated", "elegant"],
+    amountSold: 150,
+    dateAdded: new Date("2024-02-10"),
+  },
+  {
+    id: "pink-coat",
+    href: "/womans-clothing_jackets-&-coats/Pink-Coat",
+    title: "Bright Pink Tailored Coat",
+    description:
+      "Add a pop of color to your winter wardrobe with this bright pink tailored coat. With its soft fabric and cozy fit, it's the perfect combination of comfort and style.",
+    image: WJacket3,
+    imageAlt: "Pink coat with a vibrant hue and soft fabric",
+    rating: 4.7,
+    price: 110.0,
+    mainCategory: "womans-clothing",
+    subCategory: "jackets-&-coats",
+    availability: true,
+    size: ["S", "M", "L"],
+    color: ["Pink"],
+    discount: 15,
+    salePrice: 93.5,
+    tag: ["vibrant", "comfortable"],
+    amountSold: 200,
+    dateAdded: new Date("2024-04-05"),
+  },
+  {
+    id: "black-jacket-fur",
+    href: "/womans-clothing_jackets-&-coats/Black-Jacket-Fur",
+    title: "Black Faux Fur Trimmed Jacket",
+    description:
+      "This black jacket with faux fur trim is a chic and cozy option for cold weather. The luxurious fur adds a touch of glamour, making it perfect for both casual outings and special occasions.",
+    image: WJacket4,
+    imageAlt: "Black jacket with fur lining and a sleek design",
+    rating: 4.9,
+    price: 128.0,
+    mainCategory: "womans-clothing",
+    subCategory: "jackets-&-coats",
+    availability: true,
+    size: ["M", "L", "XL"],
+    color: ["Black"],
+    discount: 0,
+    salePrice: 128.0,
+    tag: ["chic", "luxurious"],
+    amountSold: 250,
+    dateAdded: new Date("2024-01-28"),
+  },
+
   /*Shoes */
   {
     id: "orange-sneakers",
@@ -681,8 +766,8 @@ export const products: productType[] = [
     availability: true,
     size: ["8 Au", "9 Au", "10 Au"],
     color: ["Orangy Yellow"],
-    discount: 10,
-    salePrice: 116.99,
+    discount: 0,
+    salePrice: 129.99,
     tag: ["outdoor", "rugged"],
     amountSold: 312,
     dateAdded: new Date("2024-04-10"),
@@ -766,8 +851,8 @@ export const products: productType[] = [
     availability: true,
     size: ["6 Au", "7 Au", "8 Au", "9 Au"],
     color: ["White"],
-    discount: 10,
-    salePrice: 53.99,
+    discount: 0,
+    salePrice: 59.99,
     tag: ["casual", "comfortable"],
     amountSold: 250,
     dateAdded: new Date("2024-02-20"),
@@ -808,8 +893,8 @@ export const products: productType[] = [
     availability: true,
     size: ["7 Au", "8 Au", "9 Au", "10 Au"],
     color: ["Red"],
-    discount: 20,
-    salePrice: 79.99,
+    discount: 0,
+    salePrice: 99.99,
     tag: ["bold", "special occasion"],
     amountSold: 210,
     dateAdded: new Date("2024-04-05"),

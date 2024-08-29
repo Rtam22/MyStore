@@ -32,3 +32,30 @@
   display: flex;
   gap: 70px;
 }
+
+@media (max-width: 1500px) {
+  .section.main {
+    display: none;
+  }
+}
+
+@media (max-width: 1230px) {
+  .footer .right {
+    display: none;
+  }
+
+  .footer {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 375px) {
+  .footer .left {
+    flex-direction: column;
+  }
+
+  .footer {
+    height: auto;
+    justify-content: center;
+  }
+}

@@ -69,6 +69,12 @@
   background: #575555;
 }
 
+@media (max-width: 1280px) {
+  .scroller {
+    overflow-x: scroll;
+  }
+}
+
 @media (max-width: 500px) {
   .scroller-wrapper button {
     display: none;

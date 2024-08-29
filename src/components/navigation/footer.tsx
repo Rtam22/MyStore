@@ -20,28 +20,28 @@ function Footer() {
         </div>
       </div>
       <div className="right">
-        <div className="section">
+        <div className="section main">
           <p>SHOP NOW</p>
           <Link to="/">Featured</Link>
           <Link to="/">Mens's Clothing</Link>
           <Link to="/">Woman's Clothing</Link>
           <Link to="/">Jewlery</Link>
         </div>
-        <div className="section">
+        <div className="section secondary">
           <p>MEN'S CLOTHING</p>
           <Link to="/">T-shirts & Tops</Link>
           <Link to="/">Jackets & Hoodies</Link>
           <Link to="/">Pants & Trousers</Link>
           <Link to="/">Shoes</Link>
         </div>
-        <div className="section">
+        <div className="section secondary">
           <p>WOMAN'S CLOTHING</p>
           <Link to="/">Tops & Blouses</Link>
           <Link to="/">Jackets & Coats</Link>
           <Link to="/">Pants & Skirts</Link>
           <Link to="/">Shoes</Link>
         </div>
-        <div className="section">
+        <div className="section secondary">
           <p>JEWELRY</p>
           <Link to="/">Tops & Blouses</Link>
           <Link to="/">Jackets & Coats</Link>

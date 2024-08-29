@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { productType } from "../data/products";
+import { fetchTopSellers } from "../pages/home";
 
 export type price = "$0 to $20" | "$20 to $50" | "$50 to $100" | " over$100";
 export type size = "X-Small" | "Small" | "Medium" | "Large" | "X-Large";
@@ -132,7 +133,7 @@ function UseFilters() {
       case "Price: Low-High":
         return sortedItems.sort((a, b) => a.salePrice - b.salePrice);
       case "Featured":
-        return sortedItems;
+        return fetchTopSellers(items, items.length);
     }
   }
 

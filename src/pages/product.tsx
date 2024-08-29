@@ -34,7 +34,6 @@ function Product() {
     const categoryItems = products.filter(
       (item) => item.subCategory === product.subCategory
     );
-    console.log(categoryItems);
     const itemIndex = selectRandomNumbersArray(
       categoryItems.length,
       categoryItems.length > 8 ? 8 : categoryItems.length

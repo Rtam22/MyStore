@@ -9,11 +9,11 @@ import { v4 as uuidv4 } from "uuid";
 import { products, productType } from "../data/products";
 import { selectRandomNumbersArray } from "../utils/calculationUtils";
 import Footer from "../components/navigation/footer";
-function Home() {
-  function fetchTopSellers() {
-    return products.sort((a, b) => b.amountSold - a.amountSold).slice(0, 9);
-  }
 
+export function fetchTopSellers(items: productType[], amount: number) {
+  return items.sort((a, b) => b.amountSold - a.amountSold).slice(0, amount);
+}
+function Home() {
   function fetchStoreSales() {
     const saleItems = products.filter((item) => item.discount > 0);
     const itemIndex = selectRandomNumbersArray(saleItems.length, 10);
@@ -63,7 +63,7 @@ function Home() {
 
         <div className="container">
           <Scroller
-            items={fetchTopSellers() as productType[]}
+            items={fetchTopSellers(products, 9) as productType[]}
             title="Top Sellers"
             size="large"
           />

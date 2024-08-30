@@ -40,7 +40,12 @@ function HeroSection({
         )}
         {button && (
           <span className="button-container">
-            <ButtonLink title={button} color="black" size="large" />
+            <ButtonLink
+              title={button}
+              color="black"
+              size="large"
+              href="/shop_sale"
+            />
           </span>
         )}
       </div>

@@ -8,13 +8,11 @@ import { sortType } from "../../pages/category";
 
 function FilterSection({
   filters,
-  subCategoryTitle,
   updateFilter,
   filterSettings,
   handleHideFilter,
+  sale,
 }: filterModalProps) {
-  const [showFilter, setShowFilter] = useState([false, false]);
-
   function handleSort(event: sortType) {
     updateFilter(event, "sort");
   }
@@ -37,6 +35,7 @@ function FilterSection({
               type="checkbox"
               name="filter"
               id={`filter-${value}`}
+              checked={value === "Sale" ? sale : undefined}
               onChange={() =>
                 handlefilter(
                   value as filterValue,

@@ -17,6 +17,7 @@ function LeftColBar({
   filterSettings,
   handleHideFilter,
   hideFilter,
+  sale,
 }: allFilterProps) {
   const { categoryName } = useParams();
   const { shiftPosition, showHeader } = useContext(ScrollerContext);
@@ -72,6 +73,7 @@ function LeftColBar({
             updateFilter={updateFilter}
             filterSettings={filterSettings}
             handleHideFilter={handleHideFilter}
+            sale={sale}
           />
         </div>
       </div>

@@ -28,9 +28,11 @@ function Home() {
     <>
       <HeroSection
         key={uuidv4()}
-        title="Discover Our New Arrivals"
-        description="Fresh styles for the season"
-        secondaryDescription="Explore the latext trends and update your wardrobe"
+        title="Seasonal Sale"
+        description="Fresh deals for the whole season"
+        secondaryDescription="Explore our discounts and elevate your wardrobe with new trends
+
+"
         image={clothingImage}
         imageAlt="Collection of clothing"
         button="Shop Now!"
@@ -40,7 +42,7 @@ function Home() {
         <div className="container">
           <Scroller
             items={fetchStoreSales() as productType[]}
-            title="Store Wide Sale"
+            title="Seasonal Sale"
             size="large"
           />
         </div>

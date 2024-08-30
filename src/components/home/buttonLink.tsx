@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./buttonLink.css";
 
 type buttonProps = {
@@ -10,7 +11,7 @@ type buttonProps = {
 function ButtonLink({ title, href, color, size }: buttonProps) {
   return (
     <div className={`button-link ${color} ${size}`}>
-      <a href={href}>{title}</a>
+      <Link to={href}>{title}</Link>
       <span></span>
     </div>
   );

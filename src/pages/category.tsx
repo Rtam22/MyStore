@@ -50,6 +50,12 @@ function Category() {
     ? categories.secondaryCategory
     : categories.mainCategory;
 
+  useEffect(() => {
+    if (categoryName.split("_")[1] === "sale") {
+      updateFilter(true, "sales");
+    }
+  }, [categoryName]);
+
   function fetchItems(items: productType[]) {
     if (categories.mainCategory === "shop") {
       return items;
@@ -135,6 +141,7 @@ function Category() {
           isSubCategory={categories.secondaryCategory ? true : false}
           handleHideFilter={handleHideFilter}
           hideFilter={hideFilter}
+          sale={filterSettings.sales}
         />
         <RightColBar
           items={itemList}

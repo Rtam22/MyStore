@@ -1,25 +1,37 @@
 import { useRef, useState } from "react";
-import Card from "../../home/card";
 import ItemCard from "../itemCard";
 import "./scroller.css";
 import { scrollerProps } from "./scrollerTypes";
 
 function Scroller({ items, title, size }: scrollerProps) {
-  const [translateX, setTranslateX] = useState(0);
+  const [isScrolling, setIsScrolling] = useState<boolean>(false);
   const scrollerRef = useRef<HTMLDivElement>(null);
 
-  function handleRightScroll() {
-    scrollerRef.current.scrollTo({
-      left: scrollerRef.current.scrollLeft + 820,
-      behavior: "smooth",
-    });
-  }
+  function handleScroll(direction: string) {
+    let scrollLength = 380;
+    if (window.innerWidth < 1000) {
+      scrollLength = 282;
+    }
 
-  function handleLeftScroll() {
-    scrollerRef.current.scrollTo({
-      left: scrollerRef.current.scrollLeft - 820,
-      behavior: "smooth",
-    });
+    if (isScrolling) {
+      return;
+    }
+    setIsScrolling(true);
+    if (direction === "right")
+      scrollerRef.current.scrollTo({
+        left: scrollerRef.current.scrollLeft + scrollLength,
+        behavior: "smooth",
+      });
+    else if (direction === "left") {
+      scrollerRef.current.scrollTo({
+        left: scrollerRef.current.scrollLeft - scrollLength,
+        behavior: "smooth",
+      });
+    }
+
+    setTimeout(() => {
+      setIsScrolling(false);
+    }, 290);
   }
 
   return (
@@ -27,21 +39,22 @@ function Scroller({ items, title, size }: scrollerProps) {
       <div className="hover">
         <h2>{title}</h2>
         <div className="button-right">
-          <button onClick={handleLeftScroll} className="scroller-button-left">
+          <button
+            onClick={() => handleScroll("left")}
+            className="scroller-button-left"
+          >
             {"‹"}
           </button>
-          <button onClick={handleRightScroll} className="scroller-button-right">
+          <button
+            onClick={() => handleScroll("right")}
+            className="scroller-button-right"
+          >
             {"›"}
           </button>
         </div>
       </div>
 
-      <div
-        className="scroller"
-        id="scroller"
-        ref={scrollerRef}
-        style={{ transform: `translateX(${translateX}px)` }}
-      >
+      <div className="scroller" id="scroller" ref={scrollerRef}>
         <div className="flex">
           {items.map((item, index) => {
             return <ItemCard key={index} item={item} size={size} />;

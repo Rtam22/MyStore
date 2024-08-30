@@ -22,6 +22,31 @@ function FilterSection({
     updateFilter(value, title as keyof filterType);
   }
 
+  function handleChecked(value: string, filterTitle: string) {
+    switch (filterTitle) {
+      case "sale":
+        return sale;
+      case "Price":
+        const filterPriceActive = filterSettings.price.find(
+          (filter) => filter === value
+        );
+        if (filterPriceActive) {
+          return true;
+        } else {
+          return false;
+        }
+      case "Size":
+        const filterSaleActive = filterSettings.size.find(
+          (filter) => filter === value
+        );
+        if (filterSaleActive) {
+          return true;
+        } else {
+          return false;
+        }
+    }
+  }
+
   function filterType(
     type: string,
     filterValues: string[],
@@ -35,7 +60,7 @@ function FilterSection({
               type="checkbox"
               name="filter"
               id={`filter-${value}`}
-              checked={value === "Sale" ? sale : undefined}
+              checked={handleChecked(value, filterTitle)}
               onChange={() =>
                 handlefilter(
                   value as filterValue,

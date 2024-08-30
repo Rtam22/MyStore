@@ -26,6 +26,10 @@ function UseFilters() {
   const [filterSettings, setFilterSettings] =
     useState<filterType>(initialFilter);
 
+  function clearFilters() {
+    setFilterSettings(initialFilter);
+  }
+
   function handleUpdateFilter<Filter>(
     value: Filter,
     filterKey: keyof filterType
@@ -163,7 +167,7 @@ function UseFilters() {
     }
   }
 
-  return { filterSettings, updateFilter, applyFilters };
+  return { filterSettings, updateFilter, applyFilters, clearFilters };
 }
 
 export default UseFilters;

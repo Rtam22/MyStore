@@ -18,9 +18,11 @@ function LeftColBar({
   handleHideFilter,
   hideFilter,
   sale,
+  clearFilters,
 }: allFilterProps) {
   const { categoryName } = useParams();
-  const { shiftPosition, showHeader } = useContext(ScrollerContext);
+  const { shiftPosition, showHeader, setScrollPositionZero } =
+    useContext(ScrollerContext);
 
   function findSubCategoryByUrl() {
     const subCategory = allfilters.subCategoryTypes.find(
@@ -64,6 +66,8 @@ function LeftColBar({
           <SubCategorySection
             subCategory={allfilters.subCategoryTypes}
             currentCategory={getLastParamLink(categoryName)}
+            setScrollPositionZero={setScrollPositionZero}
+            clearFilters={clearFilters}
           />
           <FilterSection
             filters={

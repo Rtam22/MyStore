@@ -42,7 +42,8 @@ function categoryOptions(categoryName: string) {
 function Category() {
   const { categoryName } = useParams<{ categoryName: string }>();
   const [items, setItems] = useState<productType[]>(products);
-  const { filterSettings, updateFilter, applyFilters } = useFilters();
+  const { filterSettings, updateFilter, applyFilters, clearFilters } =
+    useFilters();
   const [hideFilter, setHideFilter] = useState<boolean>(false);
   const categories = determineCategory(categoryName);
   const { showHeader, handlePauseScroll } = useContext(ScrollerContext);
@@ -142,6 +143,7 @@ function Category() {
           handleHideFilter={handleHideFilter}
           hideFilter={hideFilter}
           sale={filterSettings.sales}
+          clearFilters={clearFilters}
         />
         <RightColBar
           items={itemList}

@@ -4,6 +4,7 @@ type scrollerContextType = {
   showHeader: boolean;
   shiftPosition: boolean;
   handlePauseScroll: (boolean: boolean) => void;
+  setScrollPositionZero: () => void;
 };
 
 export const ScrollerContext = createContext<scrollerContextType>(null);
@@ -16,6 +17,12 @@ export function ScrollerProvider({ children }) {
 
   function handlePauseScroll(boolean: boolean) {
     setPause(boolean);
+  }
+
+  function setScrollPositionZero() {
+    setPrevYPosition(0);
+    setShowHeader(false);
+    setShiftPosition(false);
   }
 
   function handleScroll() {
@@ -40,7 +47,12 @@ export function ScrollerProvider({ children }) {
 
   return (
     <ScrollerContext.Provider
-      value={{ showHeader, shiftPosition, handlePauseScroll }}
+      value={{
+        showHeader,
+        shiftPosition,
+        handlePauseScroll,
+        setScrollPositionZero,
+      }}
     >
       {children}
     </ScrollerContext.Provider>

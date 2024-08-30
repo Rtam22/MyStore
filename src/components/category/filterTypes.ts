@@ -26,6 +26,8 @@ export type subCategoryType = {
 export type subCategorySelectionProps = {
   subCategory: subCategoryType[];
   currentCategory: string;
+  setScrollPositionZero: () => void;
+  clearFilters: () => void;
 };
 
 export type combineFilterTypes = {
@@ -42,4 +44,5 @@ export type allFilterProps = {
   handleHideFilter: () => void;
   hideFilter: boolean;
   sale: boolean;
+  clearFilters: () => void;
 };

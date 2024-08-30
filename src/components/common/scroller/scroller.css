@@ -73,6 +73,9 @@
   .scroller {
     overflow-x: scroll;
   }
+  .scroller-wrapper:hover .scroller {
+    padding-bottom: 25px;
+  }
 }
 
 @media (max-width: 500px) {

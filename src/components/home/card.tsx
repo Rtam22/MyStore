@@ -1,6 +1,5 @@
 import "./card.css";
 import ButtonLink from "./buttonLink";
-import { Link } from "react-router-dom";
 import { cardProps } from "./cardTypes";
 
 function Card({
@@ -20,7 +19,7 @@ function Card({
           <h3>{banner}</h3>
         </div>
       ) : null}
-      {type === "category-card" ? <Link to={href}></Link> : null}
+      {/*    {type === "category-card" ? <Link to={href}></Link> : null} */}
 
       <div className="image-container">
         <img src={image} alt={imageAlt} />

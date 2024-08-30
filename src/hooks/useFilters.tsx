@@ -30,22 +30,22 @@ function UseFilters() {
     value: Filter,
     filterKey: keyof filterType
   ) {
-    if (filterKey === "price" || filterKey === "size") {
-      const found = filterSettings[filterKey].find(
-        (filter) => filter === value
-      );
-      setFilterSettings((prevState) => {
-        const currentFilter = prevState[filterKey];
+    setFilterSettings((prevState) => {
+      const currentFilter = prevState[filterKey] as Filter[];
+      if (Array.isArray(currentFilter)) {
+        const found = currentFilter.includes(value);
         return found
           ? {
               ...prevState,
-              [filterKey]: currentFilter.filter(
-                (item) => item !== (value as Filter)
-              ),
+              [filterKey]: currentFilter.filter((item) => item !== value),
             }
-          : { ...prevState, [filterKey]: [...prevState[filterKey], value] };
-      });
-    }
+          : {
+              ...prevState,
+              [filterKey]: [...currentFilter, value],
+            };
+      }
+      return prevState;
+    });
   }
 
   function updateFilter(value: filterValue, filterKey: keyof filterType) {

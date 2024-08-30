@@ -2,11 +2,31 @@
   display: flex;
   gap: 50px;
   position: relative;
+  height: 100%;
+}
+
+.navigation-container {
+  height: 100%;
 }
 
 .header-bottom ul li a {
   font-size: 14px;
   font-weight: 400;
+  height: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.main-link:hover {
+  text-decoration: underline;
+}
+
+.link-modal ul li {
+  width: 100%;
+}
+
+.header-bottom ul li {
+  height: 100%;
 }
 
 .dropdown-menu {
@@ -59,5 +79,5 @@ nav ul li {
 .navigation-container ul li:hover .link-modal,
 .link-modal:hover {
   padding-top: 10px;
-  height: 240px;
+  height: auto;
 }

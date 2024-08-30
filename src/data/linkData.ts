@@ -38,34 +38,11 @@ export const womansClothingLinks = [
 
 export const jewelryLinks = [
   {
-    title: "Necklaces & Pendants",
-    url: "/jewelry_necklaces-&-pendants",
-  },
-  {
     title: "Earrings",
     url: "/jewelry_earrings",
   },
   {
     title: "Rings",
     url: "/jewelry_rings",
-  },
-  {
-    title: "Watches",
-    url: "/jewelry_watches",
-  },
-];
-
-export const electronicLinks = [
-  {
-    title: "Mobile Phones",
-    url: "/electronics_mobile-phones",
-  },
-  {
-    title: "Laptops & Computers",
-    url: "/electronics_laptops-&-computers",
-  },
-  {
-    title: "Tablets",
-    url: "/electronics_tablets",
   },
 ];

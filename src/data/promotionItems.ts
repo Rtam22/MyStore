@@ -1,24 +1,26 @@
-import jewelryImage from "../assets/Jewelry.jpg";
-import Electronics from "../assets/Electronics.jpg";
+import jewelryImage from "../assets/Jewelry.png";
+import ClothingSet from "../assets/ClothingSet.png";
 import { promoCardProps } from "../components/home/cardTypes";
 
 export const promotionItems: promoCardProps[] = [
   {
-    title: "Up to 15% off selected jewelry!",
+    title: "Use code JEWEL30 at checkout and Save!",
     image: jewelryImage,
     imageAlt: "Collection of Jewelry",
     type: "promo-card",
     size: "small",
     color: "orange",
-    banner: "Up to 15% off selected jewelry!",
+    banner: "Save 10% off all Jewelry!",
+    href: "/jewelry",
   },
   {
-    title: "Upgrade to the latest in tech with our cutting-edge electronics!",
-    image: Electronics,
+    title: "Explore our discounts and elevate your wardrobe with new trends",
+    image: ClothingSet,
     imageAlt: "Collection of Jewelry",
     type: "promo-card",
     size: "large",
     color: "blue",
-    banner: "Save 10% on Top Tech with Code TECH30",
+    banner: "Save up to 15% off selected products",
+    href: "/shop",
   },
 ];

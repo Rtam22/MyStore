@@ -31,7 +31,12 @@ function Card({
           <span>{title}</span>
         </h3>
         {type === "promo-card" && (
-          <ButtonLink title="Shop Now!" color={color} size="small" />
+          <ButtonLink
+            title="Shop Now!"
+            color={color}
+            size="small"
+            href={href}
+          />
         )}
       </div>
     </div>

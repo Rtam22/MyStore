@@ -28,14 +28,13 @@ function Home() {
     <>
       <HeroSection
         key={uuidv4()}
-        title="Seasonal Sale"
-        description="Fresh deals for the whole season"
-        secondaryDescription="Explore our discounts and elevate your wardrobe with new trends
-
-"
+        title="New Seasonal Arrivals"
+        description="Discover our new seasonal styles"
+        secondaryDescription="Refresh your wardrobe with the latest trends and must-have pieces"
         image={clothingImage}
         imageAlt="Collection of clothing"
         button="Shop Now!"
+        href="/shop"
       />
 
       <div className="content home">
@@ -58,6 +57,7 @@ function Home() {
                 size={item.size}
                 color={item.color}
                 banner={item.banner}
+                href={item.href}
               />
             );
           })}

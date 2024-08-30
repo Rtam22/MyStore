@@ -9,7 +9,7 @@ export type promoCardProps = baseCardProps & {
   size: "large" | "small";
   color: "orange" | "blue";
   banner: string;
-  href?: never;
+  href: string;
 };
 
 export type categoryCardProps = baseCardProps & {

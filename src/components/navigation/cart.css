@@ -7,6 +7,10 @@
   position: relative;
 }
 
+.fa-cart-shopping:hover {
+  color: rgb(113, 113, 216);
+}
+
 .item-count {
   top: -10px;
   right: -10px;

@@ -138,6 +138,7 @@ function UseFilters() {
   }
 
   function handleSizeRange(sizeRange: string[], items: productType[]) {
+    console.log(items);
     return items.filter((item) =>
       item.size.some((size) => sizeRange.includes(size))
     );

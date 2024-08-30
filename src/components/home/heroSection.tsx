@@ -7,6 +7,7 @@ type heroSectionProps = {
   image: string;
   imageAlt: string;
   button?: string;
+  href: string;
 };
 
 function HeroSection({
@@ -16,6 +17,7 @@ function HeroSection({
   image,
   imageAlt,
   button,
+  href,
 }: heroSectionProps) {
   return (
     <div className="hero-container">
@@ -40,12 +42,7 @@ function HeroSection({
         )}
         {button && (
           <span className="button-container">
-            <ButtonLink
-              title={button}
-              color="black"
-              size="large"
-              href="/shop_sale"
-            />
+            <ButtonLink title={button} color="black" size="large" href={href} />
           </span>
         )}
       </div>

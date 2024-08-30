@@ -37,6 +37,11 @@ import WShoes1 from "../assets/products/womans-clothing/WShoes1.png";
 import WShoes2 from "../assets/products/womans-clothing/WShoes2.png";
 import WShoes3 from "../assets/products/womans-clothing/WShoes3.png";
 import WShoes4 from "../assets/products/womans-clothing/WShoes4.png";
+import Ring1 from "../assets/products/jewelry/Ring1.png";
+import Ring2 from "../assets/products/jewelry/Ring2.png";
+import Ring3 from "../assets/products/jewelry/Ring3.png";
+import Earring1 from "../assets/products/jewelry/Earring1.png";
+import Earring2 from "../assets/products/jewelry/Earring2.png";
 
 export type productType = {
   id: string;
@@ -50,7 +55,7 @@ export type productType = {
   subCategory: string;
   availability: boolean;
   href: string;
-  size:
+  size?:
     | ("XS" | "S" | "M" | "L" | "XL")[]
     | ("6 Au" | "7 Au" | "8 Au" | "9 Au" | "10 Au")[];
   color?: string[];
@@ -898,5 +903,112 @@ export const products: productType[] = [
     tag: ["bold", "special occasion"],
     amountSold: 210,
     dateAdded: new Date("2024-04-05"),
+  },
+
+  /* Jewelry*/
+
+  {
+    id: "sapphire-ring",
+    href: "/jewelry_rings/Sapphire-Ring",
+    title: "Elegant Sapphire Ring",
+    description:
+      "This elegant sapphire ring features a deep blue gemstone, set in a polished silver band. A perfect blend of luxury and sophistication for any occasion.",
+    image: Ring1,
+    imageAlt: "An elegant sapphire ring with a polished silver band",
+    rating: 4.7,
+    price: 299.99,
+    mainCategory: "jewelry",
+    subCategory: "rings",
+    availability: true,
+    size: ["S", "M", "L"],
+    discount: 0,
+    salePrice: 299.99,
+    tag: ["luxury", "sophisticated"],
+    amountSold: 180,
+    dateAdded: new Date("2024-06-05"),
+  },
+
+  {
+    id: "diamond-ring-band",
+    href: "/jewelry_rings/Diamond-Ring-with-Band",
+    title: "Diamond Ring with Band",
+    description:
+      "A stunning diamond ring featuring a brilliant-cut diamond, complemented by a matching band. The perfect symbol of elegance and commitment.",
+    image: Ring2,
+    imageAlt: "A diamond ring with a matching band",
+    rating: 4.8,
+    price: 599.99,
+    mainCategory: "jewelry",
+    subCategory: "rings",
+    availability: true,
+    size: ["M", "L"],
+    discount: 0,
+    salePrice: 599.99,
+    tag: ["elegant", "commitment"],
+    amountSold: 145,
+    dateAdded: new Date("2024-05-10"),
+  },
+
+  {
+    id: "diamond-ring",
+    href: "/jewelry_rings/Diamond-Ring",
+    title: "Classic Diamond Ring",
+    description:
+      "A timeless classic, this diamond ring features a single, brilliant-cut diamond set in a sleek gold band. A symbol of everlasting love and style.",
+    image: Ring3,
+    imageAlt: "A classic diamond ring with a sleek gold band",
+    rating: 4.9,
+    price: 499.99,
+    mainCategory: "jewelry",
+    subCategory: "rings",
+    availability: true,
+    size: ["S", "L"],
+    discount: 0,
+    salePrice: 499.99,
+    tag: ["timeless", "classic"],
+    amountSold: 210,
+    dateAdded: new Date("2024-04-22"),
+  },
+
+  {
+    id: "diamond-earrings",
+    href: "/jewelry_earrings/Diamond-Earrings",
+    title: "Diamond Stud Earrings",
+    description:
+      "These exquisite diamond stud earrings feature brilliant-cut diamonds set in a sleek design. A must-have accessory that adds a touch of sparkle to any outfit.",
+    image: Earring1,
+    imageAlt: "Exquisite diamond stud earrings",
+    rating: 4.8,
+    price: 399.99,
+    mainCategory: "jewelry",
+    subCategory: "earrings",
+    availability: true,
+    discount: 0,
+    size: [],
+    salePrice: 399.99,
+    tag: ["sparkle", "elegant"],
+    amountSold: 190,
+    dateAdded: new Date("2024-07-15"),
+  },
+
+  {
+    id: "star-pearl-earrings",
+    href: "/jewelry_earrings/Star-Pearl-Earrings",
+    title: "Star Pearl Earrings",
+    description:
+      "These star-shaped pearl earrings combine elegance and charm. The lustrous pearls are set within a delicate star design, making them perfect for both casual and formal occasions.",
+    image: Earring2,
+    imageAlt: "Star-shaped pearl earrings",
+    rating: 4.6,
+    price: 249.99,
+    mainCategory: "jewelry",
+    subCategory: "earrings",
+    availability: true,
+    size: [],
+    discount: 0,
+    salePrice: 249.99,
+    tag: ["charm", "elegance"],
+    amountSold: 160,
+    dateAdded: new Date("2024-05-28"),
   },
 ];

@@ -11,11 +11,13 @@ import Cart from "./pages/cart";
 import Search from "./pages/search";
 import NotFound from "./pages/notFound";
 import { ScrollerProvider } from "./context/scrollerContext";
+import ScrollToTop from "./utils/scrollToTop";
 function App() {
   return (
     <CartProvider>
       <ScrollerProvider>
         <Router>
+          <ScrollToTop />
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />

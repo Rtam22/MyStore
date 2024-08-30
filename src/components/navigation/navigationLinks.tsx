@@ -16,16 +16,22 @@ function NavigationLinks() {
     <nav className="navigation-container">
       <ul>
         <li>
-          <Link to="/mens-clothing">Men's Clothing</Link>
+          <Link to="/mens-clothing" className="main-link">
+            Men's Clothing
+          </Link>
           <LinkModal links={mensClothingLinks} />
         </li>
 
         <li>
-          <Link to="/womans-clothing">Woman's Clothing</Link>
+          <Link to="/womans-clothing" className="main-link">
+            Woman's Clothing
+          </Link>
           <LinkModal links={womansClothingLinks} />
         </li>
         <li>
-          <Link to="/jewelry">Jewelry</Link>
+          <Link to="/jewelry" className="main-link">
+            Jewelry
+          </Link>
           <LinkModal links={jewelryLinks} />
         </li>
       </ul>

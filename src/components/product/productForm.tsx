@@ -12,9 +12,12 @@ function ProductForm({ product, handleToast }: productFormProps) {
   const [selectedSize, setSizeSelectedSize] = useState<
     "XS" | "S" | "M" | "L" | "XL"
   >(null);
-  const [selectedColor, setSelectedColor] = useState<string>(product.color[0]);
+  const [selectedColor, setSelectedColor] = useState<string>(
+    product.color ? product.color[0] : null
+  );
   const [selectedQuantity, setSelectQuantity] = useState<number>(1);
   const { addToCart } = useContext(CartContext);
+
   function handleColor(colors: string | string[]) {
     if (Array.isArray(colors)) {
       return (

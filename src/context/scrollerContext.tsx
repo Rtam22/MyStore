@@ -20,7 +20,7 @@ export function ScrollerProvider({ children }) {
 
   function handleScroll() {
     if (!pause) {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 30) {
         setShiftPosition(true);
       } else {
         setShiftPosition(false);

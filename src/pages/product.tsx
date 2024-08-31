@@ -26,7 +26,6 @@ function Product() {
       (product) => productId === getLastProductParamLink(product.href)
     );
     setProduct(selectedProduct);
-    console.log("selectedProduct");
 
     setRecommended(fetchStoreSales(selectedProduct));
   }, [productId]);

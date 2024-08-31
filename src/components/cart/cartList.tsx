@@ -1,7 +1,6 @@
 import "./cartList.css";
 import { CartContext } from "../../context/cartContext";
 import { useContext, useState } from "react";
-import { onChange } from "react-toastify/dist/core/store";
 import UseEditCartItems from "../../hooks/useEditCartItems";
 import { calculateItemTotal } from "../../utils/calculationUtils";
 import { Link } from "react-router-dom";

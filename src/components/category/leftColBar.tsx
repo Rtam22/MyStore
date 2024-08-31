@@ -3,11 +3,9 @@ import "./leftColBar.css";
 import FilterSection from "./filterSection";
 import { allFilterProps } from "./filterTypes";
 import SubCategorySection from "./subCategorySection";
-import { formatTitle } from "../../utils/textFormatUtils";
 import { getLastParamLink } from "../../utils/textFormatUtils";
 import { useParams } from "react-router-dom";
 import { ScrollerContext } from "../../context/scrollerContext";
-type sortType = "Newest" | "Price: High-Low" | "Price: Low-High" | "Featured";
 
 function LeftColBar({
   allfilters,

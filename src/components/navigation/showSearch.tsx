@@ -2,7 +2,6 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SearchModal from "./searchModal";
 import "./showSearch.css";
-import React, { useState } from "react";
 import SearchFunction from "./searchFunction";
 import { activeHeaderProps } from "./header";
 

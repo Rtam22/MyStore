@@ -1,7 +1,6 @@
 import "./filterSection.css";
 import { filterModalProps } from "./filterTypes";
 import React, { useState } from "react";
-import UseFilters from "../../hooks/useFilters";
 import { filterValue, filterType } from "../../hooks/useFilters";
 import { getFirstWord } from "../../utils/textFormatUtils";
 import { sortType } from "../../pages/category";
